@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Collections;
 [System.Serializable]
 public struct TimedEvent
 {
@@ -50,6 +51,7 @@ public class TimeBarManager : MonoBehaviour
                 {
                     timedEvent.eventTime.Invoke();
                 }
+                StartCoroutine(resetCurrentValue());
             }
         }
     }
@@ -105,5 +107,10 @@ public class TimeBarManager : MonoBehaviour
             r.sizeDelta = new Vector2(width, r.sizeDelta.y);
             r.anchoredPosition = new Vector2(xPos, 0);
         }
+    }
+    private IEnumerator resetCurrentValue()
+    {
+        yield return null;
+        currentValue = -10;
     }
 }
