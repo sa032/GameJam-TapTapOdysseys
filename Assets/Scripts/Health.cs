@@ -12,9 +12,11 @@ public class Health : MonoBehaviour
     public void damage(float damageAmount)
     {
         health -= damageAmount;
+        Debug.Log(damageAmount);
     }
     public void heal(float healAmount)
     {
         health += healAmount;
+        Debug.Log(healAmount);
     }
 }

@@ -32,27 +32,36 @@ public class TimeBarManager : MonoBehaviour
 
     private void Start()
     {
-        
         currentValue = minValue;
         TimeBar = GetComponent<Slider>();
         setMarkers(true);
     }
     private void Update()
     {
+        if (GlobalValues.barLocked)
+        {
+            return;
+        }
         currentValue += Time.deltaTime * sliderSpeed;
         setTimeBarValues();
         setMarkers(false);
-        
-        foreach (var timedEvent in events)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            bool matched = false;
+            foreach (var timedEvent in events)
             {
                 if (currentValue < timedEvent.maxTime && currentValue > timedEvent.minTime)
                 {
                     timedEvent.eventTime.Invoke();
+                    matched = true;
+                    break; // stop checking after success
                 }
-                StartCoroutine(resetCurrentValue());
             }
+            if (!matched)
+            {
+                StartCoroutine(LockForTime());
+            }
+            StartCoroutine(resetCurrentValue());
         }
     }
     private void setTimeBarValues()
@@ -112,5 +121,11 @@ public class TimeBarManager : MonoBehaviour
     {
         yield return null;
         currentValue = -10;
+    }
+    private IEnumerator LockForTime()
+    {
+        GlobalValues.barLocked = true;
+        yield return new WaitForSeconds(1);
+        GlobalValues.barLocked = false;
     }
 }
