@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16aec4d51d9106b4cbb3a965086b271e, type: 3}
+  m_Script: {fileID: 11500000, guid: f5f491b607b1cd948b5bc856850b2616, type: 3}
   m_Name: Boss1
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
-  nodeType: 6
+  nodeType: 5

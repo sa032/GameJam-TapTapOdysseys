@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using OneLine;
 using UnityEngine;
 
@@ -8,18 +8,18 @@ namespace Map
     public class MapConfig : ScriptableObject
     {
         public List<NodeBlueprint> nodeBlueprints;
-        [Tooltip("RandomNode that use to random")]
+        [Tooltip("Nodes that will be used on layers with Randomize Nodes > 0")]
         public List<NodeType> randomNodes = new List<NodeType>
-            {NodeType.EliteEnemy, NodeType.Shop, NodeType.Treasure, NodeType.MinorEnemy, NodeType.Rest};
-        public int GridWidth => Mathf.Max(numOfPreBossNodes, numOfStartingNodes);
+            {NodeType.Encounter, NodeType.Shop, NodeType.Treasure, NodeType.MinorEnemy, NodeType.Rest};
+        public int GridWidth => Mathf.Max(numOfPreBossNodes.max, numOfStartingNodes.max);
 
         [OneLineWithHeader]
-        public int numOfPreBossNodes = 2;
+        public IntMinMax numOfPreBossNodes;
         [OneLineWithHeader]
-        public int numOfStartingNodes = 1;
+        public IntMinMax numOfStartingNodes;
 
-        [Tooltip("generate paths")]
-        public int extraPaths = 1;
+        [Tooltip("Increase this number to generate more paths")]
+        public int extraPaths;
         public List<MapLayer> layers;
     }
 }

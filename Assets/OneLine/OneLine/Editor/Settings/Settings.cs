@@ -16,6 +16,7 @@ namespace OneLine.Settings {
         private GlobalSettingsLayer layer = new GlobalSettingsLayer();
         public ISettings Layer { get { return layer; } }
 
+        [Obsolete]
         private void OnEnable() {
             Defaults = new DefaultSettingsLayer();
 
@@ -41,6 +42,7 @@ namespace OneLine.Settings {
                 return result;
         }
 
+        [Obsolete]
         public void SaveAndApply() {
             local.Save();
             EditorUtility.SetDirty(this);

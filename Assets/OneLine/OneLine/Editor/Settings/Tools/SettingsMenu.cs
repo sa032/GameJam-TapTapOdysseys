@@ -76,6 +76,7 @@ namespace OneLine.Settings {
             }
         }
 
+        [System.Obsolete]
         public static void RemoveSettingsForever(Settings settings) {
             var path = AssetDatabase.GetAssetPath(settings);
             AssetDatabase.DeleteAsset(path);
@@ -94,6 +95,7 @@ namespace OneLine.Settings {
 
         }
 
+        [System.Obsolete]
         public static void ApplyDirectivesInOrderToCurrentSettings(ISettings settings){
             var directives = new PreprocessorDirectives();
 
@@ -106,6 +108,7 @@ namespace OneLine.Settings {
             directives.DefineForCurrentBuildTarget();
         }
 
+        [System.Obsolete]
         public static void ApplyDirectiveDefaultsOnly(bool defaultOnly) {
             var directives = new PreprocessorDirectives();
             directives.add("ONE_LINE_DEFAULTS_ONLY", defaultOnly);

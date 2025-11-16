@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Map
 {
@@ -9,10 +9,13 @@ namespace Map
         Rest,
         Treasure,
         Shop,
-        Encounter,
         Boss,
+        Encounter
     }
+}
 
+namespace Map
+{
     [CreateAssetMenu]
     public class NodeBlueprint : ScriptableObject
     {

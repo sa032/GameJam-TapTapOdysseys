@@ -48,7 +48,7 @@ namespace Map
         {
             layerDistances = new List<float>();
             foreach (MapLayer layer in config.layers)
-                layerDistances.Add(layer.distanceFromPreviousLayer);
+                layerDistances.Add(layer.distanceFromPreviousLayer.GetValue());
         }
 
         private static float GetDistanceToLayer(int layerIndex)
@@ -103,7 +103,7 @@ namespace Map
                     float x = xRnd * layer.nodesApartDistance;
                     float y = yRnd < 0 ? distToPreviousLayer * yRnd: distToNextLayer * yRnd;
 
-                    node.position += new Vector2(x, y);
+                    node.position += new Vector2(x, y) * layer.randomizePosition;
                 }
             }
         }
@@ -199,8 +199,8 @@ namespace Map
         {
             Vector2Int finalNode = GetFinalNode();
             var paths = new List<List<Vector2Int>>();
-            int numOfStartingNodes = config.numOfStartingNodes;
-            int numOfPreBossNodes = config.numOfPreBossNodes;
+            int numOfStartingNodes = config.numOfStartingNodes.GetValue();
+            int numOfPreBossNodes = config.numOfPreBossNodes.GetValue();
 
             List<int> candidateXs = new List<int>();
             for (int i = 0; i < config.GridWidth; i++)

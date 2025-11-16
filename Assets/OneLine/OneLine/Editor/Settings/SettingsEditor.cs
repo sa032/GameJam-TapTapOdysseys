@@ -30,6 +30,8 @@ If you just remove this ScriptableObject, your local settings stay changed.";
 
         private new Settings target { get { return (Settings) base.target;} }
 
+        [Obsolete]
+#pragma warning disable CS0809 // Obsolete member overrides non-obsolete member
         public override void OnInspectorGUI() {
 #if ONE_LINE_DEFAULTS_ONLY
             PrintErrorUnusedSettingsFile();
@@ -61,6 +63,7 @@ If you just remove this ScriptableObject, your local settings stay changed.";
             EditorGUILayout.GetControlRect(false, rect.yMax - startRect.yMin);
 #endif
         }
+#pragma warning restore CS0809 // Obsolete member overrides non-obsolete member
 
         private void PrintErrorUnusedSettingsFile(){
             EditorGUILayout.HelpBox("This settings file is not actually used by OneLine.\nDelete it, please.", MessageType.Error);
@@ -120,12 +123,14 @@ If you just remove this ScriptableObject, your local settings stay changed.";
             );
         }
 
+        [Obsolete]
         private void DrawSaveButton(Rect rect) {
             if (GUI.Button(rect.CutFromLeft(50)[0], "Save")){
                 target.SaveAndApply();
             }
         }
 
+        [Obsolete]
         private void DrawRemoveButton(Rect rect) {
             var rects = rect.CutFromRight(75);
 

@@ -25,6 +25,7 @@ namespace OneLine.Settings {
             items[key] = get.BoolValue;
         }
 
+        [Obsolete]
         public void DefineForCurrentBuildTarget() {
             BuildTargetGroup target = EditorUserBuildSettings.selectedBuildTargetGroup;
             if (target == BuildTargetGroup.Unknown) {
