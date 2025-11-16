@@ -36,8 +36,8 @@ public class TimeBarManager : MonoBehaviour
     }
     private void Update()
     {
-        //currentValue += Time.deltaTime * sliderSpeed;
-        //setTimeBarValues();
+        currentValue += Time.deltaTime * sliderSpeed;
+        setTimeBarValues();
         
         foreach (var timedEvent in events)
         {
