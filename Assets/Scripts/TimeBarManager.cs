@@ -26,18 +26,21 @@ public class TimeBarManager : MonoBehaviour
     [Header("Marker Settings")]
     public RectTransform markerParent;
     public GameObject markerPrefab;
+    private RectTransform[] markerRects;
+    private Image[] markerImages;
 
     private void Start()
     {
         
         currentValue = minValue;
         TimeBar = GetComponent<Slider>();
-        setMarkers();
+        setMarkers(true);
     }
     private void Update()
     {
         currentValue += Time.deltaTime * sliderSpeed;
         setTimeBarValues();
+        setMarkers(false);
         
         foreach (var timedEvent in events)
         {
@@ -56,34 +59,51 @@ public class TimeBarManager : MonoBehaviour
         TimeBar.minValue = minValue;
         TimeBar.value = currentValue;
     }
-    private void setMarkers()
+    private void setMarkers(bool spawnMarks)
     {
         RectTransform markerRect = markerParent.GetComponent<RectTransform>();
-        float sliderWidth = markerRect.rect.width;  
+        float sliderWidth = markerRect.rect.width;
         float fullRange = maxValue - minValue;
 
-        foreach (var ev in events)
+        if (spawnMarks)
         {
-            GameObject marker = Instantiate(markerPrefab, markerParent);
-        Image img = marker.GetComponent<Image>();
-        RectTransform r = marker.GetComponent<RectTransform>();
+            markerRects = new RectTransform[events.Length];
+            markerImages = new Image[events.Length];
+        }
 
-        img.color = ev.color;
+        for (int i = 0; i < events.Length; i++)
+        {
+            var ev = events[i];
 
-        // Normalize 0 → 1
-        float startNorm = Mathf.InverseLerp(minValue, maxValue, ev.minTime);
-        float endNorm   = Mathf.InverseLerp(minValue, maxValue, ev.maxTime);
+            RectTransform r;
+            Image img;
 
-        float width = (endNorm - startNorm) * sliderWidth;
+            if (spawnMarks)
+            {
+                GameObject m = Instantiate(markerPrefab, markerParent);
+                r = m.GetComponent<RectTransform>();
+                img = m.GetComponent<Image>();
 
-        // Convert startNorm into a centered position
-        float xStart = Mathf.Lerp(-sliderWidth / 2f, sliderWidth / 2f, startNorm);
+                markerRects[i] = r;
+                markerImages[i] = img;
+            }
+            else
+            {
+                r = markerRects[i];
+                img = markerImages[i];
+            }
 
-        float xPos = xStart + width / 2f;
+            img.color = ev.color;
 
-        // Apply the values
-        r.sizeDelta = new Vector2(width, r.sizeDelta.y);
-        r.anchoredPosition = new Vector2(xPos, 0);
+            float startNorm = Mathf.InverseLerp(minValue, maxValue, ev.minTime);
+            float endNorm   = Mathf.InverseLerp(minValue, maxValue, ev.maxTime);
+
+            float width = (endNorm - startNorm) * sliderWidth;
+            float xStart = Mathf.Lerp(-sliderWidth / 2f, sliderWidth / 2f, startNorm);
+            float xPos = xStart + width / 2f;
+
+            r.sizeDelta = new Vector2(width, r.sizeDelta.y);
+            r.anchoredPosition = new Vector2(xPos, 0);
         }
     }
 }
