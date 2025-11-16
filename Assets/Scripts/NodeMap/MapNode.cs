@@ -26,6 +26,7 @@ namespace Map
 
         public Node Node { get; private set; }
         public NodeBlueprint Blueprint { get; private set; }
+        public Vector2Int Pos;
 
         private float initialScale;
         private const float HoverScaleFactor = 1.2f;
@@ -54,6 +55,7 @@ namespace Map
                 circleImage.color = MapView.Instance.visitedColor;
                 circleImage.gameObject.SetActive(false);    
             }
+            Pos = node.point;
             
             SetState(NodeStates.Locked);
         }

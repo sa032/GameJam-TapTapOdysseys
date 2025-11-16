@@ -47,7 +47,7 @@ namespace Map
             }
         }
 
-        private void SendPlayerToNode(MapNode mapNode)
+        public void SendPlayerToNode(MapNode mapNode)
         {
             Locked = lockAfterSelecting;
             mapManager.CurrentMap.path.Add(mapNode.Node.point);
