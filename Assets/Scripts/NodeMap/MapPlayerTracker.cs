@@ -68,7 +68,7 @@ namespace Map
             // if you choose to show GUI in some of these cases, do not forget to set "Locked" in MapPlayerTracker back to false
             switch (mapNode.Node.nodeType)
             {
-                case NodeType.MinorEnemy:
+                case NodeType.Enemy:
                     break;
                 case NodeType.EliteEnemy:
                     break;

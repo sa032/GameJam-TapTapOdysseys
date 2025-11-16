@@ -9,7 +9,7 @@ namespace Map
         
         List<Node> GetNextNode()
         {
-            List<Node> a = null;
+            List<Node> a = new List<Node>();
             
             if(mapManager.CurrentMap.path.Count == 0)
             {
@@ -20,8 +20,7 @@ namespace Map
                 Node currentNode = mapManager.CurrentMap.GetNode(currentPoint);
                 foreach(Vector2Int n in currentNode.outgoing)
                 {
-                    print(n.x+" "+n.y);
-                    
+                    a.Add(mapManager.CurrentMap.GetNode(n));
                 }
                 return a;
             }

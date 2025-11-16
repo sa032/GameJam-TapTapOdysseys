@@ -8,6 +8,7 @@ namespace Map
     {
         public MapConfig config;
         public MapView view;
+        public int CurrentFloor = 0;
 
         public Map CurrentMap { get; private set; }
 
@@ -42,7 +43,7 @@ namespace Map
 
         public void GenerateNewMap()
         {
-            Map map = MapGenerator.GetMap(config);
+            Map map = MapGenerator.GetMap(config,CurrentFloor);
             CurrentMap = map;
             Debug.Log(map.ToJson());
             view.ShowMap(map);

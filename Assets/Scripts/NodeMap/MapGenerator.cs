@@ -12,7 +12,7 @@ namespace Map
         // ALL nodes by layer:
         private static readonly List<List<Node>> nodes = new List<List<Node>>();
 
-        public static Map GetMap(MapConfig conf)
+        public static Map GetMap(MapConfig conf,int CurrentFloor)
         {
             if (conf == null)
             {
@@ -23,18 +23,18 @@ namespace Map
             config = conf;
             nodes.Clear();
 
-            GenerateLayerDistances();
+            GenerateLayerDistances(CurrentFloor);
 
-            for (int i = 0; i < conf.layers.Count; i++)
-                PlaceLayer(i);
+            for (int i = 0; i < conf.FloorLayers[CurrentFloor].layers.Count; i++)
+                PlaceLayer(i , CurrentFloor);
 
-            List<List<Vector2Int>> paths = GeneratePaths();
+            List<List<Vector2Int>> paths = GeneratePaths(CurrentFloor);
 
-            RandomizeNodePositions();
+            RandomizeNodePositions(CurrentFloor);
 
             SetUpConnections(paths);
 
-            RemoveCrossConnections();
+            RemoveCrossConnections(CurrentFloor);
 
             // select all the nodes with connections:
             List<Node> nodesList = nodes.SelectMany(n => n).Where(n => n.incoming.Count > 0 || n.outgoing.Count > 0).ToList();
@@ -44,10 +44,10 @@ namespace Map
             return new Map(conf.name, bossNodeName, nodesList, new List<Vector2Int>());
         }
 
-        private static void GenerateLayerDistances()
+        private static void GenerateLayerDistances(int CurrentFloor)
         {
             layerDistances = new List<float>();
-            foreach (MapLayer layer in config.layers)
+            foreach (MapLayer layer in config.FloorLayers[CurrentFloor].layers)
                 layerDistances.Add(layer.distanceFromPreviousLayer.GetValue());
         }
 
@@ -58,9 +58,9 @@ namespace Map
             return layerDistances.Take(layerIndex + 1).Sum();
         }
 
-        private static void PlaceLayer(int layerIndex)
+        private static void PlaceLayer(int layerIndex , int CurrentFloor)
         {
-            MapLayer layer = config.layers[layerIndex];
+            MapLayer layer = config.FloorLayers[CurrentFloor].layers[layerIndex];
             List<Node> nodesOnThisLayer = new List<Node>();
 
             // offset of this layer to make all the nodes centered:
@@ -84,12 +84,12 @@ namespace Map
             nodes.Add(nodesOnThisLayer);
         }
 
-        private static void RandomizeNodePositions()
+        private static void RandomizeNodePositions(int CurrentFloor)
         {
             for (int index = 0; index < nodes.Count; index++)
             {
                 List<Node> list = nodes[index];
-                MapLayer layer = config.layers[index];
+                MapLayer layer = config.FloorLayers[CurrentFloor].layers[index];
                 float distToNextLayer = index + 1 >= layerDistances.Count
                     ? 0f
                     : layerDistances[index + 1];
@@ -122,10 +122,10 @@ namespace Map
             }
         }
 
-        private static void RemoveCrossConnections()
+        private static void RemoveCrossConnections(int CurrentFloor)
         {
             for (int i = 0; i < config.GridWidth - 1; ++i)
-                for (int j = 0; j < config.layers.Count - 1; ++j)
+                for (int j = 0; j < config.FloorLayers[CurrentFloor].layers.Count - 1; ++j)
                 {
                     Node node = GetNode(new Vector2Int(i, j));
                     if (node == null || node.HasNoConnections()) continue;
@@ -184,9 +184,9 @@ namespace Map
             return nodes[p.y][p.x];
         }
 
-        private static Vector2Int GetFinalNode()
+        private static Vector2Int GetFinalNode(int CurrentFloor)
         {
-            int y = config.layers.Count - 1;
+            int y = config.FloorLayers[CurrentFloor].layers.Count - 1;
             if (config.GridWidth % 2 == 1)
                 return new Vector2Int(config.GridWidth / 2, y);
 
@@ -195,9 +195,9 @@ namespace Map
                 : new Vector2Int(config.GridWidth / 2 - 1, y);
         }
 
-        private static List<List<Vector2Int>> GeneratePaths()
+        private static List<List<Vector2Int>> GeneratePaths(int CurrentFloor)
         {
-            Vector2Int finalNode = GetFinalNode();
+            Vector2Int finalNode = GetFinalNode(CurrentFloor);
             var paths = new List<List<Vector2Int>>();
             int numOfStartingNodes = config.numOfStartingNodes.GetValue();
             int numOfPreBossNodes = config.numOfPreBossNodes.GetValue();

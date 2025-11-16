@@ -28,65 +28,8 @@ MonoBehaviour:
     min: 1
     max: 1
   extraPaths: 1
-  layers:
-  - nodeType: 0
-    distanceFromPreviousLayer:
-      min: 0
-      max: 0
-    nodesApartDistance: 0
-    randomizePosition: 0
-    randomizeNodes: 0
-  - nodeType: 0
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 1.25
-    randomizePosition: 0
-    randomizeNodes: 0.473
-  - nodeType: 0
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 1.25
-    randomizePosition: 0
-    randomizeNodes: 0.622
-  - nodeType: 0
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 1.25
-    randomizePosition: 0
-    randomizeNodes: 0.622
-  - nodeType: 0
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 1.25
-    randomizePosition: 0
-    randomizeNodes: 0.622
-  - nodeType: 0
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 1.25
-    randomizePosition: 0
-    randomizeNodes: 0.622
-  - nodeType: 0
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 1.25
-    randomizePosition: 0
-    randomizeNodes: 0.285
-  - nodeType: 5
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 0
-    randomizePosition: 0
-    randomizeNodes: 0
   FloorLayers:
-  - Name: 
+  - Name: Fantasy Mediaval
     layers:
     - nodeType: 0
       distanceFromPreviousLayer:
@@ -97,36 +40,64 @@ MonoBehaviour:
       randomizeNodes: 0
     - nodeType: 0
       distanceFromPreviousLayer:
-        min: 0
-        max: 0
-      nodesApartDistance: 0
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
       randomizePosition: 0
-      randomizeNodes: 0
+      randomizeNodes: 0.771
+    - nodeType: 1
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.5
+    - nodeType: 2
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.257
     - nodeType: 0
       distanceFromPreviousLayer:
-        min: 0
-        max: 0
-      nodesApartDistance: 0
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
       randomizePosition: 0
-      randomizeNodes: 0
+      randomizeNodes: 0.46
     - nodeType: 0
       distanceFromPreviousLayer:
-        min: 0
-        max: 0
-      nodesApartDistance: 0
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
       randomizePosition: 0
-      randomizeNodes: 0
+      randomizeNodes: 0.431
+    - nodeType: 3
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.431
     - nodeType: 0
       distanceFromPreviousLayer:
-        min: 0
-        max: 0
-      nodesApartDistance: 0
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
       randomizePosition: 0
-      randomizeNodes: 0
+      randomizeNodes: 0.431
     - nodeType: 0
       distanceFromPreviousLayer:
-        min: 0
-        max: 0
-      nodesApartDistance: 0
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.431
+    - nodeType: 5
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
       randomizePosition: 0
       randomizeNodes: 0
