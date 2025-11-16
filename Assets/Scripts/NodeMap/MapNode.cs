@@ -157,6 +157,7 @@ namespace Map
             if (Time.time - mouseDownTime < MaxClickDuration)
             {
                 // user clicked on this node:
+                print(this.Node.point);
                 MapPlayerTracker.Instance.SelectNode(this);
             }
         }

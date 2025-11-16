@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f491b607b1cd948b5bc856850b2616, type: 3}
   m_Name: Treasure
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: -8533606670350889490, guid: b1c36803a045849499f39453de084632, type: 3}
   nodeType: 3

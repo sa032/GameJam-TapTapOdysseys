@@ -164,7 +164,7 @@ namespace Map
                     else if (rnd < 0.6f)
                     {
                         // a) 
-                        node.RemoveOutgoing(topRight.point);
+                        //node.RemoveOutgoing(topRight.point);
                         topRight.RemoveIncoming(node.point);
                     }
                     else
@@ -212,7 +212,7 @@ namespace Map
 
             candidateXs.Shuffle();
             IEnumerable<int> preBossXs = candidateXs.Take(numOfPreBossNodes);
-            List<Vector2Int> preBossPoints = (from x in preBossXs select new Vector2Int(x, finalNode.y - 1)).ToList();
+            List<Vector2Int> preBossPoints = (from x in preBossXs select new Vector2Int(x, finalNode.y -1)).ToList();
 
             int numOfPaths = Mathf.Max(numOfStartingNodes, numOfPreBossNodes) + Mathf.Max(0, config.extraPaths);
             for (int i = 0; i < numOfPaths; ++i)
@@ -246,6 +246,7 @@ namespace Map
 
                 int forwardCol = lastNodeCol;
                 horizontalDistance = Mathf.Abs(toCol - forwardCol);
+                
                 if (horizontalDistance <= verticalDistance)
                     candidateCols.Add(lastNodeCol);
 
@@ -258,7 +259,7 @@ namespace Map
                 horizontalDistance = Mathf.Abs(toCol - rightCol);
                 if (rightCol < config.GridWidth && horizontalDistance <= verticalDistance)
                     candidateCols.Add(rightCol);
-
+                
                 int randomCandidateIndex = Random.Range(0, candidateCols.Count);
                 int candidateCol = candidateCols[randomCandidateIndex];
                 Vector2Int nextPoint = new Vector2Int(candidateCol, row);

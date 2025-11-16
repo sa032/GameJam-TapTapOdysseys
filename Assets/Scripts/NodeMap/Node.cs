@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Map
 {
+    [System.Serializable]
     public class Node
     {
         public readonly Vector2Int point;

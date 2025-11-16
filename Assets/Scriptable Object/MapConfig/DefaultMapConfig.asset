@@ -27,7 +27,7 @@ MonoBehaviour:
   numOfStartingNodes:
     min: 1
     max: 1
-  extraPaths: 0
+  extraPaths: 1
   layers:
   - nodeType: 0
     distanceFromPreviousLayer:
@@ -43,6 +43,41 @@ MonoBehaviour:
     nodesApartDistance: 1.25
     randomizePosition: 0
     randomizeNodes: 0.473
+  - nodeType: 0
+    distanceFromPreviousLayer:
+      min: 2
+      max: 2
+    nodesApartDistance: 1.25
+    randomizePosition: 0
+    randomizeNodes: 0.622
+  - nodeType: 0
+    distanceFromPreviousLayer:
+      min: 2
+      max: 2
+    nodesApartDistance: 1.25
+    randomizePosition: 0
+    randomizeNodes: 0.622
+  - nodeType: 0
+    distanceFromPreviousLayer:
+      min: 2
+      max: 2
+    nodesApartDistance: 1.25
+    randomizePosition: 0
+    randomizeNodes: 0.622
+  - nodeType: 0
+    distanceFromPreviousLayer:
+      min: 2
+      max: 2
+    nodesApartDistance: 1.25
+    randomizePosition: 0
+    randomizeNodes: 0.622
+  - nodeType: 0
+    distanceFromPreviousLayer:
+      min: 2
+      max: 2
+    nodesApartDistance: 1.25
+    randomizePosition: 0
+    randomizeNodes: 0.285
   - nodeType: 5
     distanceFromPreviousLayer:
       min: 2
@@ -50,38 +85,48 @@ MonoBehaviour:
     nodesApartDistance: 0
     randomizePosition: 0
     randomizeNodes: 0
-  - nodeType: 1
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 1.25
-    randomizePosition: 0
-    randomizeNodes: 0
-  - nodeType: 0
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 0
-    randomizePosition: 0
-    randomizeNodes: 0.568
-  - nodeType: 1
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 1.25
-    randomizePosition: 0
-    randomizeNodes: 0.5
-  - nodeType: 0
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 0
-    randomizePosition: 0
-    randomizeNodes: 0
-  - nodeType: 0
-    distanceFromPreviousLayer:
-      min: 2
-      max: 2
-    nodesApartDistance: 0
-    randomizePosition: 0
-    randomizeNodes: 0
+  FloorLayers:
+  - Name: 
+    layers:
+    - nodeType: 0
+      distanceFromPreviousLayer:
+        min: 0
+        max: 0
+      nodesApartDistance: 0
+      randomizePosition: 0
+      randomizeNodes: 0
+    - nodeType: 0
+      distanceFromPreviousLayer:
+        min: 0
+        max: 0
+      nodesApartDistance: 0
+      randomizePosition: 0
+      randomizeNodes: 0
+    - nodeType: 0
+      distanceFromPreviousLayer:
+        min: 0
+        max: 0
+      nodesApartDistance: 0
+      randomizePosition: 0
+      randomizeNodes: 0
+    - nodeType: 0
+      distanceFromPreviousLayer:
+        min: 0
+        max: 0
+      nodesApartDistance: 0
+      randomizePosition: 0
+      randomizeNodes: 0
+    - nodeType: 0
+      distanceFromPreviousLayer:
+        min: 0
+        max: 0
+      nodesApartDistance: 0
+      randomizePosition: 0
+      randomizeNodes: 0
+    - nodeType: 0
+      distanceFromPreviousLayer:
+        min: 0
+        max: 0
+      nodesApartDistance: 0
+      randomizePosition: 0
+      randomizeNodes: 0

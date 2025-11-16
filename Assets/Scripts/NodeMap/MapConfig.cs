@@ -21,5 +21,13 @@ namespace Map
         [Tooltip("Increase this number to generate more paths")]
         public int extraPaths;
         public List<MapLayer> layers;
+        public List<Floor> FloorLayers;
+    }
+
+    [System.Serializable]
+    public class Floor
+    {
+        public string Name;
+        public List<MapLayer> layers;
     }
 }

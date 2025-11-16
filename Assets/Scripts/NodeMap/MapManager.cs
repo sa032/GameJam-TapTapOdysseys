@@ -13,7 +13,7 @@ namespace Map
 
         private void Start()
         {
-            if (PlayerPrefs.HasKey("Map"))
+            /*if (PlayerPrefs.HasKey("Map"))
             {
                 string mapJson = PlayerPrefs.GetString("Map");
                 Map map = JsonConvert.DeserializeObject<Map>(mapJson);
@@ -33,7 +33,11 @@ namespace Map
             else
             {
                 GenerateNewMap();
-            }
+            }*/
+        }
+        void Update()
+        {
+            //print(CurrentMap.nodes.Count);
         }
 
         public void GenerateNewMap()
