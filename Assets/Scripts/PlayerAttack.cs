@@ -4,10 +4,10 @@ public class PlayerAttack : MonoBehaviour
 {
     public void Attack()
     {
-        EnemyHealth enemyHealth = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyHealth>();
-        if (enemyHealth != null)
+        Health health = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Health>();
+        if (health != null)
         {
-            enemyHealth.damageEnemy(3);
+            health.damage(3);
         }
     }
 }
