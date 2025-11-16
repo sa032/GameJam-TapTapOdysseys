@@ -1,17 +1,26 @@
 using UnityEngine;
+using System.Collections;
 
 public class AttackTest : MonoBehaviour
 {
+    public float damage;
+    public GameObject warning;
     public void Attack()
     {
-        Debug.Log("Attack");
+        StartCoroutine(AttackCoroutine());
     }
-    public void Parry()
+    public IEnumerator AttackCoroutine()
     {
-        Debug.Log("Attack");
+        EnemyCooldown enemyCooldown = GetComponent<EnemyCooldown>();
+        enemyCooldown.attacking = true;
+        yield return StartCoroutine(SingleAttackCoroutine());
+        enemyCooldown.attacking = false;
     }
-    public void Magic()
+    public IEnumerator SingleAttackCoroutine()
     {
-        Debug.Log("Attack");
+        Health player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        Instantiate(warning);
+        yield return new WaitForSeconds(0.6f);
+        player.damage(damage);
     }
 }
