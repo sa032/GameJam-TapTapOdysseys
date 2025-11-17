@@ -7,6 +7,8 @@ namespace Map
     public class MapManager : MonoBehaviour
     {
         public MapConfig config;
+        public MapFloorDataConfig FloorDataConfig;
+        public ItemPoolConfig itemPoolConfig;
         public MapView view;
         public int CurrentFloor = 0;
         public static MapManager Instance;

@@ -13,7 +13,4 @@ MonoBehaviour:
   m_Name: FloorDataConfig
   m_EditorClassIdentifier: Assembly-CSharp::Map.MapFloorDataConfig
   FloorData:
-  - Name: Fantasy Mediaval
-    Enemy: []
-    EliteEnemy: []
-    Boss: []
+  - {fileID: 11400000, guid: 4f17063155cd0b94aa5e1a41a98c8149, type: 2}

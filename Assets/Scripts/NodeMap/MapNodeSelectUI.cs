@@ -6,15 +6,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using System.Collections;
+using Unity.VisualScripting;
 
 namespace Map
 {
     public class MapNodeSelectUI : MonoBehaviour
     {
         public MapManager mapManager;
+        public static MapNodeSelectUI instance;
         public MapViewUI mapView;
         public GameObject Card1,Card2,Card3;
-        
+        void Start()
+        {
+            instance = this;
+        }
         List<Node> GetNextNode()
         {
             List<Node> a = new List<Node>();
@@ -100,7 +105,37 @@ namespace Map
         {
             MapPlayerTracker.Instance.SendPlayerToNode(mapNode);
         }
-
+        //TODO: --------------------------------------------------------------EVENT-----------------
+        List<GameObject> items;
+        public void TreasureUI()
+        {
+            items = ItemManager.instance.GetRandomItems();
+            int Amount = items.Count;
+            ShowCardUI(Amount,NodeType.Treasure);
+        }
+        public void ShowCardUI(int CardAmount , NodeType nodeStates)
+        {
+            List<GameObject> Cards = new List<GameObject>
+            {
+                Card1
+            };
+            if(CardAmount >= 2) Cards.Add(Card2);
+            if(CardAmount >= 3) Cards.Add(Card3);
+            
+            int i = 0;
+            foreach(GameObject card in Cards)
+            {
+                if(nodeStates == NodeType.Treasure)
+                {
+                    CardContainData cardContainData = card.GetComponent<CardContainData>();
+                    cardContainData.PrefabItem = items[i];
+                    cardContainData.state = CardState.Item;
+                    card.SetActive(true);
+                }
+                i++;
+            }
+        }
+        //TODO: --------------------------------------------------------------EVENT-----------------
         public void ShowSelectPathUI(List<Node> nextnode)
         {
             DisibleCard();

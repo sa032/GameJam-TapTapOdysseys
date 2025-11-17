@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2413806693520163455, guid: 0b6f6b9f2cac82d419e9c5caf8645f73, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -106,8 +106,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8079084459622607381}
   - {fileID: 1365442048599177982}
+  - {fileID: 8079084459622607381}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -170,6 +170,7 @@ MonoBehaviour:
   visitedCircle: {fileID: 0}
   circleImage: {fileID: 2244205831425747747}
   visitedCircleImage: {fileID: 125390682125804707}
+  Pos: {x: 0, y: 0}
 --- !u!1 &6611013590318251600
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2413806693520163455, guid: 0b6f6b9f2cac82d419e9c5caf8645f73, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

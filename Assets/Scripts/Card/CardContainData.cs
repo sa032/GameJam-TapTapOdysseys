@@ -18,21 +18,26 @@ public enum CardState
 public class CardContainData : MonoBehaviour
 {
     public MapNode NodeData;
+    public GameObject PrefabItem;
     public CardState state;
     GameObject[] AllCards;
     GameObject NextUI;
 
     public void Execute()
     {
-        nodeSave = NodeData.Node;
+        if(NodeData != null)nodeSave = NodeData.Node;
         switch (state)
         {
             case CardState.SelectPath:
                 SendPlayerNextNode(NodeData);   
                 Reset();        
+                EnterNodeTransition();
                 break; 
             case CardState.GoNextFloor:
                 print("GO TO NEXT FLOOR");
+                break;
+            case CardState.Item:
+                StartCoroutine(GetItem());
                 break;
         }
         
@@ -56,11 +61,25 @@ public class CardContainData : MonoBehaviour
         TextMeshProUGUI TextTitle = transform.Find("CardContainer").Find("Title").Find("Text").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI TextDescription = transform.Find("CardContainer").Find("Description").GetComponent<TextMeshProUGUI>();
         Image image = transform.Find("CardContainer").Find("Image").GetComponent<Image>();
-        
-        NodeBlueprint blueprint = GetBlueprint(NodeData.Node.blueprintName);
-        TextDescription.text = blueprint.description.ToString();
-        TextTitle.text = blueprint.nodeType.ToString();
-        image.sprite = blueprint.sprite;
+        if(state == CardState.SelectPath){
+            NodeBlueprint blueprint = GetBlueprint(NodeData.Node.blueprintName);
+            TextDescription.text = blueprint.description.ToString();
+            TextTitle.text = blueprint.nodeType.ToString();
+            image.sprite = blueprint.sprite;
+        }else if (state == CardState.Item)
+        {   
+            ItemDataContain itemDataContain = PrefabItem.GetComponent<ItemDataContain>();
+            TextDescription.text = itemDataContain.description.ToString();
+            TextTitle.text = itemDataContain.Name.ToString();
+            image.sprite = itemDataContain.image;
+        }
+    }
+    IEnumerator GetItem()
+    {
+        ItemManager.instance.AddItemToInventory(PrefabItem);
+        Reset();
+        yield return new WaitForSeconds(1f);
+        MapNodeSelectUI.instance.GetNextNodeUI();
     }
     void CardAnimationTransition()
     {
@@ -119,32 +138,37 @@ public class CardContainData : MonoBehaviour
         NextUI = GameObject.FindGameObjectWithTag("NextUI");
         //this.gameObject.SetActive(false);
         CardUI_TransitionOut(true);
-        StartCoroutine(NextUIOutTransition());
+        
+    }
+    void EnterNodeTransition()
+    {
+        StartCoroutine(NextUIOutTransition_EnterNode());
     }
     Node nodeSave;
-    IEnumerator NextUIOutTransition()
+    IEnumerator NextUIOutTransition_EnterNode()
     {
+        GameObject BlackScreen = GameObject.FindGameObjectsWithTag("BlackScene")[0].transform.GetChild(0).gameObject;
         Animator anim = NextUI.GetComponent<Animator>();
         anim.Play("NextUI_Out");
+        BlackScreen.SetActive(false);
         yield return null;
         yield return new WaitUntil(() =>
             anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.1f
         );   
-        GameObject BlackScreen = GameObject.FindGameObjectsWithTag("BlackScene")[0].transform.GetChild(0).gameObject;
+        
         BlackScreen.SetActive(true);
         yield return new WaitUntil(() =>
             BlackScreen.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.4f
         );
-        EventCard.Instance.NodeEvent(nodeSave);
+        EventCard.Instance.EnterNodeEvent(nodeSave);
         yield return new WaitUntil(() =>
             BlackScreen.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
         );
         NextUI.SetActive(false);
         BlackScreen.SetActive(false);
-        this.gameObject.SetActive(false);
-        
-        
+        this.gameObject.SetActive(false);   
     }
+    
     public void CardUI_TransitionOut(bool db)
     {
         if(db == true) this.GetComponent<Animator>().Play("CardAnim2_SelectPath");
