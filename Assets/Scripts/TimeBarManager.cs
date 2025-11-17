@@ -42,10 +42,17 @@ public class TimeBarManager : MonoBehaviour
         {
             return;
         }
-        currentValue += Time.deltaTime * sliderSpeed;
         setTimeBarValues();
         setMarkers(false);
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
+        {
+            currentValue += Time.deltaTime * sliderSpeed;
+            if (currentValue >= maxValue)
+            {
+                StartCoroutine(resetCurrentValue());
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             bool matched = false;
             foreach (var timedEvent in events)
