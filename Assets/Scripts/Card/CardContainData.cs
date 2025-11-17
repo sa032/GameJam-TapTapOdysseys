@@ -24,17 +24,20 @@ public class CardContainData : MonoBehaviour
 
     public void Execute()
     {
+        nodeSave = NodeData.Node;
         switch (state)
         {
             case CardState.SelectPath:
-                SendPlayerNextNode(NodeData);           
+                SendPlayerNextNode(NodeData);   
+                Reset();        
                 break; 
             case CardState.GoNextFloor:
                 print("GO TO NEXT FLOOR");
                 break;
         }
-        Reset();
+        
     }
+    
     void Awake()
     {
         AllCards = GameObject.FindGameObjectsWithTag("Card");
@@ -118,24 +121,42 @@ public class CardContainData : MonoBehaviour
         CardUI_TransitionOut(true);
         StartCoroutine(NextUIOutTransition());
     }
+    Node nodeSave;
     IEnumerator NextUIOutTransition()
     {
-        NextUI.GetComponent<Animator>().Play("NextUI_Out");
-        yield return new WaitForSeconds(1f);
+        Animator anim = NextUI.GetComponent<Animator>();
+        anim.Play("NextUI_Out");
+        yield return null;
+        yield return new WaitUntil(() =>
+            anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.1f
+        );   
+        GameObject BlackScreen = GameObject.FindGameObjectsWithTag("BlackScene")[0].transform.GetChild(0).gameObject;
+        BlackScreen.SetActive(true);
+        yield return new WaitUntil(() =>
+            BlackScreen.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.4f
+        );
+        EventCard.Instance.NodeEvent(nodeSave);
+        yield return new WaitUntil(() =>
+            BlackScreen.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
+        );
         NextUI.SetActive(false);
+        BlackScreen.SetActive(false);
+        this.gameObject.SetActive(false);
+        
+        
     }
     public void CardUI_TransitionOut(bool db)
     {
         if(db == true) this.GetComponent<Animator>().Play("CardAnim2_SelectPath");
-        StartCoroutine(CardTransitionOut());
+        StartCoroutine(CardTransitionOut(db));
     }
-    IEnumerator CardTransitionOut()
+    IEnumerator CardTransitionOut(bool main)
     {
         float delaytime = this.GetComponent<DoAnimationEnable>().DelayTime;
         Image[] images = GetComponentsInChildren<Image>();
         TextMeshProUGUI[] Text_tmp = GetComponentsInChildren<TextMeshProUGUI>();
         yield return new WaitForSeconds(0.035f);
-        for (int i = 0;i<25;i++)
+        for (int i = 0;i<=25;i++)
         {
             foreach(Image image in images)
             {
@@ -151,7 +172,8 @@ public class CardContainData : MonoBehaviour
             }
             yield return new WaitForSeconds(0.005f);
         }
-        this.gameObject.SetActive(false);
+        if(main == false) this.gameObject.SetActive(false);
+        
     }
 
     protected NodeBlueprint GetBlueprint(string blueprintName)

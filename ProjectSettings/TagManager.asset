@@ -8,6 +8,7 @@ TagManager:
   - Card
   - NodeUI
   - NextUI
+  - BlackScene
   layers:
   - Default
   - TransparentFX
