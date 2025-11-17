@@ -9,6 +9,10 @@ public class EnemyManager : MonoBehaviour
     {
         SpawnEnemies();
     }
+    private void Update()
+    {
+        CleanList();
+    }
     public void SpawnEnemies()
     {
         float startX = 0f; // starting x position
@@ -38,8 +42,6 @@ public class EnemyManager : MonoBehaviour
 
     public GameObject GetFirstEnemy()
     {
-        CleanList();
-
         if (enemies.Count > 0)
             return enemies[0];
 
