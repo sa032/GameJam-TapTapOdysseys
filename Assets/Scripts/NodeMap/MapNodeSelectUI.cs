@@ -1,0 +1,118 @@
+using System.Collections.Generic;
+using System.Diagnostics;
+using Mono.Cecil;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using System.Linq;
+
+namespace Map
+{
+    public class MapNodeSelectUI : MonoBehaviour
+    {
+        public MapManager mapManager;
+        public MapViewUI mapView;
+        public GameObject Card1,Card2,Card3;
+        
+        List<Node> GetNextNode()
+        {
+            List<Node> a = new List<Node>();
+            
+            if(mapManager.CurrentMap.path.Count == 0)
+            {
+                if(mapManager.CurrentMap.GetNode(new Vector2Int(0,0)) != null)
+                a.Add(mapManager.CurrentMap.GetNode(new Vector2Int(0,0)));
+                else a.Add(mapManager.CurrentMap.GetNode(new Vector2Int(1,0)));
+                return a;
+            }else{
+                Vector2Int currentPoint = mapManager.CurrentMap.path[mapManager.CurrentMap.path.Count - 1];
+                Node currentNode = mapManager.CurrentMap.GetNode(currentPoint);
+                foreach(Vector2Int n in currentNode.outgoing)
+                {
+                    a.Add(mapManager.CurrentMap.GetNode(n));
+                }
+                return a;
+            }
+        }
+        
+        public void GetNextNodeUI()
+        {
+            MapConfig config = mapManager.config;
+            if(mapManager.CurrentMap.path.Count < config.FloorLayers[mapManager.CurrentFloor].layers.Count){
+                List<Node> nextnode = GetNextNode();
+                //CardUI(nextnode[0],Card1);
+                //if(nextnode.Count > 1)CardUI(nextnode[1],Card2);
+                if(nextnode.Count > 1){
+                    Node NodeUp = null;
+                    Node NodeDown = null;
+                    
+                    foreach(Node node in nextnode)
+                    {
+                        if(node.point.x == 1){NodeUp = node;}
+                        else NodeDown = node;
+                    }
+
+                    if(NodeUp != null)CardUI(NodeUp,Card2);
+                    if(NodeDown != null)CardUI(NodeDown,Card1);;
+                }
+                else
+                {
+                    CardUI(nextnode[0],Card1);
+                }
+                
+
+                ShowSelectPathUI(nextnode);
+                
+            }
+            else
+            {
+                print("GO NEXT FLOOR");
+            }
+        }
+        void CardUI(Node nextnode , GameObject Card)
+        {
+            Card.GetComponent<CardContainData>().state = CardState.SelectPath;
+            Card.GetComponent<CardContainData>().NodeData = FindMapNode(nextnode.point);
+        }
+
+        MapNode FindMapNode(Vector2Int pos)
+        {
+            GameObject[] NodeUI = GameObject.FindGameObjectsWithTag("NodeUI");
+            MapNode Result = null;
+            foreach(GameObject g in NodeUI)
+            {
+                MapNode MapN = g.GetComponent<MapNode>();
+                if(MapN.Pos == pos){Result = MapN;break;}
+            }
+            return Result;
+        }
+
+        public void SendPlayerNextNode(MapNode mapNode)
+        {
+            MapPlayerTracker.Instance.SendPlayerToNode(mapNode);
+        }
+
+        public void ShowSelectPathUI(List<Node> nextnode)
+        {
+            DisibleCard();
+            if(nextnode != null){
+                if(nextnode.Count > 1)
+                {
+                    Card1.SetActive(true);
+                    Card2.SetActive(true);
+                }
+                else
+                {
+                    Card1.SetActive(true);
+                }
+            }
+        }
+
+        void DisibleCard()
+        {
+            Card1.SetActive(false);
+            Card2.SetActive(false);
+            Card3.SetActive(false);
+        }
+    }
+}
