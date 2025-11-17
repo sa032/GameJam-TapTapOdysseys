@@ -550,8 +550,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeBarDatasets
   dataset1:
-  - minTime: -5
-    maxTime: -3
+  - minTime: 20
+    maxTime: 30
     eventTime:
       m_PersistentCalls:
         m_Calls:
@@ -568,8 +568,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     color: {r: 1, g: 0, b: 0, a: 1}
-  - minTime: 0
-    maxTime: 1
+  - minTime: 47
+    maxTime: 52
     eventTime:
       m_PersistentCalls:
         m_Calls:
@@ -586,8 +586,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     color: {r: 0.2037642, g: 1, b: 0, a: 1}
-  - minTime: 4
-    maxTime: 7
+  - minTime: 60
+    maxTime: 80
     eventTime:
       m_PersistentCalls:
         m_Calls:
@@ -605,8 +605,8 @@ MonoBehaviour:
           m_CallState: 2
     color: {r: 0, g: 0.069946766, b: 1, a: 1}
   dataset2:
-  - minTime: -10
-    maxTime: -8
+  - minTime: 0
+    maxTime: 20
     eventTime:
       m_PersistentCalls:
         m_Calls:
@@ -623,8 +623,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     color: {r: 1, g: 0, b: 0, a: 1}
-  - minTime: -7
-    maxTime: -4
+  - minTime: 30
+    maxTime: 40
     eventTime:
       m_PersistentCalls:
         m_Calls:
@@ -641,8 +641,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     color: {r: 0, g: 0, b: 0, a: 1}
-  - minTime: -2
-    maxTime: 1
+  - minTime: 50
+    maxTime: 60
     eventTime:
       m_PersistentCalls:
         m_Calls:
@@ -659,8 +659,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     color: {r: 0, g: 0, b: 0, a: 1}
-  - minTime: 3
-    maxTime: 6
+  - minTime: 70
+    maxTime: 80
     eventTime:
       m_PersistentCalls:
         m_Calls:
@@ -677,24 +677,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     color: {r: 0, g: 0, b: 0, a: 1}
-  - minTime: 7
-    maxTime: 10
-    eventTime:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 767466683}
-          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
-          m_MethodName: exitMagicMode
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    color: {r: 1, g: 0, b: 0, a: 1}
   dataset3: []
 --- !u!114 &767466681
 MonoBehaviour:
@@ -1305,10 +1287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483c2f34a6790b046b312195011edc70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  minValue: -10
-  maxValue: 10
+  minValue: 0
+  maxValue: 100
   currentValue: 0
-  sliderSpeed: 5
+  sliderSpeed: 40
   currentDataset: {fileID: 767466680}
   events: []
   markerParent: {fileID: 2133663306}
