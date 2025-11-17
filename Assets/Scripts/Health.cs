@@ -8,6 +8,10 @@ public class Health : MonoBehaviour
     private void Update()
     {
         health = Mathf.Clamp(health, 0, maxHealth);
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     public void damage(float damageAmount)
     {

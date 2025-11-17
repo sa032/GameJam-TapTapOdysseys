@@ -3,12 +3,22 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public float damage;
+    private EnemyManager enemyManager;
+    private void Start()
+    {
+        enemyManager = GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>();
+    }
     public void Attack()
     {
-        Health health = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Health>();
-        if (health != null)
+        GameObject enemy = enemyManager.GetFirstEnemy();
+
+        if (enemy != null)
         {
-            health.damage(damage);
+            Health health = enemy.GetComponent<Health>();
+            if (health != null)
+            {
+                health.damage(damage);
+            }
         }
     }
 }
