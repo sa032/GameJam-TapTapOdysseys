@@ -9,11 +9,13 @@ namespace Map
         public MapConfig config;
         public MapView view;
         public int CurrentFloor = 0;
+        public static MapManager Instance;
 
         public Map CurrentMap { get; private set; }
 
         private void Start()
         {
+            Instance = this;
             /*if (PlayerPrefs.HasKey("Map"))
             {
                 string mapJson = PlayerPrefs.GetString("Map");

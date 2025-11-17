@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - NodeUI
+  - Card
   layers:
   - Default
   - TransparentFX

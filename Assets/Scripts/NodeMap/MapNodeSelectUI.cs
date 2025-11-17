@@ -20,7 +20,9 @@ namespace Map
             
             if(mapManager.CurrentMap.path.Count == 0)
             {
+                if(mapManager.CurrentMap.GetNode(new Vector2Int(0,0)) != null)
                 a.Add(mapManager.CurrentMap.GetNode(new Vector2Int(0,0)));
+                else a.Add(mapManager.CurrentMap.GetNode(new Vector2Int(1,0)));
                 return a;
             }else{
                 Vector2Int currentPoint = mapManager.CurrentMap.path[mapManager.CurrentMap.path.Count - 1];
@@ -35,29 +37,42 @@ namespace Map
         
         public void GetNextNodeUI()
         {
-            List<Node> nextnode = GetNextNode();
-            
-            CardUI(nextnode[0],Card1);
-            if(nextnode.Count > 1)CardUI(nextnode[1],Card2);
+            MapConfig config = mapManager.config;
+            if(mapManager.CurrentMap.path.Count < config.FloorLayers[mapManager.CurrentFloor].layers.Count){
+                List<Node> nextnode = GetNextNode();
+                //CardUI(nextnode[0],Card1);
+                //if(nextnode.Count > 1)CardUI(nextnode[1],Card2);
+                if(nextnode.Count > 1){
+                    Node NodeUp = null;
+                    Node NodeDown = null;
+                    
+                    foreach(Node node in nextnode)
+                    {
+                        if(node.point.x == 1){NodeUp = node;}
+                        else NodeDown = node;
+                    }
+
+                    if(NodeUp != null)CardUI(NodeUp,Card2);
+                    if(NodeDown != null)CardUI(NodeDown,Card1);;
+                }
+                else
+                {
+                    CardUI(nextnode[0],Card1);
+                }
+                
+
+                ShowSelectPathUI(nextnode);
+                
+            }
+            else
+            {
+                print("GO NEXT FLOOR");
+            }
         }
         void CardUI(Node nextnode , GameObject Card)
         {
-            TextMeshProUGUI TextTitle = Card.transform.Find("Title").Find("Text").GetComponent<TextMeshProUGUI>();
-            TextMeshProUGUI TextDescription = Card.transform.Find("Description").GetComponent<TextMeshProUGUI>();
-            Image image = Card.transform.Find("Image").GetComponent<Image>();
-            
-            TextTitle.text = nextnode.nodeType.ToString();
-            image.sprite = GetBlueprint(nextnode.blueprintName).sprite;
+            Card.GetComponent<CardContainData>().state = CardState.SelectPath;
             Card.GetComponent<CardContainData>().NodeData = FindMapNode(nextnode.point);
-        }
-        protected NodeBlueprint GetBlueprint(string blueprintName)
-        {
-            MapConfig config = GetConfig(mapManager.CurrentMap.configName);
-            return config.nodeBlueprints.FirstOrDefault(n => n.name == blueprintName);
-        }
-        protected MapConfig GetConfig(string configName)
-        {
-            return mapView.allMapConfigs.FirstOrDefault(c => c.name == configName);
         }
 
         MapNode FindMapNode(Vector2Int pos)
@@ -77,10 +92,27 @@ namespace Map
             MapPlayerTracker.Instance.SendPlayerToNode(mapNode);
         }
 
-        public void ButtonTest(GameObject Button)
+        public void ShowSelectPathUI(List<Node> nextnode)
         {
-            MapNode mp = Button.transform.parent.GetComponent<CardContainData>().NodeData;
-            SendPlayerNextNode(mp);
+            DisibleCard();
+            if(nextnode != null){
+                if(nextnode.Count > 1)
+                {
+                    Card1.SetActive(true);
+                    Card2.SetActive(true);
+                }
+                else
+                {
+                    Card1.SetActive(true);
+                }
+            }
+        }
+
+        void DisibleCard()
+        {
+            Card1.SetActive(false);
+            Card2.SetActive(false);
+            Card3.SetActive(false);
         }
     }
 }

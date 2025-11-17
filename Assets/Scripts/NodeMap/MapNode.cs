@@ -160,7 +160,7 @@ namespace Map
             {
                 // user clicked on this node:
                 print(this.Node.point);
-                MapPlayerTracker.Instance.SelectNode(this);
+                //MapPlayerTracker.Instance.SelectNode(this);
             }
         }
 
