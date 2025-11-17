@@ -24,7 +24,7 @@ public class AttackTest : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         if (GlobalValues.parrying)
         {
-            
+            GlobalValues.parried = true;
         }
         else
         {

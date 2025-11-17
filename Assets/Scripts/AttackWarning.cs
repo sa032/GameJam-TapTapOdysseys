@@ -7,7 +7,8 @@ public class AttackWarning : MonoBehaviour
 
     void Start()
     {
-        targetPos = transform.position + Vector3.up;   // y + 1
+        targetPos = transform.position + Vector3.up;
+        Destroy(this.gameObject, 2);
     }
 
     void Update()
