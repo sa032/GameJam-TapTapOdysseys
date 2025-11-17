@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -4280113435008308068, guid: 8f78e26667e0ea242bdeaf2f6c566d83, type: 3}
   nodeType: 6
+  description: An unexpected event unfolds, bringing opportunity or danger.

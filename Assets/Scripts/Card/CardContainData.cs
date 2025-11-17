@@ -20,6 +20,7 @@ public class CardContainData : MonoBehaviour
     public MapNode NodeData;
     public CardState state;
     GameObject[] AllCards;
+    GameObject NextUI;
 
     public void Execute()
     {
@@ -53,8 +54,10 @@ public class CardContainData : MonoBehaviour
         TextMeshProUGUI TextDescription = transform.Find("CardContainer").Find("Description").GetComponent<TextMeshProUGUI>();
         Image image = transform.Find("CardContainer").Find("Image").GetComponent<Image>();
         
-        TextTitle.text = GetBlueprint(NodeData.Node.blueprintName).nodeType.ToString();
-        image.sprite = GetBlueprint(NodeData.Node.blueprintName).sprite;
+        NodeBlueprint blueprint = GetBlueprint(NodeData.Node.blueprintName);
+        TextDescription.text = blueprint.description.ToString();
+        TextTitle.text = blueprint.nodeType.ToString();
+        image.sprite = blueprint.sprite;
     }
     void CardAnimationTransition()
     {
@@ -103,11 +106,51 @@ public class CardContainData : MonoBehaviour
             if(card != this.gameObject){
                 card.GetComponent<CardContainData>().state = CardState.None;
                 card.GetComponent<CardContainData>().NodeData = null;
-                card.SetActive(false);
+                //card.SetActive(false);
+                card.GetComponent<CardContainData>().CardUI_TransitionOut(false);
             }
         }
         state = CardState.None;
         NodeData = null;
+
+        NextUI = GameObject.FindGameObjectWithTag("NextUI");
+        //this.gameObject.SetActive(false);
+        CardUI_TransitionOut(true);
+        StartCoroutine(NextUIOutTransition());
+    }
+    IEnumerator NextUIOutTransition()
+    {
+        NextUI.GetComponent<Animator>().Play("NextUI_Out");
+        yield return new WaitForSeconds(1f);
+        NextUI.SetActive(false);
+    }
+    public void CardUI_TransitionOut(bool db)
+    {
+        if(db == true) this.GetComponent<Animator>().Play("CardAnim2_SelectPath");
+        StartCoroutine(CardTransitionOut());
+    }
+    IEnumerator CardTransitionOut()
+    {
+        float delaytime = this.GetComponent<DoAnimationEnable>().DelayTime;
+        Image[] images = GetComponentsInChildren<Image>();
+        TextMeshProUGUI[] Text_tmp = GetComponentsInChildren<TextMeshProUGUI>();
+        yield return new WaitForSeconds(0.035f);
+        for (int i = 0;i<25;i++)
+        {
+            foreach(Image image in images)
+            {
+                //if(image != this.GetComponent<Image>()){
+                    Color temp = image.color;
+                    image.color = new Color(temp.r,temp.g,temp.b,1f-(float)i/25f);
+                //}
+            }
+            foreach(TextMeshProUGUI text in Text_tmp)
+            {
+                Color temp = text.color;
+                text.color = new Color(temp.r,temp.g,temp.b,1f-(float)i/25f);
+            }
+            yield return new WaitForSeconds(0.005f);
+        }
         this.gameObject.SetActive(false);
     }
 

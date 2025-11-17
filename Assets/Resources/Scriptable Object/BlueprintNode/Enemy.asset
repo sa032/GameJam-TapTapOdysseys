@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 1937048964782881978, guid: 43d9b0dd4d6be3845ba61e3c7861b41d, type: 3}
   nodeType: 0
+  description: A wild enemy appear.

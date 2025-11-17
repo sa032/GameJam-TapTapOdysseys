@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: -8533606670350889490, guid: b1c36803a045849499f39453de084632, type: 3}
   nodeType: 3
+  description: A hidden treasure awaits, filled with valuable rewards.

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Map
 {
@@ -21,5 +22,7 @@ namespace Map
     {
         public Sprite sprite;
         public NodeType nodeType;
+        [TextArea]
+        public string description;
     }
 }

@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using System.Collections;
 
 namespace Map
 {
@@ -34,13 +35,14 @@ namespace Map
                 return a;
             }
         }
-        
+        public GameObject NextUI;
         public void GetNextNodeUI()
         {
             MapConfig config = mapManager.config;
             if(mapManager.CurrentMap.path.Count < config.FloorLayers[mapManager.CurrentFloor].layers.Count){
                 List<Node> nextnode = GetNextNode();
                 //CardUI(nextnode[0],Card1);
+                StartCoroutine(NextUIOutTransition());
                 //if(nextnode.Count > 1)CardUI(nextnode[1],Card2);
                 if(nextnode.Count > 1){
                     Node NodeUp = null;
@@ -69,12 +71,19 @@ namespace Map
                 print("GO NEXT FLOOR");
             }
         }
+        
         void CardUI(Node nextnode , GameObject Card)
         {
             Card.GetComponent<CardContainData>().state = CardState.SelectPath;
             Card.GetComponent<CardContainData>().NodeData = FindMapNode(nextnode.point);
         }
+        IEnumerator NextUIOutTransition()
+        {
 
+            NextUI.SetActive(false);
+            NextUI.SetActive(true);
+            yield return new WaitForSeconds(1f);
+        }
         MapNode FindMapNode(Vector2Int pos)
         {
             GameObject[] NodeUI = GameObject.FindGameObjectsWithTag("NodeUI");
