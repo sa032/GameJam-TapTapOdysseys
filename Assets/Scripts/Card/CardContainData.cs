@@ -3,6 +3,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Linq;
+using System.Collections;
+using Unity.VisualScripting;
 
 public enum CardState
 {
@@ -42,16 +44,56 @@ public class CardContainData : MonoBehaviour
     }
     void OnEnable()
     {
+        CardAnimationTransition();
         CardUI();
     }
     void CardUI()
     {
-        TextMeshProUGUI TextTitle = transform.Find("Title").Find("Text").GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI TextDescription = transform.Find("Description").GetComponent<TextMeshProUGUI>();
-        Image image = transform.Find("Image").GetComponent<Image>();
+        TextMeshProUGUI TextTitle = transform.Find("CardContainer").Find("Title").Find("Text").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI TextDescription = transform.Find("CardContainer").Find("Description").GetComponent<TextMeshProUGUI>();
+        Image image = transform.Find("CardContainer").Find("Image").GetComponent<Image>();
         
         TextTitle.text = GetBlueprint(NodeData.Node.blueprintName).nodeType.ToString();
         image.sprite = GetBlueprint(NodeData.Node.blueprintName).sprite;
+    }
+    void CardAnimationTransition()
+    {
+        StartCoroutine(CardTransition());
+    }
+    IEnumerator CardTransition()
+    {
+        float delaytime = this.GetComponent<DoAnimationEnable>().DelayTime;
+        Image[] images = GetComponentsInChildren<Image>();
+        foreach(Image image in images)
+        {
+            //if(image != this.GetComponent<Image>()){
+                Color temp = image.color;
+                image.color = new Color(temp.r,temp.g,temp.b,(float)0f);
+            //}
+        }
+        TextMeshProUGUI[] Text_tmp = GetComponentsInChildren<TextMeshProUGUI>();
+        foreach(TextMeshProUGUI text in Text_tmp)
+        {
+            Color temp = text.color;
+            text.color = new Color(temp.r,temp.g,temp.b,(float)0f);
+        }
+        yield return new WaitForSeconds(delaytime);
+        for (int i = 0;i<25;i++)
+        {
+            foreach(Image image in images)
+            {
+                //if(image != this.GetComponent<Image>()){
+                    Color temp = image.color;
+                    image.color = new Color(temp.r,temp.g,temp.b,(float)i/25f);
+                //}
+            }
+            foreach(TextMeshProUGUI text in Text_tmp)
+            {
+                Color temp = text.color;
+                text.color = new Color(temp.r,temp.g,temp.b,(float)i/25f);
+            }
+            yield return new WaitForSeconds(0.001f);
+        }
     }
     void Reset()
     {
