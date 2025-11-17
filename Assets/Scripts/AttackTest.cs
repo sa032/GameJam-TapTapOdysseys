@@ -22,6 +22,13 @@ public class AttackTest : MonoBehaviour
         Health player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.6f);
-        player.damage(damage);
+        if (GlobalValues.parrying)
+        {
+            
+        }
+        else
+        {
+            player.damage(damage);
+        }
     }
 }
