@@ -10,7 +10,6 @@ public struct TimedEvent
     public UnityEvent eventTime;
     public Color color; 
 }
-
 public class TimeBarManager : MonoBehaviour
 {
     private Slider TimeBar;
@@ -22,8 +21,9 @@ public class TimeBarManager : MonoBehaviour
     public float sliderSpeed;
 
     [Header("Timed Events")]
+    public TimeBarDatasets currentDataset;
     public TimedEvent[] events;
-
+    
     [Header("Marker Settings")]
     public RectTransform markerParent;
     public GameObject markerPrefab;
@@ -34,7 +34,7 @@ public class TimeBarManager : MonoBehaviour
     {
         currentValue = minValue;
         TimeBar = GetComponent<Slider>();
-        setMarkers(true);
+        SwitchDataset(1);
     }
     private void Update()
     {
@@ -127,5 +127,34 @@ public class TimeBarManager : MonoBehaviour
         GlobalValues.barLocked = true;
         yield return new WaitForSeconds(1);
         GlobalValues.barLocked = false;
+    }
+    private void ClearMarkers()
+    {
+        if (markerRects != null)
+        {
+            foreach (var r in markerRects)
+            {
+                if (r != null)
+                    Destroy(r.gameObject);
+            }
+        }
+    }
+    public void SwitchDataset(int index)
+    {
+        ClearMarkers();
+
+        switch (index)
+        {
+            case 1:
+                events = currentDataset.dataset1;
+                break;
+            case 2:
+                events = currentDataset.dataset2;
+                break;
+            default:
+                Debug.LogWarning("Invalid dataset index!");
+                return;
+        }
+        setMarkers(true);
     }
 }
