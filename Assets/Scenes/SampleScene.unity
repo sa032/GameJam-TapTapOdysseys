@@ -509,6 +509,7 @@ GameObject:
   - component: {fileID: 767466680}
   - component: {fileID: 767466682}
   - component: {fileID: 767466681}
+  - component: {fileID: 767466683}
   m_Layer: 5
   m_Name: TimeBarDatasets
   m_TagString: Untagged
@@ -584,19 +585,115 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     color: {r: 0.2037642, g: 1, b: 0, a: 1}
-  dataset2:
-  - minTime: 1
-    maxTime: 2
-    eventTime:
-      m_PersistentCalls:
-        m_Calls: []
-    color: {r: 0, g: 0, b: 0, a: 1}
-  - minTime: 5
+  - minTime: 4
     maxTime: 7
     eventTime:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 767466683}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: enterMagicMode
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 0, g: 0.069946766, b: 1, a: 1}
+  dataset2:
+  - minTime: -10
+    maxTime: -8
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 767466683}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: exitMagicMode
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 1, g: 0, b: 0, a: 1}
+  - minTime: -7
+    maxTime: -4
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 767466683}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: Magic1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     color: {r: 0, g: 0, b: 0, a: 1}
+  - minTime: -2
+    maxTime: 1
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 767466683}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: Magic2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - minTime: 3
+    maxTime: 5
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 767466683}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: Magic3
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - minTime: 7
+    maxTime: 10
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 767466683}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: exitMagicMode
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 1, g: 0, b: 0, a: 1}
   dataset3: []
 --- !u!114 &767466681
 MonoBehaviour:
@@ -626,6 +723,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   damage: 3
+--- !u!114 &767466683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767466678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff1cf81ebc323640a8ffb8f3d58e274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MagicMode
+  inMagicMode: 0
 --- !u!1 &873069521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1198,7 @@ GameObject:
   - component: {fileID: 1728553228}
   m_Layer: 5
   m_Name: Slider
-  m_TagString: Untagged
+  m_TagString: TimeBarManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1105,9 +1215,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 767466679}
   - {fileID: 1265063191}
   - {fileID: 975639718}
-  - {fileID: 767466679}
   - {fileID: 2133663306}
   - {fileID: 1023551954}
   m_Father: {fileID: 285830410}
