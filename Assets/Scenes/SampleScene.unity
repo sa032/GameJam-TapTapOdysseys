@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e403a737c07cda047b7d4e69d57a07f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  damage: 3
+  damage: 1
 --- !u!212 &1792695947
 SpriteRenderer:
   m_ObjectHideFlags: 0
