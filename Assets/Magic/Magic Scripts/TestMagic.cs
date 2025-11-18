@@ -9,8 +9,12 @@ public class TestMagic : MagicBase
     public float damage;
     public override void Cast()
     {
-        Effects enemyEffects = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Effects>();
-        enemyEffects.StartCoroutine(enemyEffects.Burn(duration, damage));
-        
+        EnemyManager enemyManager = GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>();
+        GameObject enemy = enemyManager.GetFirstEnemy();
+        if (enemy != null)
+        {
+            Effects enemyEffects = enemy.GetComponent<Effects>();
+            enemyEffects.StartCoroutine(enemyEffects.Burn(duration, damage));
+        }
     }
 }

@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
-using TMPro;
-
 public class Health : MonoBehaviour
 {
     public float maxHealth;
     public float health;
+    public Animator anim;
+    public string hurt;
+    public string idle;
     private void Update()
     {
         health = Mathf.Clamp(health, 0, maxHealth);
@@ -28,11 +29,20 @@ public class Health : MonoBehaviour
     private IEnumerator Shake(int times)
     {
         Vector3 OrigPos = transform.position;
+        if (anim!= null)
+        {
+            anim.Play(hurt);
+        }
         for (int i = 0; i < times; i++)
         {
             transform.position = OrigPos + (Vector3)(Random.insideUnitCircle * 0.2f);
             yield return new WaitForSeconds(0.02f);
         }
         transform.position = OrigPos;
+        yield return new WaitForSeconds(0.25f);
+        if (anim!= null)
+        {
+            anim.Play(idle);
+        }
     }
 }
