@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using TMPro;
 
 public class Health : MonoBehaviour
@@ -16,11 +17,22 @@ public class Health : MonoBehaviour
     public void damage(float damageAmount)
     {
         health -= damageAmount;
+        StartCoroutine(Shake(10));
         Debug.Log(damageAmount);
     }
     public void heal(float healAmount)
     {
         health += healAmount;
         Debug.Log(healAmount);
+    }
+    private IEnumerator Shake(int times)
+    {
+        Vector3 OrigPos = transform.position;
+        for (int i = 0; i < times; i++)
+        {
+            transform.position = Random.insideUnitCircle*0.2f;
+            yield return new WaitForSeconds(0.02f);
+        }
+        transform.position = OrigPos;
     }
 }
