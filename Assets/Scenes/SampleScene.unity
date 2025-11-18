@@ -588,8 +588,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeBarDatasets
   dataset1:
-  - minTime: 20
-    maxTime: 30
+  - minTime: 5
+    maxTime: 15
     eventTime:
       m_PersistentCalls:
         m_Calls:
@@ -730,7 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   inParryMode: 0
   parryEffect: {fileID: 1410499630799543895, guid: e9e384189197d8846884e5944c7c468e, type: 3}
-  parryFrame: 0.3
+  parryFrame: 0.2
   parryPos: {fileID: 983302391}
   impulse: {fileID: 767466685}
 --- !u!114 &767466682
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e403a737c07cda047b7d4e69d57a07f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
-  damage: 3
+  damage: 1
   impulse: {fileID: 767466686}
 --- !u!114 &767466683
 MonoBehaviour:
@@ -1858,6 +1858,7 @@ MonoBehaviour:
   events: []
   markerParent: {fileID: 2133663306}
   markerPrefab: {fileID: 4070357997316523190, guid: 7d9bb4fbe79424844b957a6f4040e4dd, type: 3}
+  handle: {fileID: 1040840449}
 --- !u!114 &1728553229
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 public class Health : MonoBehaviour
 {
     public float maxHealth;
@@ -29,6 +30,10 @@ public class Health : MonoBehaviour
     private IEnumerator Shake(int times)
     {
         Vector3 OrigPos = transform.position;
+        if (GlobalValues.blocking && this.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Blocked");
+        }else
         if (anim!= null)
         {
             anim.Play(hurt);
@@ -40,6 +45,10 @@ public class Health : MonoBehaviour
         }
         transform.position = OrigPos;
         yield return new WaitForSeconds(0.25f);
+        if (GlobalValues.blocking && this.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Blocked");
+        }else
         if (anim!= null)
         {
             anim.Play(idle);

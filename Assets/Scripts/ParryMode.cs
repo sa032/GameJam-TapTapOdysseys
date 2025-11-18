@@ -44,25 +44,28 @@ public class ParryMode : MonoBehaviour
     public void enterParryMode()
     {
         GlobalValues.barLocked = true;
+        GlobalValues.blocking = true;
+        anim.Play("PlayerParry");
         inParryMode = true;
     }
     private void exitParryMode()
     {
         GlobalValues.barLocked = false;
+        GlobalValues.blocking = false;
+        anim.Play("PlayerIdle");
         inParryMode = false;
     }
     private IEnumerator startParrying()
     {
         GlobalValues.parrying = true;
-        anim.Play("PlayerParry");
+        anim.Play("PlayerAttack");
         yield return new WaitForSeconds(parryFrame);
         GlobalValues.parrying = false;
-        anim.Play("PlayerIdle");
         exitParryMode();
     }
     private IEnumerator AfterParry()
     {
         yield return new WaitForSeconds(0.2f);
-        anim.Play("PlayerIdle");
+        anim.Play("PlayerParry");
     }
 }
