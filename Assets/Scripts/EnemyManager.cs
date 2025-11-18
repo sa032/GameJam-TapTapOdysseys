@@ -15,7 +15,7 @@ public class EnemyManager : MonoBehaviour
     }
     public void SpawnEnemies()
     {
-        float startX = 0f; // starting x position
+        float startX = transform.position.x; // starting x position
         float y = 0f;      // fixed y position
         float z = 0f;      // fixed z position
 

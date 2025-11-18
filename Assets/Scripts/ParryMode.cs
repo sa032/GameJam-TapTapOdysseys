@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using Unity.Mathematics;
+using Unity.Cinemachine;
 
 public class ParryMode : MonoBehaviour
 {
     public bool inParryMode;
     public GameObject parryEffect;
     public float parryFrame;
+    public CinemachineImpulseSource impulse;
     private void Update()
     {
         if (!inParryMode)
@@ -20,6 +22,7 @@ public class ParryMode : MonoBehaviour
         }
         if (GlobalValues.parried)
         {
+            impulse.GenerateImpulse();
             Transform player = GameObject.FindGameObjectWithTag("Player").transform;
             Instantiate(parryEffect, player.position, quaternion.identity);
             GlobalValues.parrying = false;
