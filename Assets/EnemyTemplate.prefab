@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3649609387947534069}
   - component: {fileID: 28689609912512592}
   - component: {fileID: 6130467753411736361}
+  - component: {fileID: -2819545463750943313}
   - component: {fileID: 4770840370417733868}
   - component: {fileID: 6671380186472821491}
   m_Layer: 0
@@ -111,6 +112,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 10
   health: 8
+--- !u!114 &-2819545463750943313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003917188112409451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca9bf8afbdfc73242a455e7fbb196b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Effects
 --- !u!114 &4770840370417733868
 MonoBehaviour:
   m_ObjectHideFlags: 0

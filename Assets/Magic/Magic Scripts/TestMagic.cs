@@ -1,13 +1,16 @@
 using UnityEngine;
+using System.Collections;
 
 [CreateAssetMenu(fileName = "TestMagic", menuName = "Magic/Test Magic")]
 public class TestMagic : MagicBase
 {
     public GameObject MagicCard;
+    public int duration;
+    public float damage;
     public override void Cast()
     {
-        Debug.Log("Casting projectile magic!");
-        Health player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
-        player.damage(3);
+        Effects enemyEffects = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Effects>();
+        enemyEffects.StartCoroutine(enemyEffects.Burn(duration, damage));
+        
     }
 }
