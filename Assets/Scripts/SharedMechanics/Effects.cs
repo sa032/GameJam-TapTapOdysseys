@@ -12,8 +12,8 @@ public class Effects : MonoBehaviour
     {
         for (int i = 0; i < duration; i++)
         {
-            health.damage(damage);
             yield return new WaitForSeconds(1);
+            health.damage(damage);
         }
     }
 }

@@ -112,6 +112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 10
   health: 8
+  anim: {fileID: 0}
+  hurt: 
+  idle: 
 --- !u!114 &-2819545463750943313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,3 +505,4 @@ MonoBehaviour:
   enemy: {fileID: 4770840370417733868}
   fill: {fileID: 5089302257224805816}
   maxHeight: 1
+  radialSprite: {fileID: 3881893164117919070}

@@ -21,10 +21,11 @@ public class AttackTest : MonoBehaviour
     {
         Health player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         Instantiate(warning, warningPos.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.4f);
         if (GlobalValues.parrying)
         {
             GlobalValues.parried = true;
+            yield return new WaitForSeconds(5);
         }
         else
         {
