@@ -30,6 +30,7 @@ public class Health : MonoBehaviour
     private IEnumerator Shake(int times)
     {
         Vector3 OrigPos = transform.position;
+        
         if (GlobalValues.blocking && this.gameObject.CompareTag("Player"))
         {
             Debug.Log("Blocked");
@@ -38,13 +39,16 @@ public class Health : MonoBehaviour
         {
             anim.Play(hurt);
         }
+
         for (int i = 0; i < times; i++)
         {
             transform.position = OrigPos + (Vector3)(Random.insideUnitCircle * 0.2f);
             yield return new WaitForSeconds(0.02f);
         }
+
         transform.position = OrigPos;
         yield return new WaitForSeconds(0.25f);
+
         if (GlobalValues.blocking && this.gameObject.CompareTag("Player"))
         {
             Debug.Log("Blocked");
