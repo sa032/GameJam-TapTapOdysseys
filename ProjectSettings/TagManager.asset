@@ -11,6 +11,8 @@ TagManager:
   - NodeUI
   - NextUI
   - BlackScene
+  - Map
+  - Chest
   layers:
   - Default
   - TransparentFX

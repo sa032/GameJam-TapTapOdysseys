@@ -115,10 +115,8 @@ namespace Map
         }
         public void ShowCardUI(int CardAmount , NodeType nodeStates)
         {
-            List<GameObject> Cards = new List<GameObject>
-            {
-                Card1
-            };
+            List<GameObject> Cards = new List<GameObject>();
+            if(CardAmount > 0) Cards.Add(Card1);
             if(CardAmount >= 2) Cards.Add(Card2);
             if(CardAmount >= 3) Cards.Add(Card3);
             
@@ -133,6 +131,10 @@ namespace Map
                     card.SetActive(true);
                 }
                 i++;
+            }
+            if(CardAmount == 0)
+            {
+                GetNextNodeUI();
             }
         }
         //TODO: --------------------------------------------------------------EVENT-----------------

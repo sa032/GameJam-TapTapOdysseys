@@ -20,6 +20,8 @@ public class CardContainData : MonoBehaviour
     public MapNode NodeData;
     public GameObject PrefabItem;
     public CardState state;
+    public GameObject VFXItemCollect;
+    public GameObject InventoryItemUI;
     GameObject[] AllCards;
     GameObject NextUI;
 
@@ -76,10 +78,22 @@ public class CardContainData : MonoBehaviour
     }
     IEnumerator GetItem()
     {
+        
         ItemManager.instance.AddItemToInventory(PrefabItem);
         Reset();
-        yield return new WaitForSeconds(1f);
-        MapNodeSelectUI.instance.GetNextNodeUI();
+        GameObject VFXItemCollect_Clone = Instantiate(VFXItemCollect);
+        VFXItemCollect_Clone.transform.position = this.transform.position;
+        yield return new WaitForSeconds(0.15f);
+        LeanTween.moveLocal(VFXItemCollect_Clone,InventoryItemUI.transform.position,0.25f);
+        yield return new WaitForSeconds(0.2f);
+        //VFXItemCollect_Clone.transform.GetChild(0).gameObject.SetActive(false);
+        VFXItemCollect_Clone.GetComponent<ParticleSystem>().Play();
+        yield return new WaitForSeconds(0.5f);
+        VFXItemCollect_Clone.transform.GetChild(0).gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.3f);
+        Destroy(VFXItemCollect_Clone);
+        EventCard.Instance.CardCollected(CardState.Item);
+        //!MapNodeSelectUI.instance.GetNextNodeUI();
     }
     void CardAnimationTransition()
     {
@@ -160,6 +174,7 @@ public class CardContainData : MonoBehaviour
         yield return new WaitUntil(() =>
             BlackScreen.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.4f
         );
+        EventCard.Instance.ClearObject();
         EventCard.Instance.EnterNodeEvent(nodeSave);
         yield return new WaitUntil(() =>
             BlackScreen.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
