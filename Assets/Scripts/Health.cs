@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
     public void damage(float damageAmount)
     {
         health -= damageAmount;
-        StartCoroutine(Shake(10));
+        StartCoroutine(Shake(5));
         Debug.Log(damageAmount);
     }
     public void heal(float healAmount)
@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
         Vector3 OrigPos = transform.position;
         for (int i = 0; i < times; i++)
         {
-            transform.position = Random.insideUnitCircle*0.2f;
+            transform.position = OrigPos + (Vector3)(Random.insideUnitCircle * 0.2f);
             yield return new WaitForSeconds(0.02f);
         }
         transform.position = OrigPos;
