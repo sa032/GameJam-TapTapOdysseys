@@ -5,7 +5,6 @@ public class MagicMode : MonoBehaviour
 {
     private Animator anim;
     private TimeBarManager timeBarManager;
-    public bool inMagicMode;
     private MagicManager magicManager;
     private void Start()
     {
@@ -13,21 +12,12 @@ public class MagicMode : MonoBehaviour
         timeBarManager = GameObject.FindGameObjectWithTag("TimeBarManager").GetComponent<TimeBarManager>();
         magicManager = FindAnyObjectByType<MagicManager>();
     }
-    private void Update()
-    {
-        if (!inMagicMode)
-        {
-            return;
-        }
-    }
     public void enterMagicMode()
     {
-        inMagicMode = true;
         timeBarManager.SwitchDataset(2);
     }
     public void exitMagicMode()
     {
-        inMagicMode = false;
         timeBarManager.SwitchDataset(1);
     }
     public void CastMagic(int slot)

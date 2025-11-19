@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-[CreateAssetMenu(fileName = "TestMagic", menuName = "Magic/Test Magic")]
-public class TestMagic : MagicBase
+[CreateAssetMenu(fileName = "Ignite", menuName = "Magic/Ignite")]
+public class Ignite : MagicBase
 {
     public GameObject MagicCard;
     public int duration;

@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 767466681}
   - component: {fileID: 767466683}
   - component: {fileID: 767466684}
+  - component: {fileID: 767466687}
   - component: {fileID: 767466685}
   - component: {fileID: 767466686}
   m_Layer: 5
@@ -816,7 +817,152 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     color: {r: 0, g: 0, b: 0, a: 1}
-  dataset3: []
+  dataset3:
+  - minTime: 0
+    maxTime: 20
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 1, g: 0, b: 0, a: 1}
+  - minTime: 30
+    maxTime: 40
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - minTime: 50
+    maxTime: 60
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - minTime: 70
+    maxTime: 80
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 0, g: 0, b: 0, a: 1}
+  dataset4:
+  - minTime: 0
+    maxTime: 20
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 1, g: 0, b: 0, a: 1}
+  - minTime: 30
+    maxTime: 40
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - minTime: 50
+    maxTime: 60
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 0, g: 0, b: 0, a: 1}
+  - minTime: 70
+    maxTime: 80
+    eventTime:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: MagicMode, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &767466681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,7 +1006,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff1cf81ebc323640a8ffb8f3d58e274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicMode
-  inMagicMode: 0
 --- !u!114 &767466684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,9 +1018,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a15c6087141f5e4db7baf8e0de01a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicManager
+  currentMana: 5
   magicSlots:
-  - {fileID: 11400000, guid: 25976c80e49da384e8a97d708ca1c344, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 0873fd89bd3ba6b4eb00d71a74879244, type: 2}
+  - {fileID: 11400000, guid: dfa7ec01318f9044a82dd8ce33de4668, type: 2}
   - {fileID: 0}
 --- !u!114 &767466685
 MonoBehaviour:
@@ -1055,6 +1201,23 @@ MonoBehaviour:
     DissipationDistance: 100
     PropagationSpeed: 343
   DefaultVelocity: {x: 0.5, y: 0, z: 0}
+--- !u!114 &767466687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767466678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277f83f58f2e78646a56a9146b249629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  selectedMagic: {fileID: 0}
+  magicSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &873069521
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,6 +2297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9bf8afbdfc73242a455e7fbb196b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  burning: 0
 --- !u!95 &1792695951
 Animator:
   serializedVersion: 7

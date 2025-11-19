@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 460e52c9345fa1944809256777ec1a26, type: 3}
-  m_Name: TestMagic
-  m_EditorClassIdentifier: Assembly-CSharp::TestMagic
+  m_Script: {fileID: 11500000, guid: e75948913a7efcf49b7a7986adf13bf0, type: 3}
+  m_Name: FlameBurst
+  m_EditorClassIdentifier: Assembly-CSharp::FlameBurst
+  manaCost: 1.5
   MagicCard: {fileID: 0}
-  duration: 5
-  damage: 1
+  damage: 2
+  burstDamage: 5

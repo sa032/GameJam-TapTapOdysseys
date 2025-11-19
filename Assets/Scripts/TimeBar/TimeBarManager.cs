@@ -165,6 +165,12 @@ public class TimeBarManager : MonoBehaviour
             case 2:
                 events = currentDataset.dataset2;
                 break;
+            case 3:
+                events = currentDataset.dataset3;
+                break;
+            case 4:
+                events = currentDataset.dataset4;
+                break;
             default:
                 Debug.LogWarning("Invalid dataset index!");
                 return;
