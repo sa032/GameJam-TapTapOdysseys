@@ -5,15 +5,6 @@ public class MagicManager : MonoBehaviour
 {
     public float currentMana;
     public MagicBase[] magicSlots = new MagicBase[3];
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            TimeBarManager timeBarManager = GameObject.FindGameObjectWithTag("TimeBarManager").GetComponent<TimeBarManager>();
-            timeBarManager.SwitchDataset(2);
-        }
-        
-    }
     public void CastCurrentMagic(int slot)
     {
         if (magicSlots[slot] == null)
