@@ -3,21 +3,22 @@ using UnityEngine;
 public class EnemyCooldownBar : MonoBehaviour
 {
     public EnemyCooldown enemy;       // reference to your script
-    public Transform fill;          // the child spriteObject
-    public float maxHeight = 1f;    // full bar height
+    private Material instanceMaterial;
+
+    private void Start()
+    {
+        // This creates a unique copy for THIS object only
+        instanceMaterial = Instantiate(GetComponent<SpriteRenderer>().material);
+        GetComponent<SpriteRenderer>().material = instanceMaterial;
+    }
 
     void Update()
     {
         float ratio = Mathf.Clamp01(enemy.currentCoolDown / enemy.coolDown);
 
         // Because cooldown counts DOWN, flip ratio
-        float barValue =ratio;
+        float angle = ratio * 360f;
 
-        // Scale only Y
-        fill.localScale = new Vector3(
-            fill.localScale.x,
-            barValue * maxHeight,
-            fill.localScale.z
-        );
+        instanceMaterial.SetFloat("_Arc1", 360 - angle);
     }
 }
