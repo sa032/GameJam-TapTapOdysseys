@@ -24,6 +24,13 @@ public class CardContainData : MonoBehaviour
     public GameObject InventoryItemUI;
     GameObject[] AllCards;
     GameObject NextUI;
+    Color[] ColorRarity =
+    {
+        new Color(0.459f, 0.459f, 0.459f, 1.000f),
+        new Color(0.459f, 0.729f, 1.000f, 1.000f),
+        new Color(0.812f, 0.533f, 0.961f, 1.000f),
+        new Color(1.000f, 0.827f, 0.306f, 0.989f)
+    };
 
     public void Execute()
     {
@@ -63,6 +70,8 @@ public class CardContainData : MonoBehaviour
         TextMeshProUGUI TextTitle = transform.Find("CardContainer").Find("Title").Find("Text").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI TextDescription = transform.Find("CardContainer").Find("Description").GetComponent<TextMeshProUGUI>();
         Image image = transform.Find("CardContainer").Find("Image").GetComponent<Image>();
+        Outline outline = this.GetComponent<Outline>();
+        outline.enabled = false;
         if(state == CardState.SelectPath){
             NodeBlueprint blueprint = GetBlueprint(NodeData.Node.blueprintName);
             TextDescription.text = blueprint.description.ToString();
@@ -74,6 +83,9 @@ public class CardContainData : MonoBehaviour
             TextDescription.text = itemDataContain.description.ToString();
             TextTitle.text = itemDataContain.Name.ToString();
             image.sprite = itemDataContain.image;
+
+            outline.enabled = true;
+            outline.effectColor = ColorRarity[(int)itemDataContain.Rarity];
         }
     }
     IEnumerator GetItem()

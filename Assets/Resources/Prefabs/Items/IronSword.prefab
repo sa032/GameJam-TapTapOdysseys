@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b448cb88d2e48ae459c06c6c241c4b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemDataContain
-  image: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  image: {fileID: -3455089740371052150, guid: b8bf7165ad47d2e42add18b8e193737b, type: 3}
   Name: IronSword
+  Rarity: 1
   description: +15% Damage
 --- !u!114 &4134789832378561864
 MonoBehaviour:

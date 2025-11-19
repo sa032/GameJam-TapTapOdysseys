@@ -2,12 +2,16 @@ using System.Collections.Generic;
 using Map;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
     public List<GameObject> items;
     public Transform Inventory;
+    public Transform InventoryUI;
+    public Transform InventoryUI_POSITION;
     public static ItemManager instance;
+    public GameObject ItemUI;
     void Start()
     {
         instance = this;
@@ -43,9 +47,17 @@ public class ItemManager : MonoBehaviour
 
     public void AddItemToInventory(GameObject item)
     {
+        ItemDataContain itemData = item.GetComponent<ItemDataContain>();
         GameObject itemClone = Instantiate(item,Inventory);
-
+        GameObject ItemUI_Clone = Instantiate(ItemUI,InventoryUI);
+        ItemUI_Clone.transform.GetChild(0).GetComponent<Image>().sprite = itemData.image;
+        StartCoroutine(PositionUI(ItemUI_Clone));
         RemoveItemFromPool(item);
+    }
+    IEnumerator PositionUI(GameObject ItemUI_Clone)
+    {
+        yield return null;
+        InventoryUI_POSITION.position = ItemUI_Clone.transform.position; 
     }
     public void RemoveItemFromPool(GameObject item)
     {

@@ -37,7 +37,7 @@ public class EventCard : MonoBehaviour
                 break;
             case NodeType.Treasure :
                 print("TREASURE HELL YEAH!!!");
-                CardAmount = 3;
+                CardAmount = Random.Range(1,4);
                 if(ItemManager.instance.items.Count < CardAmount) CardAmount = ItemManager.instance.items.Count;
 
                 for(int i = 0;i<CardAmount;i++){
