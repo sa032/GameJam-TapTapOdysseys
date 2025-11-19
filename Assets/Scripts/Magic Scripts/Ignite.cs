@@ -14,7 +14,7 @@ public class Ignite : MagicBase
         if (enemy != null)
         {
             Effects enemyEffects = enemy.GetComponent<Effects>();
-            enemyEffects.StartCoroutine(enemyEffects.Burn(duration, damage));
+            enemyEffects.BurnInflict();
         }
     }
 }

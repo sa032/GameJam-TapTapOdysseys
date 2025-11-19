@@ -19,6 +19,7 @@ public class TimeBarManager : MonoBehaviour
     public float maxValue = 10;
     public float currentValue;
     public float sliderSpeed;
+    public float sliderMultiplier;
 
     [Header("Timed Events")]
     public TimeBarDatasets currentDataset;
@@ -30,9 +31,11 @@ public class TimeBarManager : MonoBehaviour
     public RectTransform handle;
     private RectTransform[] markerRects;
     private Image[] markerImages;
+    private Effects effects;
 
     private void Start()
     {
+        effects = GameObject.FindGameObjectWithTag("Player").GetComponent<Effects>();
         currentValue = minValue;
         TimeBar = GetComponent<Slider>();
         SwitchDataset(0);
@@ -43,11 +46,22 @@ public class TimeBarManager : MonoBehaviour
         {
             return;
         }
+        if (effects != null)
+        {
+            if (effects.cold)
+            {
+                sliderMultiplier = 0.5f;
+            }
+            else
+            {
+                sliderMultiplier = 1;
+            }
+        }
         setTimeBarValues();
         setMarkers(false);
         if (Input.GetKey(KeyCode.Space))
         {
-            currentValue += Time.deltaTime * sliderSpeed;
+            currentValue += Time.deltaTime * sliderSpeed * sliderMultiplier;
             if (currentValue >= maxValue)
             {
                 StartCoroutine(resetCurrentValue());
