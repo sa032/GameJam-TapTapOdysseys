@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: TestMagic
   m_EditorClassIdentifier: Assembly-CSharp::TestMagic
   MagicCard: {fileID: 0}
+  duration: 5
+  damage: 1

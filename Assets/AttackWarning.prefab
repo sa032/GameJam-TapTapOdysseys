@@ -126,4 +126,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b151776b386427649bb1bf7a510ee779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackWarning
-  lerpSpeed: 0
+  lerpSpeed: 5

@@ -27,6 +27,7 @@ public class TimeBarManager : MonoBehaviour
     [Header("Marker Settings")]
     public RectTransform markerParent;
     public GameObject markerPrefab;
+    public RectTransform handle;
     private RectTransform[] markerRects;
     private Image[] markerImages;
 
@@ -66,7 +67,7 @@ public class TimeBarManager : MonoBehaviour
             }
             if (!matched)
             {
-                StartCoroutine(LockForTime());
+                StartCoroutine(LockForTime(50));
             }
             StartCoroutine(resetCurrentValue());
         }
@@ -127,12 +128,18 @@ public class TimeBarManager : MonoBehaviour
     private IEnumerator resetCurrentValue()
     {
         yield return null;
-        currentValue = -10;
+        currentValue = 0;
     }
-    private IEnumerator LockForTime()
+    private IEnumerator LockForTime(int times)
     {
+        Vector2 OrigPos = handle.anchoredPosition;
         GlobalValues.barLocked = true;
-        yield return new WaitForSeconds(1);
+        for (int i = 0; i < times; i++)
+        {
+            handle.anchoredPosition = OrigPos + Random.insideUnitCircle * 10f;
+            yield return new WaitForSeconds(0.02f);
+        }
+        handle.anchoredPosition = OrigPos;
         GlobalValues.barLocked = false;
     }
     private void ClearMarkers()

@@ -96,7 +96,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.357
   m_Color: {r: 0.94525504, g: 1, b: 0, a: 1}
-  m_Intensity: 3
+  m_Intensity: 6
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -119,8 +119,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.44
-  m_PointLightOuterRadius: 2.25
+  m_PointLightInnerRadius: 0.6
+  m_PointLightOuterRadius: 3.55
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0853897fd91abf04b8c62a202dc463c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  fadeSpeed: 0.7
 --- !u!1 &7428195554107058387
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +260,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -312,8 +313,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 5
+      scalar: 10
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -483,7 +484,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1123,7 +1124,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 30
+        scalar: 70
         minScalar: 30
         maxCurve:
           serializedVersion: 2
