@@ -156,6 +156,7 @@ public class TimeBarManager : MonoBehaviour
     public void SwitchDataset(int index)
     {
         ClearMarkers();
+        events = currentDataset.datasets[index];
 
         switch (index)
         {
