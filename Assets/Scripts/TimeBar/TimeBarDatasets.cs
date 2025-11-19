@@ -9,9 +9,5 @@ public class TimeBarDatasets : MonoBehaviour
     {
         public TimedEvent[] elements;
     }
-    public List<TimedEventDataset> datasets;
-    public TimedEvent[] dataset1;
-    public TimedEvent[] dataset2;
-    public TimedEvent[] dataset3;
-    public TimedEvent[] dataset4;
+    public TimedEventDataset[] datasets;
 }

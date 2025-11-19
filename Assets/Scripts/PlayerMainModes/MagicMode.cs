@@ -14,11 +14,11 @@ public class MagicMode : MonoBehaviour
     }
     public void enterMagicMode()
     {
-        timeBarManager.SwitchDataset(2);
+        timeBarManager.SwitchDataset(1);
     }
     public void exitMagicMode()
     {
-        timeBarManager.SwitchDataset(1);
+        timeBarManager.SwitchDataset(0);
     }
     public void CastMagic(int slot)
     {

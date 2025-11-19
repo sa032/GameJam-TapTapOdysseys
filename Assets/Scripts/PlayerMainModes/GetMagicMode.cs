@@ -11,7 +11,7 @@ public class GetMagicMode : MonoBehaviour
             
             TimeBarManager timeBarManager = GameObject.FindGameObjectWithTag("TimeBarManager").GetComponent<TimeBarManager>();
             selectedMagic = magicSlots[slot];
-            timeBarManager.SwitchDataset(4);
+            timeBarManager.SwitchDataset(3);
         }
     }
     public void GetMagic(int slot)
@@ -21,7 +21,7 @@ public class GetMagicMode : MonoBehaviour
         {
             TimeBarManager timeBarManager = GameObject.FindGameObjectWithTag("TimeBarManager").GetComponent<TimeBarManager>();
             magicManager.SetMagic(slot, selectedMagic);
-            timeBarManager.SwitchDataset(1);
+            timeBarManager.SwitchDataset(0);
         }
     }
 }

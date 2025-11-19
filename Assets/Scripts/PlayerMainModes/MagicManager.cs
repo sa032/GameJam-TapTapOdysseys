@@ -10,7 +10,7 @@ public class MagicManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             TimeBarManager timeBarManager = GameObject.FindGameObjectWithTag("TimeBarManager").GetComponent<TimeBarManager>();
-            timeBarManager.SwitchDataset(3);
+            timeBarManager.SwitchDataset(2);
         }
         
     }

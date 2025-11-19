@@ -35,7 +35,7 @@ public class TimeBarManager : MonoBehaviour
     {
         currentValue = minValue;
         TimeBar = GetComponent<Slider>();
-        SwitchDataset(1);
+        SwitchDataset(0);
     }
     private void Update()
     {
@@ -156,26 +156,7 @@ public class TimeBarManager : MonoBehaviour
     public void SwitchDataset(int index)
     {
         ClearMarkers();
-        events = currentDataset.datasets[index];
-
-        switch (index)
-        {
-            case 1:
-                events = currentDataset.dataset1;
-                break;
-            case 2:
-                events = currentDataset.dataset2;
-                break;
-            case 3:
-                events = currentDataset.dataset3;
-                break;
-            case 4:
-                events = currentDataset.dataset4;
-                break;
-            default:
-                Debug.LogWarning("Invalid dataset index!");
-                return;
-        }
+        events = currentDataset.datasets[index].elements;
         setMarkers(true);
     }
 }
