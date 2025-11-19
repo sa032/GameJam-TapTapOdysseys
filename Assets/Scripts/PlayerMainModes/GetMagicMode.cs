@@ -6,8 +6,9 @@ public class GetMagicMode : MonoBehaviour
     public MagicBase[] magicSlots = new MagicBase[3];
     public void SelectMagic(int slot)
     {
-        if (magicSlots[slot] == null)
+        if (magicSlots[slot] != null)
         {
+            
             TimeBarManager timeBarManager = GameObject.FindGameObjectWithTag("TimeBarManager").GetComponent<TimeBarManager>();
             selectedMagic = magicSlots[slot];
             timeBarManager.SwitchDataset(4);
