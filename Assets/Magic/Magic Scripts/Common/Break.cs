@@ -1,12 +1,10 @@
 using UnityEngine;
-using System.Collections;
 
-[CreateAssetMenu(fileName = "Ignite", menuName = "Magic/Ignite")]
-public class Ignite : MagicBase
+[CreateAssetMenu(fileName = "Break", menuName = "Magic/Common/Break")]
+public class Break : MagicBase
 {
     public GameObject MagicCard;
     public int duration;
-    public float damage;
     public override void Cast()
     {
         EnemyManager enemyManager = GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>();
@@ -14,7 +12,7 @@ public class Ignite : MagicBase
         if (enemy != null)
         {
             Effects enemyEffects = enemy.GetComponent<Effects>();
-            enemyEffects.BurnInflict();
+            enemyEffects.FragileInflict(duration);
         }
     }
 }

@@ -39,13 +39,13 @@ public class Effects : MonoBehaviour
     {
         health.damage(7);
     }
-    public void BurnInflict()
+    public void BurnInflict(int duration, float damage)
     {
         if (burning)
         {
             StopCoroutine(burnCoroutine);
         }
-        burnCoroutine = StartCoroutine(Burn(3, 1));
+        burnCoroutine = StartCoroutine(Burn(duration, damage));
     }
     public IEnumerator Burn(int duration, float damage)
     {
@@ -57,22 +57,22 @@ public class Effects : MonoBehaviour
         }
         burning = false;
     }
-    public void ColdInflict()
+    public void ColdInflict(float duration)
     {
         if (frozen)
         {
             StopCoroutine(freezeCoroutine);
-            freezeCoroutine = StartCoroutine(Freeze(3));
+            freezeCoroutine = StartCoroutine(Freeze(duration));
             return;
         }
         if (cold)
         {
             StopCoroutine(coldCoroutine);
             cold = false;
-            freezeCoroutine = StartCoroutine(Freeze(3));
+            freezeCoroutine = StartCoroutine(Freeze(duration));
             return;
         }
-        coldCoroutine = StartCoroutine(Cold(3));
+        coldCoroutine = StartCoroutine(Cold(duration));
     }
     public IEnumerator Cold(float duration)
     {
@@ -86,13 +86,13 @@ public class Effects : MonoBehaviour
         yield return new WaitForSeconds(duration);
         frozen = false;
     }
-    public void fragileInflict()
+    public void FragileInflict(float duration)
     {
         if (fragile)
         {
             StopCoroutine(fragileCoroutine);
         }
-        fragileCoroutine = StartCoroutine(Fragile(3));
+        fragileCoroutine = StartCoroutine(Fragile(duration));
     }
     public IEnumerator Fragile(float duration)
     {
@@ -100,13 +100,13 @@ public class Effects : MonoBehaviour
         yield return new WaitForSeconds(duration);
         fragile = false;
     }
-    public void weakInflict()
+    public void WeakInflict(float duration)
     {
         if (weak)
         {
             StopCoroutine(weakCoroutine);
         }
-        weakCoroutine = StartCoroutine(Weak(3));
+        weakCoroutine = StartCoroutine(Weak(duration));
     }
     public IEnumerator Weak(float duration)
     {

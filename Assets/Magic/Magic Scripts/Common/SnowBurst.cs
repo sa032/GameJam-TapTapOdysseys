@@ -1,6 +1,7 @@
 using UnityEngine;
-[CreateAssetMenu(fileName = "FlameBurst", menuName = "Magic/FlameBurst")]
-public class FlameBurst : MagicBase
+
+[CreateAssetMenu(fileName = "SnowBurst", menuName = "Magic/Common/SnowBurst")]
+public class SnowBurst : MagicBase
 {
     public GameObject MagicCard;
     public float damage;
@@ -12,7 +13,7 @@ public class FlameBurst : MagicBase
         if (enemy != null)
         {
             Effects enemyEffects = enemy.GetComponent<Effects>();
-            if (enemyEffects.burning)
+            if (enemyEffects.cold)
             {
                 Health health = enemy.GetComponent<Health>();
                 health.damage(burstDamage);
