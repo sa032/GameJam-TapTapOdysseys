@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using Unity.Cinemachine;
+using UnityEngine.Events;
 
 public class PlayerAttack : MonoBehaviour
 {
     public float damage;
+    public UnityEvent nextAttack;
     private EnemyManager enemyManager;
     private Animator anim;
     public CinemachineImpulseSource impulse;
@@ -30,10 +32,20 @@ public class PlayerAttack : MonoBehaviour
                 health.damage(damage);
             }
         }
+        if (GlobalValues.NextAttack)
+        {
+            nextAttack.Invoke();
+            GlobalValues.NextAttack = false;
+        }
         anim.Play("PlayerAttack");
         GlobalValues.barLocked = true;
         yield return new WaitForSeconds(0.3f);
         anim.Play("PlayerIdle");
         GlobalValues.barLocked = false;
     }
+    public void SetNextAttack(UnityAction attack)
+{
+    nextAttack.RemoveAllListeners();
+    nextAttack.AddListener(attack);
+}
 }

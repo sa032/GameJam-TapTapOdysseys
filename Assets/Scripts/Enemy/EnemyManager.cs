@@ -47,4 +47,9 @@ public class EnemyManager : MonoBehaviour
 
         return null;
     }
+    public List<GameObject> GetAllEnemies()
+    {
+        CleanList();
+        return enemies;
+    }
 }

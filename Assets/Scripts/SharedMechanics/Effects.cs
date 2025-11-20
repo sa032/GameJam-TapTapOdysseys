@@ -9,11 +9,11 @@ public class Effects : MonoBehaviour
     public bool frozen;
     public bool fragile;
     public bool weak;
-    private Coroutine burnCoroutine;
-    private Coroutine coldCoroutine;
-    private Coroutine freezeCoroutine;
-    private Coroutine fragileCoroutine;
-    private Coroutine weakCoroutine;
+    [HideInInspector]public Coroutine burnCoroutine;
+    [HideInInspector]public Coroutine coldCoroutine;
+    [HideInInspector]public Coroutine freezeCoroutine;
+    [HideInInspector]public Coroutine fragileCoroutine;
+    [HideInInspector]public Coroutine weakCoroutine;
     private void Start()
     {
         health = GetComponent<Health>();
@@ -22,16 +22,8 @@ public class Effects : MonoBehaviour
     {
         if (burning && frozen)
         {
-            if (burnCoroutine != null)
-            {
-                StopCoroutine(burnCoroutine);
-            }
-            if (freezeCoroutine != null)
-            {
-                StopCoroutine(freezeCoroutine);
-            }
-            burning = false;
-            frozen = false;
+            BurnStop();
+            FreezeStop();
             Shock();
         }
     }
@@ -46,6 +38,15 @@ public class Effects : MonoBehaviour
             StopCoroutine(burnCoroutine);
         }
         burnCoroutine = StartCoroutine(Burn(duration, damage));
+    }
+    public void BurnStop()
+    {
+        if (burnCoroutine != null)
+        {
+            StopCoroutine(burnCoroutine);
+            burnCoroutine = null;
+        }
+        burning = false;
     }
     public IEnumerator Burn(int duration, float damage)
     {
@@ -74,6 +75,24 @@ public class Effects : MonoBehaviour
         }
         coldCoroutine = StartCoroutine(Cold(duration));
     }
+    public void ColdStop()
+    {
+        if (coldCoroutine != null)
+        {
+            StopCoroutine(coldCoroutine);
+            coldCoroutine = null;
+        }
+        cold = false;
+    }
+    public void FreezeStop()
+    {
+        if (freezeCoroutine != null)
+        {
+            StopCoroutine(freezeCoroutine);
+            freezeCoroutine = null;
+        }
+        frozen = false;
+    }
     public IEnumerator Cold(float duration)
     {
         cold = true;
@@ -94,6 +113,15 @@ public class Effects : MonoBehaviour
         }
         fragileCoroutine = StartCoroutine(Fragile(duration));
     }
+    public void FragileStop()
+    {
+        if (fragileCoroutine != null)
+        {
+            StopCoroutine(fragileCoroutine);
+            fragileCoroutine = null;
+        }
+        fragile = false;
+    }
     public IEnumerator Fragile(float duration)
     {
         fragile = true;
@@ -107,6 +135,15 @@ public class Effects : MonoBehaviour
             StopCoroutine(weakCoroutine);
         }
         weakCoroutine = StartCoroutine(Weak(duration));
+    }
+    public void WeakStop()
+    {
+        if (weakCoroutine != null)
+        {
+            StopCoroutine(weakCoroutine);
+            weakCoroutine = null;
+        }
+        weak = false;
     }
     public IEnumerator Weak(float duration)
     {

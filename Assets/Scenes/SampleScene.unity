@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 767466686}
   m_Layer: 5
   m_Name: TimeBarDatasets
-  m_TagString: Untagged
+  m_TagString: TimeBarDatasets
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -994,6 +994,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   damage: 1
+  nextAttack:
+    m_PersistentCalls:
+      m_Calls: []
   impulse: {fileID: 767466686}
 --- !u!114 &767466683
 MonoBehaviour:
@@ -1021,9 +1024,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MagicManager
   currentMana: 5
   magicSlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 0873fd89bd3ba6b4eb00d71a74879244, type: 2}
+  - {fileID: 11400000, guid: e652237bcaa53db4fa6cda14e285b47c, type: 2}
+  - {fileID: 11400000, guid: 55d95a7e43c06424e82392175ccda740, type: 2}
 --- !u!114 &767466685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2045,6 +2048,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
   enemies: []
   enemiesToSpawn:
+  - {fileID: 2003917188112409451, guid: dcb04a4245715ee43a53b5a6220c3e86, type: 3}
+  - {fileID: 2003917188112409451, guid: dcb04a4245715ee43a53b5a6220c3e86, type: 3}
   - {fileID: 2003917188112409451, guid: dcb04a4245715ee43a53b5a6220c3e86, type: 3}
 --- !u!4 &1621819737
 Transform:
