@@ -19,6 +19,11 @@ public class Effects : MonoBehaviour
     public float freezeRemaining;
     public float fragileRemaining;
     public float weakRemaining;
+    public ParticleSystem burnParticles;
+    public ParticleSystem coldParticles;
+    public ParticleSystem freezeParticles;
+    public ParticleSystem fragileParticles;
+    public ParticleSystem weakParticles;
     public void Start()
     {
         health = GetComponent<Health>();
@@ -30,6 +35,31 @@ public class Effects : MonoBehaviour
             BurnStop();
             FreezeStop();
             Shock();
+        }
+        if (burning)
+        {
+            //fix
+            burnParticles.Play();
+        }
+        else
+        {
+            
+        }
+        if (cold)
+        {
+            
+        }
+        if (frozen)
+        {
+            
+        }
+        if (fragile)
+        {
+            
+        }
+        if (weak)
+        {
+            
         }
     }
     public void Shock()
