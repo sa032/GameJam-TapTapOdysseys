@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 460e52c9345fa1944809256777ec1a26, type: 3}
-  m_Name: Ignite
-  m_EditorClassIdentifier: Assembly-CSharp::Ignite
+  m_Script: {fileID: 11500000, guid: ad39a06d94f317a4fb9d1c2a941f12cc, type: 3}
+  m_Name: Scorch
+  m_EditorClassIdentifier: Assembly-CSharp::Scorch
   manaCost: 0
   MagicCard: {fileID: 0}
-  duration: 5
-  damage: 0.5
+  baseDamage: 2

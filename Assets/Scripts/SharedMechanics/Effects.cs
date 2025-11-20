@@ -14,7 +14,12 @@ public class Effects : MonoBehaviour
     [HideInInspector]public Coroutine freezeCoroutine;
     [HideInInspector]public Coroutine fragileCoroutine;
     [HideInInspector]public Coroutine weakCoroutine;
-    private void Start()
+    public float burnRemaining;
+    public float coldRemaining;
+    public float freezeRemaining;
+    public float fragileRemaining;
+    public float weakRemaining;
+    public void Start()
     {
         health = GetComponent<Health>();
     }
@@ -48,13 +53,15 @@ public class Effects : MonoBehaviour
         }
         burning = false;
     }
-    public IEnumerator Burn(int duration, float damage)
+    public IEnumerator Burn(float duration, float damage)
     {
         burning = true;
-        for (int i = 0; i < duration; i++)
+        burnRemaining = duration;
+        while (burnRemaining > 0)
         {
             yield return new WaitForSeconds(1);
             health.damage(damage);
+            burnRemaining -= 1;
         }
         burning = false;
     }
@@ -96,13 +103,23 @@ public class Effects : MonoBehaviour
     public IEnumerator Cold(float duration)
     {
         cold = true;
-        yield return new WaitForSeconds(duration);
+        coldRemaining = duration;
+        while (coldRemaining > 0)
+        {
+            yield return new WaitForSeconds(duration);
+            coldRemaining -= 1;
+        }
         cold = false;
     }
     public IEnumerator Freeze(float duration)
     {
         frozen = true;
-        yield return new WaitForSeconds(duration);
+        freezeRemaining = duration;
+        while (freezeRemaining > 0)
+        {
+            yield return new WaitForSeconds(duration);
+            freezeRemaining -= 1;
+        }
         frozen = false;
     }
     public void FragileInflict(float duration)
@@ -125,7 +142,12 @@ public class Effects : MonoBehaviour
     public IEnumerator Fragile(float duration)
     {
         fragile = true;
-        yield return new WaitForSeconds(duration);
+        fragileRemaining = duration;
+        while (fragileRemaining > 0)
+        {
+            yield return new WaitForSeconds(duration);
+            fragileRemaining -= 1;
+        }
         fragile = false;
     }
     public void WeakInflict(float duration)
@@ -148,7 +170,12 @@ public class Effects : MonoBehaviour
     public IEnumerator Weak(float duration)
     {
         weak = true;
-        yield return new WaitForSeconds(duration);
+        weakRemaining = duration;
+        while (weakRemaining > 0)
+        {
+            yield return new WaitForSeconds(duration);
+            weakRemaining -= 1;
+        }
         weak = false;
     }
 }

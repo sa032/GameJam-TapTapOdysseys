@@ -1026,7 +1026,7 @@ MonoBehaviour:
   magicSlots:
   - {fileID: 11400000, guid: 0873fd89bd3ba6b4eb00d71a74879244, type: 2}
   - {fileID: 11400000, guid: e652237bcaa53db4fa6cda14e285b47c, type: 2}
-  - {fileID: 11400000, guid: 55d95a7e43c06424e82392175ccda740, type: 2}
+  - {fileID: 11400000, guid: 8bcdde5cea92fd146aab91f0de0063d4, type: 2}
 --- !u!114 &767466685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2309,6 +2309,11 @@ MonoBehaviour:
   frozen: 0
   fragile: 0
   weak: 0
+  burnRemaining: 0
+  coldRemaining: 0
+  freezeRemaining: 0
+  fragileRemaining: 0
+  weakRemaining: 0
 --- !u!95 &1792695951
 Animator:
   serializedVersion: 7
