@@ -6,8 +6,14 @@ public class Effects : MonoBehaviour
     private Health health;
     public bool burning;
     public bool cold;
+    public bool frozen;
+    public bool fragile;
+    public bool weak;
     private Coroutine burnCoroutine;
     private Coroutine coldCoroutine;
+    private Coroutine freezeCoroutine;
+    private Coroutine fragileCoroutine;
+    private Coroutine weakCoroutine;
     private void Start()
     {
         health = GetComponent<Health>();
@@ -32,9 +38,18 @@ public class Effects : MonoBehaviour
     }
     public void ColdInflict()
     {
+        if (frozen)
+        {
+            StopCoroutine(freezeCoroutine);
+            freezeCoroutine = StartCoroutine(Freeze(3));
+            return;
+        }
         if (cold)
         {
             StopCoroutine(coldCoroutine);
+            cold = false;
+            freezeCoroutine = StartCoroutine(Freeze(3));
+            return;
         }
         coldCoroutine = StartCoroutine(Cold(3));
     }
@@ -43,5 +58,39 @@ public class Effects : MonoBehaviour
         cold = true;
         yield return new WaitForSeconds(duration);
         cold = false;
+    }
+    public IEnumerator Freeze(float duration)
+    {
+        frozen = true;
+        yield return new WaitForSeconds(duration);
+        frozen = false;
+    }
+    public void fragileInflict()
+    {
+        if (fragile)
+        {
+            StopCoroutine(fragileCoroutine);
+        }
+        fragileCoroutine = StartCoroutine(Fragile(3));
+    }
+    public IEnumerator Fragile(float duration)
+    {
+        fragile = true;
+        yield return new WaitForSeconds(duration);
+        fragile = false;
+    }
+    public void weakInflict()
+    {
+        if (weak)
+        {
+            StopCoroutine(weakCoroutine);
+        }
+        weakCoroutine = StartCoroutine(Weak(3));
+    }
+    public IEnumerator Weak(float duration)
+    {
+        weak = true;
+        yield return new WaitForSeconds(duration);
+        weak = false;
     }
 }

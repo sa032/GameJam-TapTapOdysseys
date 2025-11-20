@@ -48,7 +48,10 @@ public class TimeBarManager : MonoBehaviour
         }
         if (effects != null)
         {
-            if (effects.cold)
+            if (effects.frozen)
+            {
+                sliderMultiplier = 0.05f;
+            }else if (effects.cold)
             {
                 sliderMultiplier = 0.5f;
             }

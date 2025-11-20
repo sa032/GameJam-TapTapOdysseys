@@ -22,7 +22,10 @@ public class EnemyCooldown : MonoBehaviour
         {
             return;
         }
-        if (effects.cold)
+        if (effects.frozen)
+        {
+            coolDownSpeed = 0;
+        }else if (effects.cold)
         {
             coolDownSpeed = 0.5f;
         }
