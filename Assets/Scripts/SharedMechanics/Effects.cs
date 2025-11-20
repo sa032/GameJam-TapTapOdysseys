@@ -18,6 +18,27 @@ public class Effects : MonoBehaviour
     {
         health = GetComponent<Health>();
     }
+    private void Update()
+    {
+        if (burning && frozen)
+        {
+            if (burnCoroutine != null)
+            {
+                StopCoroutine(burnCoroutine);
+            }
+            if (freezeCoroutine != null)
+            {
+                StopCoroutine(freezeCoroutine);
+            }
+            burning = false;
+            frozen = false;
+            Shock();
+        }
+    }
+    public void Shock()
+    {
+        health.damage(7);
+    }
     public void BurnInflict()
     {
         if (burning)
