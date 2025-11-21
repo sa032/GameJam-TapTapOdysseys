@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
-using Unity.Mathematics;
 using Unity.Cinemachine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class ParryMode : MonoBehaviour
 {
@@ -12,9 +13,18 @@ public class ParryMode : MonoBehaviour
     public float parryFrame;
     public Transform parryPos;
     public CinemachineImpulseSource impulse;
+    public AudioSource SFX;
+
+    public Volume volume;
+    private Vignette vignette;
     private void Start()
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        
+        if (volume.profile.TryGet<Vignette>(out Vignette v))
+        {
+            vignette = v;
+        }
     }
     private void Update()
     {
@@ -31,8 +41,10 @@ public class ParryMode : MonoBehaviour
         {
             impulse.GenerateImpulse();
             Instantiate(parryEffect, parryPos.position, Quaternion.identity);
+            vignette.intensity.value = 0.5f;
             GlobalValues.parrying = false;
             GlobalValues.parried = false;
+            SFX.Play();
             if (parryCoroutine != null)
             {
                 StopCoroutine(parryCoroutine);

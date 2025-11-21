@@ -13,6 +13,7 @@ TagManager:
   - BlackScene
   - Map
   - Chest
+  - TimeBarDatasets
   layers:
   - Default
   - TransparentFX

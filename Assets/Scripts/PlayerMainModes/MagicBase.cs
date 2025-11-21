@@ -5,6 +5,8 @@ public enum MagicType {
 }
 public abstract class MagicBase : ScriptableObject
 {
+    public float manaCost;
+    public AudioClip audioClip;
     public abstract void Cast();
     public MagicType magicType;
     public GameObject PassivePrefab;

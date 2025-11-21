@@ -1,13 +1,17 @@
 using UnityEngine;
 using System.Collections;
 using Unity.Cinemachine;
+using UnityEngine.Events;
 
 public class PlayerAttack : MonoBehaviour
 {
     public float damage;
+    public UnityEvent nextAttack;
     private EnemyManager enemyManager;
     private Animator anim;
     public CinemachineImpulseSource impulse;
+    public GameObject slash;
+    public AudioSource audioSource;
     private void Start()
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
@@ -21,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
     {
         impulse.GenerateImpulse();
         GameObject enemy = enemyManager.GetFirstEnemy();
+        audioSource.Play();
 
         if (enemy != null)
         {
@@ -28,7 +33,13 @@ public class PlayerAttack : MonoBehaviour
             if (health != null)
             {
                 health.damage(damage);
+                Instantiate(slash, enemy.transform.position, Quaternion.identity);
             }
+        }
+        if (GlobalValues.NextAttack)
+        {
+            nextAttack.Invoke();
+            GlobalValues.NextAttack = false;
         }
         anim.Play("PlayerAttack");
         GlobalValues.barLocked = true;
@@ -36,4 +47,9 @@ public class PlayerAttack : MonoBehaviour
         anim.Play("PlayerIdle");
         GlobalValues.barLocked = false;
     }
+    public void SetNextAttack(UnityAction attack)
+{
+    nextAttack.RemoveAllListeners();
+    nextAttack.AddListener(attack);
+}
 }

@@ -19,6 +19,7 @@ public class TimeBarManager : MonoBehaviour
     public float maxValue = 10;
     public float currentValue;
     public float sliderSpeed;
+    public float sliderMultiplier;
 
     [Header("Timed Events")]
     public TimeBarDatasets currentDataset;
@@ -30,12 +31,14 @@ public class TimeBarManager : MonoBehaviour
     public RectTransform handle;
     private RectTransform[] markerRects;
     private Image[] markerImages;
+    private Effects effects;
 
     private void Start()
     {
+        effects = GameObject.FindGameObjectWithTag("Player").GetComponent<Effects>();
         currentValue = minValue;
         TimeBar = GetComponent<Slider>();
-        SwitchDataset(1);
+        SwitchDataset(0);
     }
     private void Update()
     {
@@ -43,11 +46,25 @@ public class TimeBarManager : MonoBehaviour
         {
             return;
         }
+        if (effects != null)
+        {
+            if (effects.frozen)
+            {
+                sliderMultiplier = 0.05f;
+            }else if (effects.cold)
+            {
+                sliderMultiplier = 0.5f;
+            }
+            else
+            {
+                sliderMultiplier = 1;
+            }
+        }
         setTimeBarValues();
         setMarkers(false);
         if (Input.GetKey(KeyCode.Space))
         {
-            currentValue += Time.deltaTime * sliderSpeed;
+            currentValue += Time.deltaTime * sliderSpeed * sliderMultiplier;
             if (currentValue >= maxValue)
             {
                 StartCoroutine(resetCurrentValue());
@@ -156,19 +173,7 @@ public class TimeBarManager : MonoBehaviour
     public void SwitchDataset(int index)
     {
         ClearMarkers();
-
-        switch (index)
-        {
-            case 1:
-                events = currentDataset.dataset1;
-                break;
-            case 2:
-                events = currentDataset.dataset2;
-                break;
-            default:
-                Debug.LogWarning("Invalid dataset index!");
-                return;
-        }
+        events = currentDataset.datasets[index].elements;
         setMarkers(true);
     }
 }
