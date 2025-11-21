@@ -24,9 +24,24 @@ public class Effects : MonoBehaviour
     public ParticleSystem freezeParticles;
     public ParticleSystem fragileParticles;
     public ParticleSystem weakParticles;
+
     public void Start()
     {
         health = GetComponent<Health>();
+        burnParticles = transform.Find("Particles/BurnEffect").GetComponent<ParticleSystem>();
+        coldParticles = transform.Find("Particles/ColdEffect").GetComponent<ParticleSystem>();
+        /*
+        freezeParticles = transform.Find("Particles/FreezeEffect").GetComponent<ParticleSystem>();
+        fragileParticles = transform.Find("Particles/FragileEffect").GetComponent<ParticleSystem>();
+        weakParticles = transform.Find("Particles/WeakEffect").GetComponent<ParticleSystem>();
+        */
+        burnParticles.Stop();
+        coldParticles.Stop();
+        /*
+        freezeParticles.Stop();
+        fragileParticles.Stop();
+        weakParticles.Stop();
+        */
     }
     private void Update()
     {
@@ -38,29 +53,56 @@ public class Effects : MonoBehaviour
         }
         if (burning)
         {
-            //fix
-            burnParticles.Play();
+            if (!burnParticles.isPlaying)
+                burnParticles.Play();
         }
         else
         {
-            
+            if (burnParticles.isPlaying)
+                burnParticles.Stop();
         }
         if (cold)
         {
-            
+            if (!coldParticles.isPlaying)
+                coldParticles.Play();
         }
+        else
+        {
+            if (coldParticles.isPlaying)
+                coldParticles.Stop();
+        }
+        /*
         if (frozen)
         {
-            
+            if (!freezeParticles.isPlaying)
+                freezeParticles.Play();
+        }
+        else
+        {
+            if (freezeParticles.isPlaying)
+                freezeParticles.Stop();
         }
         if (fragile)
         {
-            
+            if (!fragileParticles.isPlaying)
+                fragileParticles.Play();
+        }
+        else
+        {
+            if (fragileParticles.isPlaying)
+                fragileParticles.Stop();
         }
         if (weak)
         {
-            
+            if (!weakParticles.isPlaying)
+                weakParticles.Play();
         }
+        else
+        {
+            if (weakParticles.isPlaying)
+                weakParticles.Stop();
+        }
+        */
     }
     public void Shock()
     {
