@@ -48,6 +48,7 @@ public class TimeBarManager : MonoBehaviour
         TimeBar = GetComponent<Slider>();
         SwitchDataset(0);
     }
+    public Animator Spacebar;
     private void Update()
     {
         if (GlobalValues.barLocked)
@@ -72,14 +73,17 @@ public class TimeBarManager : MonoBehaviour
         setMarkers(false);
         if (Input.GetKey(KeyCode.Space))
         {
+            Spacebar.SetBool("IsPress",true);
             currentValue += Time.deltaTime * sliderSpeed * sliderMultiplier;
             if (currentValue >= maxValue)
             {
                 StartCoroutine(resetCurrentValue());
             }
         }
+        
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            Spacebar.SetBool("IsPress",false);
             bool matched = false;
             foreach (var timedEvent in events)
             {

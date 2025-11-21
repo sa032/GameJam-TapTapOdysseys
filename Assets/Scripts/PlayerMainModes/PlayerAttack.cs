@@ -45,7 +45,7 @@ public class PlayerAttack : MonoBehaviour
         }
         anim.Play("PlayerAttack");
         GlobalValues.barLocked = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
         anim.Play("PlayerIdle");
         GlobalValues.barLocked = false;
     }
