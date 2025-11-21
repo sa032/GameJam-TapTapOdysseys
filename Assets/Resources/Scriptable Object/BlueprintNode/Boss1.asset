@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Boss1
   m_EditorClassIdentifier: 
   sprite: {fileID: -6248741079362886434, guid: 345cf3681fa4b20479361b10d5dc54ed, type: 3}
-  nodeType: 5
+  nodeType: 6
   description: The boss.

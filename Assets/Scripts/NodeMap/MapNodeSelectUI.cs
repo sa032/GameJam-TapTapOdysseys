@@ -15,9 +15,10 @@ namespace Map
         public MapManager mapManager;
         public static MapNodeSelectUI instance;
         public MapViewUI mapView;
-        public GameObject Card1,Card2,Card3;
+        public GameObject Card1,Card2,Card3,Title;
         void Start()
         {
+            PreviousLevel = LevelManager.instance.currentLevel;
             instance = this;
         }
         List<Node> GetNextNode()
@@ -41,39 +42,55 @@ namespace Map
             }
         }
         public GameObject NextUI;
+        public int PreviousLevel = 1;
+        public void GetDifLevel()
+        {
+            int newLevel = LevelManager.instance.predictedLevel;
+            int Dif_level = newLevel - PreviousLevel;
+            LevelManager.instance.Dif_level = Dif_level;
+        }
         public void GetNextNodeUI()
         {
             MapConfig config = mapManager.config;
-            if(mapManager.CurrentMap.path.Count < config.FloorLayers[mapManager.CurrentFloor].layers.Count){
-                List<Node> nextnode = GetNextNode();
-                //CardUI(nextnode[0],Card1);
-                StartCoroutine(NextUIOutTransition());
-                //if(nextnode.Count > 1)CardUI(nextnode[1],Card2);
-                if(nextnode.Count > 1){
-                    Node NodeUp = null;
-                    Node NodeDown = null;
-                    
-                    foreach(Node node in nextnode)
-                    {
-                        if(node.point.x == 1){NodeUp = node;}
-                        else NodeDown = node;
-                    }
+            MagicCardManager.instance.BorderDB();
+            if(LevelManager.instance.Dif_level == 0){
+                if(mapManager.CurrentMap.path.Count < config.FloorLayers[mapManager.CurrentFloor].layers.Count){
+                    List<Node> nextnode = GetNextNode();
+                    //CardUI(nextnode[0],Card1);
+                    StartCoroutine(NextUIOutTransition());
+                    //if(nextnode.Count > 1)CardUI(nextnode[1],Card2);
+                    if(nextnode.Count > 1){
+                        Node NodeUp = null;
+                        Node NodeDown = null;
+                        
+                        foreach(Node node in nextnode)
+                        {
+                            if(node.point.x == 1){NodeUp = node;}
+                            else NodeDown = node;
+                        }
 
-                    if(NodeUp != null)CardUI(NodeUp,Card2);
-                    if(NodeDown != null)CardUI(NodeDown,Card1);;
+                        if(NodeUp != null)CardUI(NodeUp,Card2);
+                        if(NodeDown != null)CardUI(NodeDown,Card1);;
+                    }
+                    else
+                    {
+                        CardUI(nextnode[0],Card1);
+                    }
+                    
+
+                    ShowSelectPathUI(nextnode);
+                    
                 }
                 else
                 {
-                    CardUI(nextnode[0],Card1);
+                    print("GO NEXT FLOOR");
                 }
-                
-
-                ShowSelectPathUI(nextnode);
-                
             }
             else
             {
-                print("GO NEXT FLOOR");
+                
+                MagicCardManager.instance.BorderShow(new Color(1.000f, 0.898f, 0.588f, 1.000f));
+                LevelUPSelectCard();
             }
         }
         
@@ -107,11 +124,18 @@ namespace Map
         }
         //TODO: --------------------------------------------------------------EVENT-----------------
         List<GameObject> items;
+        List<MagicBase> magics;
         public void TreasureUI()
         {
             items = ItemManager.instance.GetRandomItems();
             int Amount = items.Count;
             ShowCardUI(Amount,NodeType.Treasure);
+        }
+        public void LevelUPSelectCard()
+        {
+            magics = MagicCardManager.instance.GetRandomMagic();
+            int Amount = magics.Count;
+            ShowCardUI(Amount,NodeType.None);
         }
         public void ShowCardUI(int CardAmount , NodeType nodeStates)
         {
@@ -125,9 +149,19 @@ namespace Map
             {
                 if(nodeStates == NodeType.Treasure)
                 {
+                    Title.SetActive(false);
                     CardContainData cardContainData = card.GetComponent<CardContainData>();
                     cardContainData.PrefabItem = items[i];
                     cardContainData.state = CardState.Item;
+                    card.SetActive(true);
+                }
+                if(nodeStates == NodeType.None)
+                {
+                    Title.SetActive(true);
+                    Title.GetComponent<TextMeshProUGUI>().text = "LEVEL UP CHOOSE SKILL ("+LevelManager.instance.Dif_level+")";
+                    CardContainData cardContainData = card.GetComponent<CardContainData>();
+                    cardContainData.MagicData = magics[i];
+                    cardContainData.state = CardState.Magic;
                     card.SetActive(true);
                 }
                 i++;

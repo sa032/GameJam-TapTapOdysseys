@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class MagicManager : MonoBehaviour
 {
+    public static MagicManager instance; 
     public MagicBase[] magicSlots = new MagicBase[3];
+    void Start()
+    {
+        instance = this;
+    }
     public void CastCurrentMagic(int slot)
     {
         if (magicSlots[slot] == null)

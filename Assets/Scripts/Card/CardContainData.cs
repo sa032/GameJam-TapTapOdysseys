@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Linq;
 using System.Collections;
 using Unity.VisualScripting;
+using Unity.Mathematics;
 
 public enum CardState
 {
@@ -12,24 +13,29 @@ public enum CardState
     SelectPath,
     GoNextFloor,
     Item,
+    Magic,
     ShopItem,
     EncounterChoice,
+    MagicSwitch,
 }
 public class CardContainData : MonoBehaviour
 {
     public MapNode NodeData;
     public GameObject PrefabItem;
+    public MagicBase MagicData;
     public CardState state;
     public GameObject VFXItemCollect;
     public GameObject InventoryItemUI;
+    public static CardContainData instance;
     GameObject[] AllCards;
     GameObject NextUI;
+    public System.Action CardEvent;
     Color[] ColorRarity =
     {
-        new Color(0.459f, 0.459f, 0.459f, 1.000f),
-        new Color(0.459f, 0.729f, 1.000f, 1.000f),
-        new Color(0.812f, 0.533f, 0.961f, 1.000f),
-        new Color(1.000f, 0.827f, 0.306f, 0.989f)
+        new Color(0.706f, 0.706f, 0.706f, 1.000f),
+        new Color(0.647f, 0.824f, 1.000f, 1.000f),
+        new Color(0.914f, 0.757f, 1.000f, 1.000f),
+        new Color(1.000f, 0.894f, 0.580f, 0.989f)
     };
 
     public void Execute()
@@ -40,6 +46,7 @@ public class CardContainData : MonoBehaviour
             case CardState.SelectPath:
                 SendPlayerNextNode(NodeData);   
                 Reset();        
+                SoundManager.instance.PlaySoundSFX("NextStage");
                 EnterNodeTransition();
                 break; 
             case CardState.GoNextFloor:
@@ -48,12 +55,30 @@ public class CardContainData : MonoBehaviour
             case CardState.Item:
                 StartCoroutine(GetItem());
                 break;
+            case CardState.Magic :
+                MagicCardManager.instance.AddMagicToInventory(MagicData);
+                MagicCardManager.instance.CardPreviewFunc(MagicData,this.transform.position);
+                
+                Reset();
+                //StartCoroutine(DisbleSelf(0.5f));
+                break;
+            case CardState.MagicSwitch:
+                int index = 0;
+                if(this.gameObject.name == "Card1") index = 0;
+                if(this.gameObject.name == "Card2") index = 1;
+                if(this.gameObject.name == "Card3") index = 2;
+                
+                MagicCardManager.instance.SwicthMagic(index);
+                
+                Reset();
+                break;
         }
         
     }
     
     void Awake()
     {
+        instance = this;
         AllCards = GameObject.FindGameObjectsWithTag("Card");
     }
     public void SendPlayerNextNode(MapNode mapNode)
@@ -67,18 +92,32 @@ public class CardContainData : MonoBehaviour
     }
     void CardUI()
     {
-        TextMeshProUGUI TextTitle = transform.Find("CardContainer").Find("Title").Find("Text").GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI TextDescription = transform.Find("CardContainer").Find("Description").GetComponent<TextMeshProUGUI>();
-        Image image = transform.Find("CardContainer").Find("Image").GetComponent<Image>();
+        Transform CardContainer = transform.Find("CardContainer");
+        Transform CardSkillContainer = transform.Find("CardSkillContainer");
+
+        TextMeshProUGUI TextTitle = CardContainer.Find("Title").Find("Text").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI TextDescription = CardContainer.Find("Description").GetComponent<TextMeshProUGUI>();
+        Image image = CardContainer.Find("Image").GetComponent<Image>();
+
+        TextMeshProUGUI TextTitleMagic = CardSkillContainer.Find("Title").Find("Text").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI TextDescriptionMagic = CardSkillContainer.Find("Description").GetComponent<TextMeshProUGUI>();
+        Image imageMagic = CardSkillContainer.Find("Image").GetComponent<Image>();
+        Image TypeOfMagicUI = CardSkillContainer.Find("TypeOfMagicUI").GetComponent<Image>();
+
         Outline outline = this.GetComponent<Outline>();
         outline.enabled = false;
+        CardContainer.gameObject.SetActive(false);
+        CardSkillContainer.gameObject.SetActive(false);
+        this.GetComponent<Image>().color = new Color(1,1,1,1);
         if(state == CardState.SelectPath){
+            CardContainer.gameObject.SetActive(true);
             NodeBlueprint blueprint = GetBlueprint(NodeData.Node.blueprintName);
             TextDescription.text = blueprint.description.ToString();
             TextTitle.text = blueprint.nodeType.ToString();
             image.sprite = blueprint.sprite;
         }else if (state == CardState.Item)
         {   
+            CardContainer.gameObject.SetActive(true);
             ItemDataContain itemDataContain = PrefabItem.GetComponent<ItemDataContain>();
             TextDescription.text = itemDataContain.description.ToString();
             TextTitle.text = itemDataContain.Name.ToString();
@@ -86,6 +125,26 @@ public class CardContainData : MonoBehaviour
 
             outline.enabled = true;
             outline.effectColor = ColorRarity[(int)itemDataContain.Rarity];
+        }else if (state == CardState.Magic || state == CardState.MagicSwitch)
+        {
+            this.GetComponent<Image>().color = new Color(0.239f, 0.239f, 0.239f, 1.000f);
+            CardSkillContainer.gameObject.SetActive(true);
+            MagicBase itemDataContain = MagicData;
+            TextDescriptionMagic.text = MagicData.Description.ToString();
+            TextTitleMagic.text = MagicData.Name.ToString();
+            imageMagic.sprite = MagicData.Image;
+
+            outline.enabled = true;
+            outline.effectColor = ColorRarity[(int)itemDataContain.Rarity];
+
+            if (MagicData.magicType == MagicType.Passive)
+            {
+                TypeOfMagicUI.color = new Color(0.514f, 0.545f, 1.000f, 1.000f);
+            }
+            else
+            {
+                TypeOfMagicUI.color = new Color(1.000f, 0.098f, 0.310f, 1.000f);
+            }
         }
     }
     IEnumerator GetItem()
@@ -96,14 +155,17 @@ public class CardContainData : MonoBehaviour
         GameObject VFXItemCollect_Clone = Instantiate(VFXItemCollect);
         VFXItemCollect_Clone.transform.position = this.transform.position;
         yield return new WaitForSeconds(0.15f);
+        SoundManager.instance.PlaySoundSFX("ItemGet1");
         LeanTween.moveLocal(VFXItemCollect_Clone,InventoryItemUI.transform.position,0.25f);
         yield return new WaitForSeconds(0.2f);
         //VFXItemCollect_Clone.transform.GetChild(0).gameObject.SetActive(false);
+        SoundManager.instance.PlaySoundSFX("ItemGet2");
         VFXItemCollect_Clone.GetComponent<ParticleSystem>().Play();
         yield return new WaitForSeconds(0.5f);
         VFXItemCollect_Clone.transform.GetChild(0).gameObject.SetActive(false);
         yield return new WaitForSeconds(0.3f);
         Destroy(VFXItemCollect_Clone);
+        
         EventCard.Instance.CardCollected(CardState.Item);
         //!MapNodeSelectUI.instance.GetNextNodeUI();
     }
@@ -166,12 +228,17 @@ public class CardContainData : MonoBehaviour
         CardUI_TransitionOut(true);
         
     }
+    public IEnumerator DisbleSelf(float db)
+    {
+        yield return new WaitForSeconds(db);
+        this.gameObject.SetActive(false);
+    }
     void EnterNodeTransition()
     {
         StartCoroutine(NextUIOutTransition_EnterNode());
     }
     Node nodeSave;
-    IEnumerator NextUIOutTransition_EnterNode()
+    public IEnumerator NextUIOutTransition_EnterNode()
     {
         GameObject BlackScreen = GameObject.FindGameObjectsWithTag("BlackScene")[0].transform.GetChild(0).gameObject;
         Animator anim = NextUI.GetComponent<Animator>();
@@ -198,10 +265,10 @@ public class CardContainData : MonoBehaviour
     
     public void CardUI_TransitionOut(bool db)
     {
-        if(db == true) this.GetComponent<Animator>().Play("CardAnim2_SelectPath");
-        StartCoroutine(CardTransitionOut(db));
+        if(db == true && this.gameObject.activeSelf)this.GetComponent<Animator>().Play("CardAnim2_SelectPath");
+        if (gameObject.activeInHierarchy) StartCoroutine(CardTransitionOut(db));
     }
-    IEnumerator CardTransitionOut(bool main)
+    public IEnumerator CardTransitionOut(bool main)
     {
         float delaytime = this.GetComponent<DoAnimationEnable>().DelayTime;
         Image[] images = GetComponentsInChildren<Image>();

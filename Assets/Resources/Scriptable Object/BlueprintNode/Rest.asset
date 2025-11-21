@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Rest
   m_EditorClassIdentifier: 
   sprite: {fileID: -7895601659516305588, guid: e3ab0330811483b45a4075fc719ab59f, type: 3}
-  nodeType: 2
+  nodeType: 3
   description: A peaceful spot to recover and regain your strength.

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2e6881d17cc9e46965d96df8987731, type: 3}
   m_Name: F1 Mediaval Fantasy
   m_EditorClassIdentifier: Assembly-CSharp::FloorDataPool
-  Enemy: []
-  EliteEnemy: []
-  Boss: []
-  ItemPool:
-  - {fileID: 11400000, guid: 913343a54562449458bf071897012100, type: 2}
+  Enemy:
+  - {fileID: 0}
+  EliteEnemy:
+  - {fileID: 0}
+  Boss:
+  - {fileID: 0}

@@ -5,6 +5,7 @@ namespace Map
 {
     public enum NodeType
     {
+        None,
         Enemy,
         EliteEnemy,
         Rest,

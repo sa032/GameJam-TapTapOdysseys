@@ -3,9 +3,11 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using Map;
 
-public class ExpBarController : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
+    public static LevelManager instance;
     [Header("UI Elements")]
     public Image fillImage;
     public TMP_Text levelText;
@@ -36,10 +38,12 @@ public class ExpBarController : MonoBehaviour
     private Color originalColor;
     
     public int predictedLevel; // Level ที่คาดว่าจะถึงหลังเติม EXP ก้อนนี้
+    public int Dif_level;
 
 
-    private void Start()
+    private void Awake()
     {
+        instance = this;
         originalColor = fillImage.color;
         UpdateUIInstant();
     }
@@ -49,6 +53,7 @@ public class ExpBarController : MonoBehaviour
     {
         expQueue.Enqueue(amount);
         predictedLevel = CalculatePredictedLevelFromQueue();
+        MapNodeSelectUI.instance.GetDifLevel();
         if (!isProcessing)
             StartCoroutine(ProcessExpQueue());
     }
@@ -92,7 +97,7 @@ public class ExpBarController : MonoBehaviour
                 }
             }
         }
-
+        
         return tempLevel;
     }
 
@@ -121,6 +126,9 @@ public class ExpBarController : MonoBehaviour
         {
             currentExp -= expToNextLevel;
             LevelUp();
+
+            fillImage.fillAmount = currentExp / expToNextLevel;
+            UpdateText();
         }
     }
 
@@ -156,6 +164,7 @@ public class ExpBarController : MonoBehaviour
     {
         currentLevel++;
         expToNextLevel *= 1.2f;
+        SoundManager.instance.PlaySoundSFX("LevelUp");
 
         // ตั้ง flag ให้เล่น particle หลัง AnimateAddExp เสร็จ
         particleQueued = true;

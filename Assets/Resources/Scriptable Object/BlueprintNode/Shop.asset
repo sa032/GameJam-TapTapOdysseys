@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shop
   m_EditorClassIdentifier: 
   sprite: {fileID: -1151905075149521417, guid: ee6cff05492b3cc42aee7ba86b570a04, type: 3}
-  nodeType: 4
+  nodeType: 5
   description: A traveling merchant offers goods for your journey.

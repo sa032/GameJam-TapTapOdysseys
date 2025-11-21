@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bb14966bf28c4164ba9c2580c724cdf9, type: 2}
   - {fileID: 11400000, guid: e1635866d1c2f154e8c9045bd0e000f2, type: 2}
   - {fileID: 11400000, guid: dfb2651849bbba640970aec1f4b8601f, type: 2}
-  randomNodes: 0600000004000000030000000000000002000000
+  randomNodes: 0100000004000000030000000500000002000000
   numOfPreBossNodes:
     min: 1
     max: 2
@@ -31,70 +31,70 @@ MonoBehaviour:
   FloorLayers:
   - Name: Fantasy Mediaval
     layers:
-    - nodeType: 0
+    - nodeType: 1
       distanceFromPreviousLayer:
         min: 0
         max: 0
       nodesApartDistance: 0.75
       randomizePosition: 0.266
       randomizeNodes: 0
-    - nodeType: 0
-      distanceFromPreviousLayer:
-        min: 2
-        max: 2
-      nodesApartDistance: 1.25
-      randomizePosition: 0
-      randomizeNodes: 0.771
     - nodeType: 1
       distanceFromPreviousLayer:
         min: 2
         max: 2
       nodesApartDistance: 1.25
       randomizePosition: 0
+      randomizeNodes: 0.771
+    - nodeType: 4
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
       randomizeNodes: 0.5
-    - nodeType: 2
+    - nodeType: 1
       distanceFromPreviousLayer:
         min: 2
         max: 2
       nodesApartDistance: 1.25
       randomizePosition: 0
       randomizeNodes: 0.257
-    - nodeType: 0
+    - nodeType: 1
       distanceFromPreviousLayer:
         min: 2
         max: 2
       nodesApartDistance: 1.25
       randomizePosition: 0
       randomizeNodes: 0.46
-    - nodeType: 0
+    - nodeType: 2
       distanceFromPreviousLayer:
         min: 2
         max: 2
       nodesApartDistance: 1.25
       randomizePosition: 0
       randomizeNodes: 0.431
-    - nodeType: 3
+    - nodeType: 1
       distanceFromPreviousLayer:
         min: 2
         max: 2
       nodesApartDistance: 1.25
       randomizePosition: 0
       randomizeNodes: 0.431
-    - nodeType: 0
+    - nodeType: 1
       distanceFromPreviousLayer:
         min: 2
         max: 2
       nodesApartDistance: 1.25
       randomizePosition: 0
       randomizeNodes: 0.431
-    - nodeType: 0
+    - nodeType: 1
       distanceFromPreviousLayer:
         min: 2
         max: 2
       nodesApartDistance: 1.25
       randomizePosition: 0
       randomizeNodes: 0.431
-    - nodeType: 5
+    - nodeType: 6
       distanceFromPreviousLayer:
         min: 2
         max: 2

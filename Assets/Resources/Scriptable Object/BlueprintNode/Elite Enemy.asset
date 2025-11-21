@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Elite Enemy
   m_EditorClassIdentifier: 
   sprite: {fileID: -3027573767474093759, guid: 3997af31317f0a14480e032a4546da94, type: 3}
-  nodeType: 1
+  nodeType: 2
   description: A powerful foe stands before you, far stronger than the rest.
