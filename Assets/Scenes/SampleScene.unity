@@ -2632,11 +2632,11 @@ PrefabInstance:
     - target: {fileID: 4280913727174844639, guid: a20e73f1ef26b704c8343faf2ce9f145, type: 3}
       propertyPath: 'enemiesToSpawn.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300904625300859974, guid: ffb508bccf31a9d42980def6fae94e7d, type: 3}
     - target: {fileID: 4280913727174844639, guid: a20e73f1ef26b704c8343faf2ce9f145, type: 3}
       propertyPath: 'enemiesToSpawn.Array.data[1]'
       value: 
-      objectReference: {fileID: 2346981638277858310, guid: 97546c6758b6da54392bc60a67798f7e, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4280913727174844639, guid: a20e73f1ef26b704c8343faf2ce9f145, type: 3}
       propertyPath: 'enemiesToSpawn.Array.data[2]'
       value: 
