@@ -10,6 +10,8 @@ public class PlayerAttack : MonoBehaviour
     private EnemyManager enemyManager;
     private Animator anim;
     public CinemachineImpulseSource impulse;
+    public GameObject slash;
+    public AudioSource audioSource;
     private void Start()
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
@@ -23,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
     {
         impulse.GenerateImpulse();
         GameObject enemy = enemyManager.GetFirstEnemy();
+        audioSource.Play();
 
         if (enemy != null)
         {
@@ -30,6 +33,7 @@ public class PlayerAttack : MonoBehaviour
             if (health != null)
             {
                 health.damage(damage);
+                Instantiate(slash, enemy.transform.position, Quaternion.identity);
             }
         }
         if (GlobalValues.NextAttack)
