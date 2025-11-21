@@ -11,6 +11,7 @@ public class Frostbite : MagicBase
     {
         EnemyManager enemyManager = GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>();
         List<GameObject> enemies = enemyManager.GetAllEnemies();
+        AudioSource.PlayClipAtPoint(audioClip, enemyManager.transform.position);
         foreach (GameObject enemy in enemies)
         {
             if (enemy != null)

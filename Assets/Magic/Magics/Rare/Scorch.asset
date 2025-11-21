@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Scorch
   m_EditorClassIdentifier: Assembly-CSharp::Scorch
   manaCost: 0
+  audioClip: {fileID: 8300000, guid: 768700e536909e247825030ee144c19f, type: 3}
   MagicCard: {fileID: 0}
   baseDamage: 2

@@ -15,6 +15,7 @@ public class Ignite : MagicBase
         {
             Effects enemyEffects = enemy.GetComponent<Effects>();
             enemyEffects.BurnInflict(duration, damage);
+            AudioSource.PlayClipAtPoint(audioClip, enemy.transform.position);
         }
     }
 }

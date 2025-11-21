@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Flamewake
   m_EditorClassIdentifier: Assembly-CSharp::Flamewake
   manaCost: 0
+  audioClip: {fileID: 8300000, guid: d4a7a76345db3f349b73d8050e9a12a5, type: 3}
   MagicCard: {fileID: 0}
   duration: 5
   damage: 0.5

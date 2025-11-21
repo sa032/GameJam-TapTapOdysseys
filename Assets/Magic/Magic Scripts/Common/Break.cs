@@ -13,6 +13,7 @@ public class Break : MagicBase
         {
             Effects enemyEffects = enemy.GetComponent<Effects>();
             enemyEffects.FragileInflict(duration);
+            AudioSource.PlayClipAtPoint(audioClip, enemy.transform.position);
         }
     }
 }

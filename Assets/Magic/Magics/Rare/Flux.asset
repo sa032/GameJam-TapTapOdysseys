@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Flux
   m_EditorClassIdentifier: Assembly-CSharp::Flux
   manaCost: 0
+  audioClip: {fileID: 8300000, guid: 2adf967d24cc81a4aae3ae599640227c, type: 3}
   MagicCard: {fileID: 0}
   timeAdd: 3

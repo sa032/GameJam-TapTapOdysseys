@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SnowBurst
   m_EditorClassIdentifier: Assembly-CSharp::SnowBurst
   manaCost: 0
+  audioClip: {fileID: 8300000, guid: f8b6f02e6ab358b4f874081d11a876e3, type: 3}
   MagicCard: {fileID: 0}
   damage: 0
   burstDamage: 0

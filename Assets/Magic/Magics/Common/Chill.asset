@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Chill
   m_EditorClassIdentifier: Assembly-CSharp::Chill
   manaCost: 0
+  audioClip: {fileID: 8300000, guid: f8b6f02e6ab358b4f874081d11a876e3, type: 3}
   MagicCard: {fileID: 0}
-  duration: 0
+  duration: 3

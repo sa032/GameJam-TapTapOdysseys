@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Weaken
   m_EditorClassIdentifier: Assembly-CSharp::Weaken
   manaCost: 0
+  audioClip: {fileID: 8300000, guid: 91781035ac276f940a71944ae9192cd5, type: 3}
   MagicCard: {fileID: 0}
   duration: 0

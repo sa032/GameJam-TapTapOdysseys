@@ -16,11 +16,13 @@ public class FlameBurst : MagicBase
             {
                 Health health = enemy.GetComponent<Health>();
                 health.damage(burstDamage);
+                AudioSource.PlayClipAtPoint(audioClip, enemy.transform.position);
             }
             else
             {
                 Health health = enemy.GetComponent<Health>();
                 health.damage(damage);
+                AudioSource.PlayClipAtPoint(audioClip, enemy.transform.position);
             }
         }
     }

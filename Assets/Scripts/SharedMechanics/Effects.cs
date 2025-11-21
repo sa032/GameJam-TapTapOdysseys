@@ -121,6 +121,7 @@ public class Effects : MonoBehaviour
         if (burnCoroutine != null)
         {
             StopCoroutine(burnCoroutine);
+            burnRemaining = 0;
             burnCoroutine = null;
         }
         burning = false;
@@ -149,6 +150,7 @@ public class Effects : MonoBehaviour
         {
             StopCoroutine(coldCoroutine);
             cold = false;
+            coldRemaining = 0;
             freezeCoroutine = StartCoroutine(Freeze(duration));
             return;
         }
@@ -159,6 +161,7 @@ public class Effects : MonoBehaviour
         if (coldCoroutine != null)
         {
             StopCoroutine(coldCoroutine);
+            coldRemaining = 0;
             coldCoroutine = null;
         }
         cold = false;
@@ -168,6 +171,7 @@ public class Effects : MonoBehaviour
         if (freezeCoroutine != null)
         {
             StopCoroutine(freezeCoroutine);
+            freezeRemaining = 0;
             freezeCoroutine = null;
         }
         frozen = false;
@@ -178,7 +182,7 @@ public class Effects : MonoBehaviour
         coldRemaining = duration;
         while (coldRemaining > 0)
         {
-            yield return new WaitForSeconds(duration);
+            yield return new WaitForSeconds(1);
             coldRemaining -= 1;
         }
         cold = false;
@@ -189,7 +193,7 @@ public class Effects : MonoBehaviour
         freezeRemaining = duration;
         while (freezeRemaining > 0)
         {
-            yield return new WaitForSeconds(duration);
+            yield return new WaitForSeconds(1);
             freezeRemaining -= 1;
         }
         frozen = false;
@@ -207,6 +211,7 @@ public class Effects : MonoBehaviour
         if (fragileCoroutine != null)
         {
             StopCoroutine(fragileCoroutine);
+            fragileRemaining = 0;
             fragileCoroutine = null;
         }
         fragile = false;
@@ -217,7 +222,7 @@ public class Effects : MonoBehaviour
         fragileRemaining = duration;
         while (fragileRemaining > 0)
         {
-            yield return new WaitForSeconds(duration);
+            yield return new WaitForSeconds(1);
             fragileRemaining -= 1;
         }
         fragile = false;
@@ -235,6 +240,7 @@ public class Effects : MonoBehaviour
         if (weakCoroutine != null)
         {
             StopCoroutine(weakCoroutine);
+            weakRemaining = 0;
             weakCoroutine = null;
         }
         weak = false;
@@ -245,7 +251,7 @@ public class Effects : MonoBehaviour
         weakRemaining = duration;
         while (weakRemaining > 0)
         {
-            yield return new WaitForSeconds(duration);
+            yield return new WaitForSeconds(1);
             weakRemaining -= 1;
         }
         weak = false;

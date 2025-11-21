@@ -28,6 +28,7 @@ public class Flamewake : MagicBase
         }
         if (oneBurning)
         {
+            AudioSource.PlayClipAtPoint(audioClip, enemyManager.transform.position);
             foreach (GameObject enemy in enemies)
             {
                 if (enemy != null)

@@ -13,6 +13,7 @@ public class Weaken : MagicBase
         {
             Effects enemyEffects = enemy.GetComponent<Effects>();
             enemyEffects.WeakInflict(duration);
+            AudioSource.PlayClipAtPoint(audioClip, enemy.transform.position);
         }
     }
 }

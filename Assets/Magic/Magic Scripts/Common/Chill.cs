@@ -13,6 +13,7 @@ public class Chill : MagicBase
         {
             Effects enemyEffects = enemy.GetComponent<Effects>();
             enemyEffects.ColdInflict(duration);
+            AudioSource.PlayClipAtPoint(audioClip, enemy.transform.position);
         }
     }
 }

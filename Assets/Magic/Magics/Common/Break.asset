@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Break
   m_EditorClassIdentifier: Assembly-CSharp::Break
   manaCost: 0
+  audioClip: {fileID: 8300000, guid: 60e87aaee9a30b243a2a2c4f65a1e432, type: 3}
   MagicCard: {fileID: 0}
   duration: 0
