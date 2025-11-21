@@ -2629,6 +2629,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4280913727174844639, guid: a20e73f1ef26b704c8343faf2ce9f145, type: 3}
+      propertyPath: 'enemiesToSpawn.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280913727174844639, guid: a20e73f1ef26b704c8343faf2ce9f145, type: 3}
+      propertyPath: 'enemiesToSpawn.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2346981638277858310, guid: 97546c6758b6da54392bc60a67798f7e, type: 3}
+    - target: {fileID: 4280913727174844639, guid: a20e73f1ef26b704c8343faf2ce9f145, type: 3}
+      propertyPath: 'enemiesToSpawn.Array.data[2]'
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6709375869009391569, guid: a20e73f1ef26b704c8343faf2ce9f145, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.48
