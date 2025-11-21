@@ -41,6 +41,7 @@ public class CardContainData : MonoBehaviour
     public void Execute()
     {
         if(NodeData != null)nodeSave = NodeData.Node;
+        TimeBarManager.instance.SwitchDataset(0);
         switch (state)
         {
             case CardState.SelectPath:
@@ -64,9 +65,9 @@ public class CardContainData : MonoBehaviour
                 break;
             case CardState.MagicSwitch:
                 int index = 0;
-                if(this.gameObject.name == "Card1") index = 0;
+                if(this.gameObject.name == "Card1") index = 2;
                 if(this.gameObject.name == "Card2") index = 1;
-                if(this.gameObject.name == "Card3") index = 2;
+                if(this.gameObject.name == "Card3") index = 0;
                 
                 MagicCardManager.instance.SwicthMagic(index);
                 
@@ -131,7 +132,7 @@ public class CardContainData : MonoBehaviour
             CardSkillContainer.gameObject.SetActive(true);
             MagicBase itemDataContain = MagicData;
             TextDescriptionMagic.text = MagicData.Description.ToString();
-            TextTitleMagic.text = MagicData.Name.ToString();
+            TextTitleMagic.text = "["+MagicData.magicType.ToString()+"] "+MagicData.Name.ToString();
             imageMagic.sprite = MagicData.Image;
 
             outline.enabled = true;

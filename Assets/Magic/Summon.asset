@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460e52c9345fa1944809256777ec1a26, type: 3}
   m_Name: Summon
   m_EditorClassIdentifier: Assembly-CSharp::TestMagic
+  manaCost: 0
+  audioClip: {fileID: 0}
   magicType: 1
   PassivePrefab: {fileID: 2745216227508706587, guid: 5cd369667989d194a89d6ecb58a74424, type: 3}
-  Name: '[Passive] Stickman'
+  Name: Stickman
   Image: {fileID: 3055025890641205262, guid: 663cce3367d1e8b4287e588d7dec47dd, type: 3}
   Rarity: 0
   Description: Summon a stickman to fight with you

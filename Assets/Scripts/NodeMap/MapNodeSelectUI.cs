@@ -166,16 +166,57 @@ namespace Map
                 }
                 i++;
             }
+            TimeDatasetSwitch(CardAmount);
             if(CardAmount == 0)
             {
                 GetNextNodeUI();
             }
+        }
+        public void TimeDatasetSwitch(int CardAmount)
+        {
+            ParryMode.instance.exitParryMode();
+            
+            TimeBarDatasets.TimedEventDataset events = TimeBarManager.instance.currentDataset.datasets[2];
+            if (CardAmount == 3)
+            {
+                events.elements[0].minTime = 0;
+                events.elements[0].maxTime = 34;
+
+                events.elements[1].minTime = 34;
+                events.elements[1].maxTime = 67;
+
+                events.elements[2].minTime = 67;
+                events.elements[2].maxTime = 100;
+            }else if (CardAmount == 2)
+            {
+                events.elements[1].minTime = 0;
+                events.elements[1].maxTime = 50;
+
+                events.elements[2].minTime = 50;
+                events.elements[2].maxTime = 100;
+
+                events.elements[0].minTime = 0;
+                events.elements[0].maxTime = 0;
+
+            }else if (CardAmount == 1)
+            {
+                events.elements[2].minTime = 0;
+                events.elements[2].maxTime = 100;
+
+                events.elements[1].minTime = 0;
+                events.elements[1].maxTime = 0;
+
+                events.elements[0].minTime = 0;
+                events.elements[0].maxTime = 0;
+            }
+            TimeBarManager.instance.SwitchDataset(2);
         }
         //TODO: --------------------------------------------------------------EVENT-----------------
         public void ShowSelectPathUI(List<Node> nextnode)
         {
             DisibleCard();
             if(nextnode != null){
+                TimeDatasetSwitch(nextnode.Count);
                 if(nextnode.Count > 1)
                 {
                     Card1.SetActive(true);

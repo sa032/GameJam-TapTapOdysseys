@@ -32,7 +32,9 @@ public class PlayerAttack : MonoBehaviour
             Health health = enemy.GetComponent<Health>();
             if (health != null)
             {
-                health.damage(damage);
+                BuffContainData buff = BuffContainData.instance;
+                float damageBuffCalculate = (damage + buff.DamageBuffFlat) * (1+buff.DamageBuffPercent/100);
+                health.damage(damageBuffCalculate);
                 Instantiate(slash, enemy.transform.position, Quaternion.identity);
             }
         }

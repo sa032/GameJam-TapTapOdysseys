@@ -92,6 +92,7 @@ public class MagicCardManager : MonoBehaviour
     }
     IEnumerator SwitchMagicCard()
     {
+        MapNodeSelectUI.instance.TimeDatasetSwitch(3);
         SoundManager.instance.PlaySoundSFX("MagicSwitch");
         MapNodeSelectUI.instance.Title.SetActive(false);
         CardContainData.instance.StopAllCoroutines();
@@ -135,9 +136,11 @@ public class MagicCardManager : MonoBehaviour
         GameObject Card3 = MapNodeSelectUI.instance.Card3;
 
         List<GameObject> Cards = new List<GameObject>();
-        if(CardAmount > 0) Cards.Add(Card1);
-        if(CardAmount >= 2) Cards.Add(Card2);
         if(CardAmount >= 3) Cards.Add(Card3);
+        if(CardAmount >= 2) Cards.Add(Card2);
+        if(CardAmount > 0) Cards.Add(Card1);
+        
+        
             
         int i = 0;
         BorderMagicUI.SetActive(true);

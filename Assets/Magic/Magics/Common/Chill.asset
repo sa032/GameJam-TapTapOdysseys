@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chill
   manaCost: 0
   audioClip: {fileID: 8300000, guid: f8b6f02e6ab358b4f874081d11a876e3, type: 3}
+  magicType: 0
+  PassivePrefab: {fileID: 0}
+  Name: Chill
+  Image: {fileID: -6573826362745927925, guid: 6a0312f853ce0e741898b97b76425025, type: 3}
+  Rarity: 0
+  Description: 
   MagicCard: {fileID: 0}
   duration: 3

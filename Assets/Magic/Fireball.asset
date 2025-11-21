@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460e52c9345fa1944809256777ec1a26, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: Assembly-CSharp::TestMagic
+  manaCost: 0
+  audioClip: {fileID: 0}
   magicType: 0
   PassivePrefab: {fileID: 0}
-  Name: '[Active] Fireball'
+  Name: Fireball
   Image: {fileID: -6607481912129624618, guid: 9543fbc506101cb4eb0cfb2068cfecb1, type: 3}
   Rarity: 0
   Description: Cast Fireball deal massive damage

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460e52c9345fa1944809256777ec1a26, type: 3}
   m_Name: Defensive stats
   m_EditorClassIdentifier: Assembly-CSharp::TestMagic
+  manaCost: 0
+  audioClip: {fileID: 0}
   magicType: 1
   PassivePrefab: {fileID: 769629659062329521, guid: c44bde44270a6ef42b23af15a3ec0af6, type: 3}
-  Name: '[PASSIVE] Defensive Stats'
+  Name: Defensive Stats
   Image: {fileID: 989763977084697835, guid: 8414975cf922f20478e65d232c525a03, type: 3}
   Rarity: 1
   Description: +0.5 Defense

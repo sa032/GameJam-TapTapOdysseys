@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460e52c9345fa1944809256777ec1a26, type: 3}
   m_Name: IDK
   m_EditorClassIdentifier: Assembly-CSharp::TestMagic
+  manaCost: 0
+  audioClip: {fileID: 0}
   magicType: 0
   PassivePrefab: {fileID: 0}
-  Name: '[Active] IDK'
+  Name: IDK
   Image: {fileID: -3983944188102630738, guid: 8f5b771590d07d24bb7e911055bddd88, type: 3}
   Rarity: 2
   Description: CAST SOMETHING TEST THING BTW
