@@ -53,7 +53,7 @@ public class ParryMode : MonoBehaviour
             {
                 StopCoroutine(parryCoroutine);
             }
-            StartCoroutine(AfterParry());
+            anim.Play("PlayerParry");
         }
 
     }
@@ -83,10 +83,5 @@ public class ParryMode : MonoBehaviour
         yield return new WaitForSeconds(parryFrame);
         GlobalValues.parrying = false;
         exitParryMode();
-    }
-    private IEnumerator AfterParry()
-    {
-        yield return new WaitForSeconds(0.2f);
-        anim.Play("PlayerParry");
     }
 }
