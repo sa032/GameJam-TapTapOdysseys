@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Map.MapFloorDataConfig
   FloorData:
   - {fileID: 11400000, guid: 4f17063155cd0b94aa5e1a41a98c8149, type: 2}
+  - {fileID: 11400000, guid: 4f17063155cd0b94aa5e1a41a98c8149, type: 2}

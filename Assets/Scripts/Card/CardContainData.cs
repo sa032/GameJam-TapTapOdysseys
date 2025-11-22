@@ -53,6 +53,8 @@ public class CardContainData : MonoBehaviour
                 break; 
             case CardState.GoNextFloor:
                 print("GO TO NEXT FLOOR");
+                StartCoroutine(NextFloorEnter());
+                Reset();
                 break;
             case CardState.Item:
                 StartCoroutine(GetItem());
@@ -87,6 +89,7 @@ public class CardContainData : MonoBehaviour
                 
                 Reset();
                 break;
+            
         }
         
     }
@@ -174,9 +177,15 @@ public class CardContainData : MonoBehaviour
                 image.sprite = Yes;
             }
             
+        }else if (state == CardState.GoNextFloor)
+        {
+            CardContainer.gameObject.SetActive(true);
+            TextTitle.text = "Next Floor";
+            TextDescription.text = "Go to the next dimension";
+            image.sprite = NextFloor;
         }
     }
-    public Sprite Yes,No;
+    public Sprite Yes,No,NextFloor;
     IEnumerator GetItem()
     {
         
@@ -262,6 +271,41 @@ public class CardContainData : MonoBehaviour
     {
         yield return new WaitForSeconds(db);
         this.gameObject.SetActive(false);
+    }
+    public IEnumerator NextFloorEnter()
+    {
+        GameObject BlackScreen = GameObject.FindGameObjectsWithTag("BlackScene")[0].transform.GetChild(0).gameObject;
+        //Animator anim = NextUI.GetComponent<Animator>();
+        //anim.Play("NextUI_Out");
+        BlackScreen.SetActive(false);
+        yield return null;
+        //yield return new WaitUntil(() =>
+            //anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.1f
+        //);   
+        
+        BlackScreen.SetActive(true);
+        yield return new WaitUntil(() =>
+            BlackScreen.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.4f
+        );
+        EventCard.Instance.ClearObject();
+        //TODO >>>>>>
+        if (MapManager.Instance.CurrentFloor+1 < MapManager.Instance.config.FloorLayers.Count)
+        {
+            print("LET TO THE NEXT FLOOR");
+            MapManager.Instance.CurrentFloor += 1;
+            MapManager.Instance.GenerateNewMap();
+        }
+        
+        yield return new WaitUntil(() =>
+            BlackScreen.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
+        );
+        MapNodeSelectUI.instance.Card1.SetActive(false);
+        MapNodeSelectUI.instance.Card2.SetActive(false);
+        MapNodeSelectUI.instance.Card3.SetActive(false);
+        //NextUI.SetActive(false);
+        BlackScreen.SetActive(false);
+        this.gameObject.SetActive(false);   
+        MapNodeSelectUI.instance.GetNextNodeUI();
     }
     void EnterNodeTransition()
     {

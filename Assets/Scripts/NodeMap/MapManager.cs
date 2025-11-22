@@ -12,6 +12,7 @@ namespace Map
         public MapView view;
         public int CurrentFloor = 0;
         public static MapManager Instance;
+        public SpriteRenderer MapImage;
 
         public Map CurrentMap { get; private set; }
 
@@ -51,6 +52,7 @@ namespace Map
             CurrentMap = map;
             Debug.Log(map.ToJson());
             view.ShowMap(map);
+            MapImage.sprite = config.FloorLayers[CurrentFloor].MapImage;
         }
 
         public void SaveMap()

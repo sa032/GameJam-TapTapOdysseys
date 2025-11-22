@@ -48,7 +48,7 @@ MonoBehaviour:
   image: {fileID: -3455089740371052150, guid: b8bf7165ad47d2e42add18b8e193737b, type: 3}
   Name: IronSword
   Rarity: 1
-  description: +15% Damage
+  description: +50% Damage
 --- !u!114 &4134789832378561864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bdab942d681e94484e052b0e46562e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item_StatsBuff
-  DamageBuffPercent: 15
+  DamageBuffPercent: 50
   DamageBuffFlat: 0
   DefenseBuffPercent: 0
   DefenseBuffFlat: 0

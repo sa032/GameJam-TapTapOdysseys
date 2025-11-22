@@ -29,6 +29,80 @@ MonoBehaviour:
   extraPaths: 1
   FloorLayers:
   - Name: Future
+    MapImage: {fileID: 21300000, guid: 7f47b16e4ea478b4b9d6c85225bc21f6, type: 3}
+    layers:
+    - nodeType: 1
+      distanceFromPreviousLayer:
+        min: 0
+        max: 0
+      nodesApartDistance: 0.75
+      randomizePosition: 0.266
+      randomizeNodes: 0
+    - nodeType: 1
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.771
+    - nodeType: 4
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.5
+    - nodeType: 1
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.257
+    - nodeType: 1
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.46
+    - nodeType: 2
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.431
+    - nodeType: 1
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.431
+    - nodeType: 1
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.431
+    - nodeType: 1
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0.431
+    - nodeType: 6
+      distanceFromPreviousLayer:
+        min: 2
+        max: 2
+      nodesApartDistance: 1.25
+      randomizePosition: 0
+      randomizeNodes: 0
+  - Name: Egypt
+    MapImage: {fileID: 5885588517540005310, guid: 96d2c72bfbc32f1469272e4e9309c73c, type: 3}
     layers:
     - nodeType: 1
       distanceFromPreviousLayer:

@@ -415,7 +415,7 @@ MonoBehaviour:
   health: 25
   Defense: 0
   isBlock: 0
-  LevelGain: 100
+  LevelGain: 350
   anim: {fileID: 0}
   hurt: 
   idle: 

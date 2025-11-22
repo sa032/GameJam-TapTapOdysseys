@@ -28,6 +28,7 @@ namespace Map
     public class Floor
     {
         public string Name;
+        public Sprite MapImage;
         public List<MapLayer> layers;
     }
 }

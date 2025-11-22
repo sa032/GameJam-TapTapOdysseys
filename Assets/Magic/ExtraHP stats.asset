@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 460e52c9345fa1944809256777ec1a26, type: 3}
-  m_Name: IDK
+  m_Name: ExtraHP stats
   m_EditorClassIdentifier: Assembly-CSharp::TestMagic
   manaCost: 0
   audioClip: {fileID: 0}
-  magicType: 0
-  PassivePrefab: {fileID: 0}
-  Name: IDK
-  Image: {fileID: -3983944188102630738, guid: 8f5b771590d07d24bb7e911055bddd88, type: 3}
-  Rarity: 2
-  Description: CAST SOMETHING TEST THING BTW
+  magicType: 1
+  PassivePrefab: {fileID: 769629659062329521, guid: 8d208b320e3ebd646af8d545a3015c5e, type: 3}
+  Name: ExtraHP
+  Image: {fileID: 7278047870583210113, guid: 3c0d1f7cbf1106445875822a7d644b63, type: 3}
+  Rarity: 0
+  Description: +10 ExtraHP
   MagicCard: {fileID: 0}
   duration: 5
   damage: 1

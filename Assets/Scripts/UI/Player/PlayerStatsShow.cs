@@ -36,5 +36,6 @@ public class PlayerStatsShow : MonoBehaviour
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         Player.GetComponent<Health>().isBlock = ParryMode.instance.inParryMode;
         Player.GetComponent<Health>().Defense = buff.DefenseBuffFlat;
+        Player.GetComponent<Health>().maxHealth = 20+buff.HPBuffFlat;
     }
 }

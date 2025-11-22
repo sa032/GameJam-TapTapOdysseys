@@ -39,7 +39,7 @@ public class ItemManager : MonoBehaviour
         {
             int index = UnityEngine.Random.Range(0, temp.Count);
             result.Add(temp[index]);
-            temp.RemoveAt(index); // ลบเพื่อกันซ้ำ
+            //temp.RemoveAt(index); // ลบเพื่อกันซ้ำ
         }
 
         return result; // จะมี 1–3 ชิ้น ตามจำนวนของจริง
@@ -52,7 +52,7 @@ public class ItemManager : MonoBehaviour
         GameObject ItemUI_Clone = Instantiate(ItemUI,InventoryUI);
         ItemUI_Clone.transform.GetChild(0).GetComponent<Image>().sprite = itemData.image;
         StartCoroutine(PositionUI(ItemUI_Clone));
-        RemoveItemFromPool(item);
+        //RemoveItemFromPool(item);
     }
     IEnumerator PositionUI(GameObject ItemUI_Clone)
     {

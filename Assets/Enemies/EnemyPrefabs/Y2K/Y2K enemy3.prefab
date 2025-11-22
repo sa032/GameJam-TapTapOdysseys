@@ -219,6 +219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 10
   health: 10
+  Defense: 0
+  isBlock: 0
+  LevelGain: 110
   anim: {fileID: 0}
   hurt: 
   idle: 

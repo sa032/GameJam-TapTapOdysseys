@@ -3199,6 +3199,7 @@ MonoBehaviour:
   InventoryItemUI: {fileID: 1637803132}
   Yes: {fileID: 21300000, guid: 647ea0f16f695b84a98510a765d20af5, type: 3}
   No: {fileID: 21300000, guid: bae0df5cd0d6c274fad68827771dbd1b, type: 3}
+  NextFloor: {fileID: -2988961025472912570, guid: b5058b1525fce884dad6ec2ae3756e19, type: 3}
 --- !u!114 &238834108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3874,6 +3875,7 @@ MonoBehaviour:
   isEnterEnemyNode: 0
   EnemyNodeType: 0
   Healing: {fileID: 1657814145}
+  BossBar: {fileID: 1656262052}
   BorderUI2: {fileID: 1080619406}
 --- !u!1 &389502098
 GameObject:
@@ -4251,6 +4253,7 @@ MonoBehaviour:
   InventoryItemUI: {fileID: 1637803132}
   Yes: {fileID: 21300000, guid: 647ea0f16f695b84a98510a765d20af5, type: 3}
   No: {fileID: 21300000, guid: bae0df5cd0d6c274fad68827771dbd1b, type: 3}
+  NextFloor: {fileID: -2988961025472912570, guid: b5058b1525fce884dad6ec2ae3756e19, type: 3}
 --- !u!114 &411701945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16407,7 +16410,7 @@ RectTransform:
   m_Father: {fileID: 1625914851}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16576,7 +16579,7 @@ MonoBehaviour:
   currentLevel: 1
   currentExp: 0
   expToNextLevel: 100
-  fillSpeed: 20
+  fillSpeed: 10
   fillCurve:
     serializedVersion: 2
     m_Curve:
@@ -16878,6 +16881,7 @@ MonoBehaviour:
   InventoryItemUI: {fileID: 1637803132}
   Yes: {fileID: 21300000, guid: 647ea0f16f695b84a98510a765d20af5, type: 3}
   No: {fileID: 21300000, guid: bae0df5cd0d6c274fad68827771dbd1b, type: 3}
+  NextFloor: {fileID: -2988961025472912570, guid: b5058b1525fce884dad6ec2ae3756e19, type: 3}
 --- !u!114 &923022889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25411,6 +25415,7 @@ MonoBehaviour:
   InventoryItemUI: {fileID: 1637803132}
   Yes: {fileID: 0}
   No: {fileID: 0}
+  NextFloor: {fileID: 0}
 --- !u!114 &1423251212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27902,12 +27907,12 @@ GameObject:
   - component: {fileID: 1656262055}
   - component: {fileID: 1656262054}
   m_Layer: 5
-  m_Name: PlayerBar (1)
+  m_Name: BossBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1656262053
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27941,7 +27946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d13cc0a1bd7d3479990fd925cd41ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBarPlayer
-  playerHP: {fileID: 1191422021}
+  playerHP: {fileID: 0}
   slider: {fileID: 1288727740}
   text: {fileID: 1940061091}
 --- !u!114 &1656262055
@@ -34055,6 +34060,7 @@ MonoBehaviour:
   itemPoolConfig: {fileID: 11400000, guid: 913343a54562449458bf071897012100, type: 2}
   view: {fileID: 488242409}
   CurrentFloor: 0
+  MapImage: {fileID: 836832799}
 --- !u!1 &1746452357
 GameObject:
   m_ObjectHideFlags: 0
@@ -41345,10 +41351,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicCardManager
   Magics:
-  - {fileID: 11400000, guid: a561d87dd25ae6a409e8769c781c4357, type: 2}
+  - {fileID: 11400000, guid: 0873fd89bd3ba6b4eb00d71a74879244, type: 2}
+  - {fileID: 11400000, guid: ff17d4da325a07540be9d1ccbddf8180, type: 2}
+  - {fileID: 11400000, guid: 4dff6915678f9784e8a085cf266c972a, type: 2}
+  - {fileID: 11400000, guid: dfa7ec01318f9044a82dd8ce33de4668, type: 2}
+  - {fileID: 11400000, guid: e746c231065256a419045620aa98ce03, type: 2}
+  - {fileID: 11400000, guid: 6ba9fc8b2a8f811408b4dc3ed3057321, type: 2}
+  - {fileID: 11400000, guid: 53845f9018b2a754f91e8d0b7ab77e74, type: 2}
   - {fileID: 11400000, guid: c89ef18867a15b54fad9ae6bdf3b72f3, type: 2}
-  - {fileID: 11400000, guid: 7620a06f8bb2501499e3b2a888fc6935, type: 2}
-  - {fileID: 11400000, guid: 2d3fe52cfb52b404d85d3fb7a1dcd2ac, type: 2}
+  - {fileID: 11400000, guid: 3a675210742bd124994a3e73ab4a5cdf, type: 2}
   MagicPassiveInventory: {fileID: 2141624218}
   BorderMagicUI: {fileID: 2033363441}
   CardPreview: {fileID: 1423251209}

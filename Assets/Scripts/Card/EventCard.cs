@@ -66,6 +66,9 @@ public class EventCard : MonoBehaviour
             case NodeType.Rest :
                 StartCoroutine(RestAnimation());
                 break;
+            case NodeType.Boss :
+                StartCoroutine(SpawnBossEnemy());
+                break;
         }
     }
     public ParticleSystem Healing;
@@ -123,6 +126,22 @@ public class EventCard : MonoBehaviour
         }
         StartCoroutine(TreasureAnimation(delayTime));
     }
+    public GameObject BossBar;
+    public IEnumerator SpawnBossEnemy()
+    {
+        yield return new WaitForSeconds(0.25f);
+        BossBar.SetActive(true);
+        isEnterEnemyNode = true;
+        int randomEnemyAmount = Random.Range(1,5);
+        MapManager map = MapManager.Instance;
+        List<GameObject> EnemyToClone = new List<GameObject>();
+        
+        List<GameObject> Enemy = map.FloorDataConfig.FloorData[map.CurrentFloor].BossPrefab;
+        EnemyToClone.Add(Enemy[0]);
+        
+        EnemyManager.instance.SpawnEnemies(EnemyToClone);
+        BossBar.GetComponent<HealthBarPlayer>().playerHP = EnemyManager.instance.enemies[0].GetComponent<Health>();
+    }
     public IEnumerator SpawnMinorEnemy()
     {
         yield return new WaitForSeconds(0.25f);
@@ -160,7 +179,7 @@ public class EventCard : MonoBehaviour
     public GameObject BorderUI2;
     void EncounterNPC()
     {
-        TimeBarDatasets.TimedEventDataset events = TimeBarManager.instance.currentDataset.datasets[2];
+        
         MapManager map = MapManager.Instance;
         FloorDataPool data = map.FloorDataConfig.FloorData[map.CurrentFloor];
         int randomEncounter = Random.Range(0,data.encounters.Count);
@@ -169,6 +188,7 @@ public class EventCard : MonoBehaviour
         NPCEncounterUI.GetComponent<Image>().sprite = encounter.imageNPC;
         BorderUI2.SetActive(true);
         TextMeshProUGUI text = NPCEncounterUI.transform.Find("ChatBubble").Find("Text").GetComponent<TextMeshProUGUI>();
+        TimeBarDatasets.TimedEventDataset events = TimeBarManager.instance.currentDataset.datasets[2];
         text.text = encounter.dialouge;
         events.elements[1].minTime = 0;
         events.elements[1].maxTime = 50;
@@ -178,7 +198,7 @@ public class EventCard : MonoBehaviour
 
         events.elements[0].minTime = 0;
         events.elements[0].maxTime = 0;
-
+        TimeBarManager.instance.SwitchDataset(2);
         
         MapNodeSelectUI.instance.Card1.GetComponent<CardContainData>().state = CardState.EncounterChoice;
         MapNodeSelectUI.instance.Card1.GetComponent<CardContainData>().encounterType = EncounterType.None;
@@ -187,7 +207,7 @@ public class EventCard : MonoBehaviour
         MapNodeSelectUI.instance.Card2.GetComponent<CardContainData>().encounterType = EncounterType.Exp;
         StartCoroutine(showcard());
         SoundManager.instance.PlaySoundSFX("NPCEnter");
-        TimeBarManager.instance.SwitchDataset(2);
+        
 
     }
     IEnumerator showcard()
@@ -204,7 +224,7 @@ public class EventCard : MonoBehaviour
     }
     IEnumerator GonextNode()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
         foreach(GameObject card in cards) card.SetActive(false);
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3866401214873751117}
   - component: {fileID: 8758774634268369664}
   m_Layer: 0
-  m_Name: Defensive stats Prefab
+  m_Name: Damage stats Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item_StatsBuff
   DamageBuffPercent: 0
-  DamageBuffFlat: 0
+  DamageBuffFlat: 0.1
   DefenseBuffPercent: 0
-  DefenseBuffFlat: 0.1
+  DefenseBuffFlat: 0
   HPBuffPercent: 0
   HPBuffFlat: 0
