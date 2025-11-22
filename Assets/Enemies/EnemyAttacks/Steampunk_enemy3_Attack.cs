@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Y2K_enemy3_Attack : MonoBehaviour
+public class Steampunk_enemy3_Attack : MonoBehaviour
 {
     public float damage;
     public GameObject warning;
@@ -14,24 +14,33 @@ public class Y2K_enemy3_Attack : MonoBehaviour
     {
         EnemyCooldown enemyCooldown = GetComponent<EnemyCooldown>();
         enemyCooldown.attacking = true;
-        yield return StartCoroutine(SingleAttackCoroutine());
+        yield return StartCoroutine(BaseAttackCoroutine());
         enemyCooldown.attacking = false;
     }
-    public IEnumerator SingleAttackCoroutine()
+    public IEnumerator BaseAttackCoroutine()
+    {
+        Instantiate(warning, warningPos.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.4f);
+        yield return StartCoroutine(SingleAttackCoroutine(true));
+        
+    }
+    private IEnumerator SingleAttackCoroutine(bool stunAfterParry)
     {
         Health player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         Effects playerEffects = GameObject.FindGameObjectWithTag("Player").GetComponent<Effects>();
-        Instantiate(warning, warningPos.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.4f);
         if (GlobalValues.parrying)
         {
             GlobalValues.parried = true;
-            yield return new WaitForSeconds(5);
+            if (stunAfterParry)
+            {
+                yield return new WaitForSeconds(3);
+            }
         }
         else
         {
             player.damage(damage);
-            playerEffects.ColdInflict(4);
+            playerEffects.WeakInflict(5);
+            playerEffects.FragileInflict(5);
         }
     }
 }

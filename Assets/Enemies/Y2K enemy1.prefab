@@ -455,8 +455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5b7b7bc94370d42b0cf9b1e0498af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  coolDown: 8
-  currentCoolDown: 8
+  coolDown: 6
+  currentCoolDown: 6
   attackEvent:
     m_PersistentCalls:
       m_Calls:
