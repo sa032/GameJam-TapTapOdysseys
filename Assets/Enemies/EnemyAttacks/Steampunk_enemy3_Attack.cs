@@ -6,13 +6,14 @@ public class Steampunk_enemy3_Attack : MonoBehaviour
     public float damage;
     public GameObject warning;
     public Transform warningPos;
+    public Transform parentCooldown;
     public void Attack()
     {
         StartCoroutine(AttackCoroutine());
     }
     public IEnumerator AttackCoroutine()
     {
-        EnemyCooldown enemyCooldown = GetComponent<EnemyCooldown>();
+        EnemyCooldown enemyCooldown = parentCooldown.GetComponent<EnemyCooldown>();
         enemyCooldown.attacking = true;
         yield return StartCoroutine(BaseAttackCoroutine());
         enemyCooldown.attacking = false;

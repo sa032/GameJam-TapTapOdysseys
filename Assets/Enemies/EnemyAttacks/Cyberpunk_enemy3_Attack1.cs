@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class AttackTest : MonoBehaviour
+public class Cyberpunk_enemy3_Attack1 : MonoBehaviour
 {
     public float damage;
     public GameObject warning;
@@ -15,22 +15,32 @@ public class AttackTest : MonoBehaviour
     {
         EnemyCooldown enemyCooldown = parentCooldown.GetComponent<EnemyCooldown>();
         enemyCooldown.attacking = true;
-        yield return StartCoroutine(SingleAttackCoroutine());
+        yield return StartCoroutine(BaseAttackCoroutine());
         enemyCooldown.attacking = false;
     }
-    public IEnumerator SingleAttackCoroutine()
+    public IEnumerator BaseAttackCoroutine()
     {
-        Health player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        yield return StartCoroutine(SingleAttackCoroutine(true));
+        
+    }
+    private IEnumerator SingleAttackCoroutine(bool stunAfterParry)
+    {
+        Health player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        Effects playerEffects = GameObject.FindGameObjectWithTag("Player").GetComponent<Effects>();
         if (GlobalValues.parrying)
         {
             GlobalValues.parried = true;
-            yield return new WaitForSeconds(5);
+            if (stunAfterParry)
+            {
+                yield return new WaitForSeconds(5);
+            }
         }
         else
         {
             player.damage(damage);
+            playerEffects.BurnInflict(5,damage * 0.2f);
         }
     }
 }

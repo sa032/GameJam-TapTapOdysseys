@@ -277,6 +277,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   attacking: 0
+  parent: {fileID: 5380948705782931793}
 --- !u!114 &8976642609189314956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +293,7 @@ MonoBehaviour:
   damage: 3
   warning: {fileID: 8449481324884985313, guid: 1201ac3f95b48354e9f8740b1af2f30f, type: 3}
   warningPos: {fileID: 2799675635629815011}
+  parentCooldown: {fileID: 5380948705782931793}
 --- !u!1 &3084519604436704650
 GameObject:
   m_ObjectHideFlags: 0

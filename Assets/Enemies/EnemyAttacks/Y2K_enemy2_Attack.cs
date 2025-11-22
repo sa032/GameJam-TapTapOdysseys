@@ -6,13 +6,14 @@ public class Y2K_enemy2_Attack : MonoBehaviour
     public float damage;
     public GameObject warning;
     public Transform warningPos;
+    public Transform parentCooldown;
     public void Attack()
     {
         StartCoroutine(AttackCoroutine());
     }
     public IEnumerator AttackCoroutine()
     {
-        EnemyCooldown enemyCooldown = GetComponent<EnemyCooldown>();
+        EnemyCooldown enemyCooldown = parentCooldown.GetComponent<EnemyCooldown>();
         enemyCooldown.attacking = true;
         yield return StartCoroutine(SingleAttackCoroutine());
         enemyCooldown.attacking = false;

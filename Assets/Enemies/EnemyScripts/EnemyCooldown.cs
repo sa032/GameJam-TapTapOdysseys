@@ -12,9 +12,10 @@ public class EnemyCooldown : MonoBehaviour
     public bool attacking;
     private float coolDownSpeed;
     private Effects effects;
+    public Transform parent;
     private void Start()
     {
-        effects = GetComponent<Effects>();
+        effects = parent.GetComponent<Effects>();
     }
     private void Update()
     {

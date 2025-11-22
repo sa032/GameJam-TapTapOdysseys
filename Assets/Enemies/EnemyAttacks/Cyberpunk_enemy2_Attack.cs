@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Steampunk_enemy1_Attack : MonoBehaviour
+public class Cyberpunk_enemy2_Attack : MonoBehaviour
 {
     public float damage;
     public GameObject warning;
@@ -21,23 +21,28 @@ public class Steampunk_enemy1_Attack : MonoBehaviour
     public IEnumerator BaseAttackCoroutine()
     {
         Instantiate(warning, warningPos.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
+        Instantiate(warning, warningPos.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.3f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
         StartCoroutine(SingleAttackCoroutine(false));
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
+        StartCoroutine(SingleAttackCoroutine(false));
+        yield return new WaitForSeconds(0.3f);
         yield return StartCoroutine(SingleAttackCoroutine(true));
         
     }
     private IEnumerator SingleAttackCoroutine(bool stunAfterParry)
     {
         Health player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        Effects playerEffects = GameObject.FindGameObjectWithTag("Player").GetComponent<Effects>();
         if (GlobalValues.parrying)
         {
             GlobalValues.parried = true;
             if (stunAfterParry)
             {
-                yield return new WaitForSeconds(5);
+                yield return new WaitForSeconds(9);
             }
         }
         else
