@@ -3,25 +3,28 @@ using System.Collections.Generic;
 
 public class EnemyManager : MonoBehaviour
 {
+    public static EnemyManager instance;
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject[] enemiesToSpawn;
+    public Transform ObjectContainer;
     private void Start()
     {
-        SpawnEnemies();
+        instance = this;
+        //SpawnEnemies();
     }
     private void Update()
     {
         CleanList();
     }
-    public void SpawnEnemies()
+    public void SpawnEnemies(List<GameObject> Enemies)
     {
         float startX = transform.position.x; // starting x position
         float y = 0f;      // fixed y position
         float z = 0f;      // fixed z position
 
-        for (int i = 0; i < enemiesToSpawn.Length; i++)
+        for (int i = 0; i < Enemies.Count; i++)
         {
-            GameObject enemyPrefab = enemiesToSpawn[i];
+            GameObject enemyPrefab = Enemies[i];
             if (enemyPrefab != null)
             {
                 // Calculate position for this enemy
@@ -29,6 +32,7 @@ public class EnemyManager : MonoBehaviour
 
                 // Instantiate enemy
                 GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+                newEnemy.transform.parent = ObjectContainer;
 
                 // Add to list
                 enemies.Add(newEnemy);

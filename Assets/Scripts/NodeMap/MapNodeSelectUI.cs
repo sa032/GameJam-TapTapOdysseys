@@ -48,10 +48,12 @@ namespace Map
             int newLevel = LevelManager.instance.predictedLevel;
             int Dif_level = newLevel - PreviousLevel;
             LevelManager.instance.Dif_level = Dif_level;
+            
         }
         public void GetNextNodeUI()
         {
             MapConfig config = mapManager.config;
+            PreviousLevel = LevelManager.instance.predictedLevel;
             MagicCardManager.instance.BorderDB();
             if(LevelManager.instance.Dif_level == 0){
                 if(mapManager.CurrentMap.path.Count < config.FloorLayers[mapManager.CurrentFloor].layers.Count){

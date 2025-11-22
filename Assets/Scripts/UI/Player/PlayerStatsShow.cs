@@ -32,5 +32,9 @@ public class PlayerStatsShow : MonoBehaviour
         Kill.text = "Kill " + buff.Kill;
         ManaSlider.value = MagicManager.instance.currentMana/100;
         ManaText.text = "Mana "+MagicManager.instance.currentMana+"/"+100;
+
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        Player.GetComponent<Health>().isBlock = ParryMode.instance.inParryMode;
+        Player.GetComponent<Health>().Defense = buff.DefenseBuffFlat;
     }
 }

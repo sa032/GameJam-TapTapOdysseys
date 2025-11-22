@@ -1,10 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 public class Health : MonoBehaviour
 {
     public float maxHealth;
     public float health;
+    public float Defense;
+    public bool isBlock;
+    public float LevelGain;
     public Animator anim;
     public string hurt;
     public string idle;
@@ -13,12 +17,23 @@ public class Health : MonoBehaviour
         health = Mathf.Clamp(health, 0, maxHealth);
         if (health <= 0)
         {
-            Destroy(gameObject);
+            if (this.gameObject.tag == "Enemy")
+            {
+                BuffContainData.instance.Kill +=1;
+                LevelManager.instance.AddExp(LevelGain);
+                Destroy(gameObject);
+            }
+            
         }
     }
     public void damage(float damageAmount)
     {
-        health -= damageAmount;
+        float dmg_reduction = 0;
+        if(isBlock == true) dmg_reduction = 50;
+        float dmgCal1 = damageAmount-Defense;
+        float damageCalculate = dmgCal1-(dmgCal1*(dmg_reduction/100));
+        if(damageCalculate <= 0) damageCalculate = 0;
+        health -= damageCalculate;
         StartCoroutine(Shake(5));
         Debug.Log(damageAmount);
     }
