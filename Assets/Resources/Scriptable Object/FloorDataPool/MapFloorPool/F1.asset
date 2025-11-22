@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloorDataPool
   EnemyPrefab:
   - {fileID: 2003917188112409451, guid: dcb04a4245715ee43a53b5a6220c3e86, type: 3}
-  EliteEnemyPrefab: []
+  EliteEnemyPrefab:
+  - {fileID: 7965060501521148882, guid: 1013a88541edda046ab96041dacc65f4, type: 3}
   BossPrefab: []
+  encounters:
+  - {fileID: 11400000, guid: 07e596e382b3e8f43b511e8a57a06063, type: 2}

@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 021175e103d57604f919f9bdd14e1633, type: 3}
-  m_Name: New Encounter
+  m_Name: Y2kNPC
   m_EditorClassIdentifier: Assembly-CSharp::Encounter
-  test:
-    m_PersistentCalls:
-      m_Calls: []
+  dialouge: Yo! bro need help?
+  imageNPC: {fileID: -2256948484998397059, guid: f897598e9d0f7384d9f64fcc2fffeb99, type: 3}
+  type: 1
+  amount: 0

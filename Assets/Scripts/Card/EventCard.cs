@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Map;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EventCard : MonoBehaviour
 {
@@ -16,6 +19,7 @@ public class EventCard : MonoBehaviour
     public GameObject VFXItemCollect;
     public GameObject ChestPrefab;
     public GameObject TreasureUI;
+    public GameObject NPCEncounterUI;
     [Header("Value")]
     public bool isEnterEnemyNode;
     float timer = 0.5f;
@@ -56,7 +60,23 @@ public class EventCard : MonoBehaviour
                 
                 TreasureEvent(timer+0.1f,3);
                 break;
+            case NodeType.Encounter :
+                EncounterNPC();
+                break;
+            case NodeType.Rest :
+                StartCoroutine(RestAnimation());
+                break;
         }
+    }
+    public ParticleSystem Healing;
+    IEnumerator RestAnimation()
+    {
+        SoundManager.instance.PlaySoundSFX("Healing");
+        Healing.Play();
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        Player.GetComponent<Health>().health = Player.GetComponent<Health>().maxHealth; 
+        yield return new WaitForSeconds(1f);
+        MapNodeSelectUI.instance.GetNextNodeUI();
     }
     IEnumerator EnemyReward()
     {
@@ -137,6 +157,59 @@ public class EventCard : MonoBehaviour
         }
         EnemyManager.instance.SpawnEnemies(EnemyToClone);
     }
+    public GameObject BorderUI2;
+    void EncounterNPC()
+    {
+        TimeBarDatasets.TimedEventDataset events = TimeBarManager.instance.currentDataset.datasets[2];
+        MapManager map = MapManager.Instance;
+        FloorDataPool data = map.FloorDataConfig.FloorData[map.CurrentFloor];
+        int randomEncounter = Random.Range(0,data.encounters.Count);
+        Encounter encounter = data.encounters[randomEncounter];
+        NPCEncounterUI.SetActive(true);
+        NPCEncounterUI.GetComponent<Image>().sprite = encounter.imageNPC;
+        BorderUI2.SetActive(true);
+        TextMeshProUGUI text = NPCEncounterUI.transform.Find("ChatBubble").Find("Text").GetComponent<TextMeshProUGUI>();
+        text.text = encounter.dialouge;
+        events.elements[1].minTime = 0;
+        events.elements[1].maxTime = 50;
+
+        events.elements[2].minTime = 50;
+        events.elements[2].maxTime = 100;
+
+        events.elements[0].minTime = 0;
+        events.elements[0].maxTime = 0;
+
+        
+        MapNodeSelectUI.instance.Card1.GetComponent<CardContainData>().state = CardState.EncounterChoice;
+        MapNodeSelectUI.instance.Card1.GetComponent<CardContainData>().encounterType = EncounterType.None;
+        
+        MapNodeSelectUI.instance.Card2.GetComponent<CardContainData>().state = CardState.EncounterChoice;
+        MapNodeSelectUI.instance.Card2.GetComponent<CardContainData>().encounterType = EncounterType.Exp;
+        StartCoroutine(showcard());
+        SoundManager.instance.PlaySoundSFX("NPCEnter");
+        TimeBarManager.instance.SwitchDataset(2);
+
+    }
+    IEnumerator showcard()
+    {
+        yield return new WaitForSeconds(1f);
+        MapNodeSelectUI.instance.Card1.SetActive(true);
+        MapNodeSelectUI.instance.Card2.SetActive(true);
+    }
+    public void ExitEncounter()
+    {
+        BorderUI2.SetActive(false);
+        NPCEncounterUI.SetActive(false);
+        StartCoroutine(GonextNode());
+    }
+    IEnumerator GonextNode()
+    {
+        yield return new WaitForSeconds(1f);
+        GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
+        foreach(GameObject card in cards) card.SetActive(false);
+
+        MapNodeSelectUI.instance.GetNextNodeUI();
+    }
     IEnumerator TreasureAnimation(float delayTime)
     {
         yield return null;
@@ -167,7 +240,9 @@ public class EventCard : MonoBehaviour
             Destroy(VFXItemCollect_Clone,timer+0.1f);
         }
         if(ChestClone.Length > 0) ChestClone[CardAmount-1].GetComponent<Animator>().SetBool("Open",true);
+        SoundManager.instance.PlaySoundSFX("ChestOpen2");
         yield return new WaitForSeconds(delayTime);
+        SoundManager.instance.PlaySoundSFX("ChestOpen");
         MapNodeSelectUI.instance.TreasureUI();
         
     }

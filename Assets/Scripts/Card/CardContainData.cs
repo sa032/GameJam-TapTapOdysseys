@@ -25,6 +25,7 @@ public class CardContainData : MonoBehaviour
     public MagicBase MagicData;
     public CardState state;
     public GameObject VFXItemCollect;
+    public EncounterType encounterType;
     public GameObject InventoryItemUI;
     public static CardContainData instance;
     GameObject[] AllCards;
@@ -70,6 +71,19 @@ public class CardContainData : MonoBehaviour
                 if(this.gameObject.name == "Card3") index = 0;
                 
                 MagicCardManager.instance.SwicthMagic(index);
+                
+                Reset();
+                break;
+            case CardState.EncounterChoice:
+                if (encounterType == EncounterType.None)
+                {
+                    EventCard.Instance.ExitEncounter();
+                }
+                else if (encounterType == EncounterType.Exp)
+                {
+                    LevelManager.instance.AddExp(LevelManager.instance.expToNextLevel+1);
+                    EventCard.Instance.ExitEncounter();
+                }
                 
                 Reset();
                 break;
@@ -146,8 +160,23 @@ public class CardContainData : MonoBehaviour
             {
                 TypeOfMagicUI.color = new Color(1.000f, 0.098f, 0.310f, 1.000f);
             }
+        }else if (state == CardState.EncounterChoice)
+        {
+            CardContainer.gameObject.SetActive(true);
+            TextDescription.text = "";
+            if (encounterType == EncounterType.None)
+            {
+                TextTitle.text = "No";
+                image.sprite = No;
+            }else
+            {
+                TextTitle.text = "Yes";
+                image.sprite = Yes;
+            }
+            
         }
     }
+    public Sprite Yes,No;
     IEnumerator GetItem()
     {
         
