@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2e6881d17cc9e46965d96df8987731, type: 3}
-  m_Name: F2
+  m_Name: F3
   m_EditorClassIdentifier: Assembly-CSharp::FloorDataPool
   EnemyPrefab:
   - {fileID: 731588782997593316, guid: 81b2d792dc3dea1448effacd2e27bc5f, type: 3}
@@ -20,4 +20,4 @@ MonoBehaviour:
   BossPrefab:
   - {fileID: 7946928893400954836, guid: fe2dd4c622a5aa64da1e836dd70aaac2, type: 3}
   encounters:
-  - {fileID: 11400000, guid: f978606ad7756964da8fb4f52f58c007, type: 2}
+  - {fileID: 11400000, guid: 06c57b1e9e4bdbf4b9437bd9f6cb4e14, type: 2}

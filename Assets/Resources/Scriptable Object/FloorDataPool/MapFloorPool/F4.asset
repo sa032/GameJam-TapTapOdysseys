@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2e6881d17cc9e46965d96df8987731, type: 3}
-  m_Name: F2
+  m_Name: F4
   m_EditorClassIdentifier: Assembly-CSharp::FloorDataPool
   EnemyPrefab:
   - {fileID: 731588782997593316, guid: 81b2d792dc3dea1448effacd2e27bc5f, type: 3}

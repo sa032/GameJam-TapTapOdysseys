@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6178547703097035025}
   - component: {fileID: 4134789832378561864}
   m_Layer: 0
-  m_Name: Shield Of Hero
+  m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b448cb88d2e48ae459c06c6c241c4b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemDataContain
-  image: {fileID: -3983944188102630738, guid: 8f5b771590d07d24bb7e911055bddd88, type: 3}
-  Name: Shield Of Hero
-  Rarity: 3
-  description: +1.5 Defense
+  image: {fileID: 7482667652216324306, guid: c929cc2b6e5520e41a31828af5f6339a, type: 3}
+  Name: Block
+  Rarity: 0
+  description: +0.2 Defense
 --- !u!114 &4134789832378561864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +64,6 @@ MonoBehaviour:
   DamageBuffPercent: 0
   DamageBuffFlat: 0
   DefenseBuffPercent: 0
-  DefenseBuffFlat: 1.5
+  DefenseBuffFlat: 0.2
   HPBuffPercent: 0
   HPBuffFlat: 0

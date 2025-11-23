@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6178547703097035025}
   - component: {fileID: 4134789832378561864}
   m_Layer: 0
-  m_Name: Shield Of Hero
+  m_Name: Sword of Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b448cb88d2e48ae459c06c6c241c4b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemDataContain
-  image: {fileID: -3983944188102630738, guid: 8f5b771590d07d24bb7e911055bddd88, type: 3}
-  Name: Shield Of Hero
+  image: {fileID: 1239791830632635237, guid: edb486065f0ba884badc7dc2a8f95f24, type: 3}
+  Name: Sword of hero
   Rarity: 3
-  description: +1.5 Defense
+  description: +2 Damage +100% Damage
 --- !u!114 &4134789832378561864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,9 +61,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bdab942d681e94484e052b0e46562e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item_StatsBuff
-  DamageBuffPercent: 0
-  DamageBuffFlat: 0
+  DamageBuffPercent: 100
+  DamageBuffFlat: 2
   DefenseBuffPercent: 0
-  DefenseBuffFlat: 1.5
+  DefenseBuffFlat: 0
   HPBuffPercent: 0
   HPBuffFlat: 0

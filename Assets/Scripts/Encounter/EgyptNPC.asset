@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 021175e103d57604f919f9bdd14e1633, type: 3}
-  m_Name: Y2kNPC
+  m_Name: EgyptNPC
   m_EditorClassIdentifier: Assembly-CSharp::Encounter
-  dialouge: Yo! bro need help?
-  imageNPC: {fileID: 21300000, guid: f897598e9d0f7384d9f64fcc2fffeb99, type: 3}
+  dialouge: '*- I AM ROBOT ASSITANCE DO YOU NEED HELP? -*'
+  imageNPC: {fileID: 21300000, guid: eab78d8da06f0f84fbab2c73bcf125f9, type: 3}
   type: 1
   amount: 0
