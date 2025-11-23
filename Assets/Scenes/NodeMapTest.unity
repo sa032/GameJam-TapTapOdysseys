@@ -943,6 +943,7 @@ GameObject:
   - component: {fileID: 68094979}
   - component: {fileID: 68094978}
   - component: {fileID: 68094977}
+  - component: {fileID: 68094987}
   m_Layer: 5
   m_Name: TimeBarDatasets
   m_TagString: TimeBarDatasets
@@ -1371,6 +1372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicManager
   currentMana: 5
+  maxMana: 100
   magicSlots:
   - {fileID: 0}
   - {fileID: 0}
@@ -1407,6 +1409,7 @@ MonoBehaviour:
   SFX: {fileID: 68094978}
   BorderUI: {fileID: 2033363441}
   DefenseTextUI: {fileID: 800566026}
+  magicManager: {fileID: 68094982}
   volume: {fileID: 606664329}
 --- !u!114 &68094985
 MonoBehaviour:
@@ -1427,6 +1430,7 @@ MonoBehaviour:
   impulse: {fileID: 68094979}
   slash: {fileID: 8837877417409421276, guid: b130bd9ed9c9879428c08503ff15b229, type: 3}
   audioSource: {fileID: 68094977}
+  magicManager: {fileID: 68094982}
 --- !u!114 &68094986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,7 +1593,7 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
       color: {r: 0, g: 0, b: 0, a: 1}
-    - Name: 
+    - Name: 'Heal [Mana : 50]'
       isMagic: 0
       MagicIndex: 0
       minTime: 70
@@ -1597,19 +1601,19 @@ MonoBehaviour:
       eventTime:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 0}
-            m_TargetAssemblyTypeName: 
-            m_MethodName: 
-            m_Mode: 0
+          - m_Target: {fileID: 68094987}
+            m_TargetAssemblyTypeName: Heal, Assembly-CSharp
+            m_MethodName: heal
+            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: 
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-      color: {r: 0, g: 0, b: 0, a: 1}
+      color: {r: 0.21137585, g: 0.7132075, b: 0.19781414, a: 1}
   - elements:
     - Name: Select3
       isMagic: 0
@@ -1696,6 +1700,21 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
       color: {r: 0.6666667, g: 0.6666667, b: 0.9568628, a: 1}
+--- !u!114 &68094987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68094975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ffb31fb1d82404b9135c763207ea99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Heal
+  magicManager: {fileID: 68094982}
+  player: {fileID: 1191422021}
+  healVFX: {fileID: 1657814145}
 --- !u!1 &71179187
 GameObject:
   m_ObjectHideFlags: 0
@@ -23345,7 +23364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &951603299
 MonoBehaviour:
   m_ObjectHideFlags: 0

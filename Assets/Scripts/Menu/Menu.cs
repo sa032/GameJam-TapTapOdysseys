@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
     public ParticleSystem DimensionVFX;
     void Start()
     {
-        
+        TimeBarManager.instance.SwitchDataset(3);
     }
 
     // Update is called once per frame
@@ -29,6 +29,8 @@ public class Menu : MonoBehaviour
     bool isPlayingCutscene = false;
     public IEnumerator PlayMainMenu()
     {
+        TimeBarManager.instance.SwitchDataset(3);
+        yield return null;
         TimeBarManager.instance.SwitchDataset(0);
         
         isPlayingCutscene = true;

@@ -20,7 +20,7 @@ MonoBehaviour:
   Name: Defensive Stats
   Image: {fileID: 5523630204628833594, guid: 4fd7433d2ca875c4687354d0b6e34d60, type: 3}
   Rarity: 0
-  Description: +1 Damage
+  Description: +0.25 Damage
   MagicCard: {fileID: 0}
   duration: 5
   damage: 1
