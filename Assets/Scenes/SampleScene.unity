@@ -671,6 +671,7 @@ GameObject:
   - component: {fileID: 767466686}
   - component: {fileID: 767466688}
   - component: {fileID: 767466689}
+  - component: {fileID: 767466690}
   m_Layer: 5
   m_Name: TimeBarDatasets
   m_TagString: TimeBarDatasets
@@ -843,13 +844,13 @@ MonoBehaviour:
       eventTime:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 0}
-            m_TargetAssemblyTypeName: 
-            m_MethodName: 
-            m_Mode: 0
+          - m_Target: {fileID: 767466690}
+            m_TargetAssemblyTypeName: Heal, Assembly-CSharp
+            m_MethodName: heal
+            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: 
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -1066,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a15c6087141f5e4db7baf8e0de01a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicManager
-  currentMana: 0
+  currentMana: 50
   maxMana: 100
   magicSlots:
   - {fileID: 11400000, guid: ff17d4da325a07540be9d1ccbddf8180, type: 2}
@@ -1461,6 +1462,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &767466690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767466678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ffb31fb1d82404b9135c763207ea99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  magicManager: {fileID: 767466684}
+  player: {fileID: 1792695949}
 --- !u!1 &873069521
 GameObject:
   m_ObjectHideFlags: 0
