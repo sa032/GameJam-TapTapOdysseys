@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Sear
   manaCost: 0
   audioClip: {fileID: 8300000, guid: 768700e536909e247825030ee144c19f, type: 3}
+  magicParticles: {fileID: 8083267488726359564, guid: 93cb3a26e5aba99468283c3be2fbe31b, type: 3}
   MagicCard: {fileID: 0}
   duration: 3

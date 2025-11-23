@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Frostnova
   manaCost: 0
   audioClip: {fileID: 8300000, guid: e2962ca8531d6dc4ab70c4de0e795571, type: 3}
+  magicParticles: {fileID: 2651090604078100182, guid: dcee9e95bbd4f424bbfdfc435fe91551, type: 3}
   MagicCard: {fileID: 0}
   duration: 5

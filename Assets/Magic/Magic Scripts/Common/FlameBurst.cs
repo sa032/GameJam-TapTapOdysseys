@@ -12,6 +12,7 @@ public class FlameBurst : MagicBase
         if (enemy != null)
         {
             Effects enemyEffects = enemy.GetComponent<Effects>();
+            Instantiate(magicParticles, enemy.transform.position, Quaternion.identity);
             if (enemyEffects.burning)
             {
                 Health health = enemy.GetComponent<Health>();

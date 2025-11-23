@@ -7,6 +7,7 @@ public class Cyberpunk_enemy3_Attack1 : MonoBehaviour
     public GameObject warning;
     public Transform warningPos;
     public Transform parentCooldown;
+    public Animator animator;
     public void Attack()
     {
         StartCoroutine(AttackCoroutine());
@@ -22,7 +23,10 @@ public class Cyberpunk_enemy3_Attack1 : MonoBehaviour
     {
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("DogAttack");
         yield return StartCoroutine(SingleAttackCoroutine(true));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("DogIdle");
         
     }
     private IEnumerator SingleAttackCoroutine(bool stunAfterParry)

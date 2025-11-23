@@ -21,4 +21,4 @@ MonoBehaviour:
   Rarity: 0
   Description: inflict Fragile | Single
   MagicCard: {fileID: 0}
-  duration: 0
+  duration: 5

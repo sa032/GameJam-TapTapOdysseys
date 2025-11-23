@@ -9,6 +9,8 @@ public class Blizzard : MagicBase
     public int duration;
     public void blizzardAttack()
     {
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+        Instantiate(magicParticles, player.transform.position, Quaternion.identity);
         EnemyManager enemyManager = GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>();
         List<GameObject> enemies = enemyManager.GetAllEnemies();
         AudioSource.PlayClipAtPoint(audioClip, enemyManager.transform.position);
