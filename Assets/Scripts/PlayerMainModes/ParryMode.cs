@@ -17,6 +17,7 @@ public class ParryMode : MonoBehaviour
     public CinemachineImpulseSource impulse;
     public AudioSource SFX;
     public GameObject BorderUI,DefenseTextUI;
+    public MagicManager magicManager;
 
     public Volume volume;
     private Vignette vignette;
@@ -48,6 +49,7 @@ public class ParryMode : MonoBehaviour
             vignette.intensity.value = 0.5f;
             GlobalValues.parrying = false;
             GlobalValues.parried = false;
+            magicManager.currentMana += 20;
             SFX.Play();
             if (parryCoroutine != null)
             {

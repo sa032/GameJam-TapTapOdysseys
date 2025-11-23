@@ -4,10 +4,15 @@ public class MagicManager : MonoBehaviour
 {
     public float currentMana;
     public static MagicManager instance; 
+    public float maxMana;
     public MagicBase[] magicSlots = new MagicBase[3];
     void Start()
     {
         instance = this;
+    }
+    private void Update()
+    {
+        currentMana = Mathf.Clamp(currentMana, 0, maxMana);
     }
     public void CastCurrentMagic(int slot)
     {

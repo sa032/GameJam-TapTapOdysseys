@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     public CinemachineImpulseSource impulse;
     public GameObject slash;
     public AudioSource audioSource;
+    public MagicManager magicManager;
     private void Start()
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
@@ -34,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 BuffContainData buff = BuffContainData.instance;
                 float damageBuffCalculate = damage;
+                magicManager.currentMana += 5;
                 health.damage(damageBuffCalculate);
                 Instantiate(slash, enemy.transform.position, Quaternion.identity);
             }
