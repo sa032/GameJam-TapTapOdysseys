@@ -1066,9 +1066,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MagicManager
   currentMana: 5
   magicSlots:
-  - {fileID: 11400000, guid: 6ba9fc8b2a8f811408b4dc3ed3057321, type: 2}
-  - {fileID: 11400000, guid: 4dff6915678f9784e8a085cf266c972a, type: 2}
   - {fileID: 11400000, guid: ff17d4da325a07540be9d1ccbddf8180, type: 2}
+  - {fileID: 11400000, guid: e652237bcaa53db4fa6cda14e285b47c, type: 2}
+  - {fileID: 11400000, guid: afe68f62089d35b4191c1f6b9e22d97d, type: 2}
 --- !u!114 &767466685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2632,7 +2632,7 @@ PrefabInstance:
     - target: {fileID: 4280913727174844639, guid: a20e73f1ef26b704c8343faf2ce9f145, type: 3}
       propertyPath: 'enemiesToSpawn.Array.data[0]'
       value: 
-      objectReference: {fileID: 7965060501521148882, guid: 1013a88541edda046ab96041dacc65f4, type: 3}
+      objectReference: {fileID: 7908432637282672443, guid: 8db525d88f4f01a4d968715cae40aa52, type: 3}
     - target: {fileID: 4280913727174844639, guid: a20e73f1ef26b704c8343faf2ce9f145, type: 3}
       propertyPath: 'enemiesToSpawn.Array.data[1]'
       value: 

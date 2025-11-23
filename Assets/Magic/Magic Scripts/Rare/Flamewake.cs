@@ -11,7 +11,8 @@ public class Flamewake : MagicBase
     public override void Cast()
     {
         bool oneBurning = false;
-
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+        Instantiate(magicParticles, player.transform.position, Quaternion.identity);
         EnemyManager enemyManager = GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>();
         List<GameObject> enemies = enemyManager.GetAllEnemies();
         foreach (GameObject enemy in enemies)

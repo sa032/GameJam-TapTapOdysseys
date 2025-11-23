@@ -12,6 +12,7 @@ public class Chill : MagicBase
         if (enemy != null)
         {
             Effects enemyEffects = enemy.GetComponent<Effects>();
+            Instantiate(magicParticles, enemy.transform.position, Quaternion.identity);
             enemyEffects.ColdInflict(duration);
             AudioSource.PlayClipAtPoint(audioClip, enemy.transform.position);
         }

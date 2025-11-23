@@ -7,6 +7,7 @@ public class Steampunk_enemy3_Attack : MonoBehaviour
     public GameObject warning;
     public Transform warningPos;
     public Transform parentCooldown;
+    public Animator animator;
     public void Attack()
     {
         StartCoroutine(AttackCoroutine());
@@ -22,7 +23,10 @@ public class Steampunk_enemy3_Attack : MonoBehaviour
     {
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("DesertSamuraiAttack");
         yield return StartCoroutine(SingleAttackCoroutine(true));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("DesertSamuraiIdle");
         
     }
     private IEnumerator SingleAttackCoroutine(bool stunAfterParry)

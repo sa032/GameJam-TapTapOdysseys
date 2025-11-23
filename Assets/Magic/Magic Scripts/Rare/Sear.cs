@@ -16,6 +16,8 @@ public class Sear : MagicBase
         {
             if (enemy != null)
             {
+                Vector3 particlePos = new Vector3(enemy.transform.position.x,enemy.transform.position.y + 5,enemy.transform.position.z);
+                Instantiate(magicParticles, particlePos, Quaternion.identity);
                 Effects enemyEffects = enemy.GetComponent<Effects>();
                 if (enemyEffects.burning)
                 {

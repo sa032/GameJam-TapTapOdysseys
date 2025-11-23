@@ -16,6 +16,7 @@ public class Frostbite : MagicBase
         {
             if (enemy != null)
             {
+                Instantiate(magicParticles, enemy.transform.position, Quaternion.identity);
                 Effects enemyEffects = enemy.GetComponent<Effects>();
                 if (enemyEffects.cold)
                 {

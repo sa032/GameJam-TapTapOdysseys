@@ -7,6 +7,7 @@ public class Steampunk_enemy1_Attack : MonoBehaviour
     public GameObject warning;
     public Transform warningPos;
     public Transform parentCooldown;
+    public Animator animator;
     public void Attack()
     {
         StartCoroutine(AttackCoroutine());
@@ -24,9 +25,15 @@ public class Steampunk_enemy1_Attack : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("DesertSpiderAttack");
         StartCoroutine(SingleAttackCoroutine(false));
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("DesertSpiderIdle");
+        yield return new WaitForSeconds(0.3f);
+        animator.Play("DesertSpiderAttack");
         yield return StartCoroutine(SingleAttackCoroutine(true));
+        yield return new WaitForSeconds(0.3f);
+        animator.Play("DesertSpiderIdle");
         
     }
     private IEnumerator SingleAttackCoroutine(bool stunAfterParry)

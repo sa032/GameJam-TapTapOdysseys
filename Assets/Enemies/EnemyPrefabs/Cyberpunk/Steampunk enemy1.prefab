@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 2088797519527229379}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -1.58, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -161,7 +161,7 @@ Transform:
   m_GameObject: {fileID: 3463211482855596477}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0.8, z: 0}
+  m_LocalPosition: {x: -0.75, y: 1.52, z: 0}
   m_LocalScale: {x: 1.5, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -252,7 +252,7 @@ Transform:
   m_GameObject: {fileID: 8160670324345102572}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0.8, z: 0}
+  m_LocalPosition: {x: -0.75, y: 1.5199997, z: 0}
   m_LocalScale: {x: 1.5, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 172993527489623960}
   - component: {fileID: 1677769057473908340}
   - component: {fileID: 4308384042865560995}
+  - component: {fileID: 3897320993694603859}
   m_Layer: 0
   m_Name: Steampunk enemy1
   m_TagString: Enemy
@@ -419,7 +420,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 6186289864497035961, guid: 31ec4c4a08724544ea9e1e647e23c6ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -471,8 +472,8 @@ MonoBehaviour:
   weakRemaining: 0
   burnParticles: {fileID: 0}
   coldParticles: {fileID: 0}
-  freezeParticles: {fileID: 0}
-  fragileParticles: {fileID: 0}
+  freezeSprite: {fileID: 0}
+  fragileSprite: {fileID: 0}
   weakParticles: {fileID: 0}
 --- !u!114 &1677769057473908340
 MonoBehaviour:
@@ -521,6 +522,29 @@ MonoBehaviour:
   warning: {fileID: 8449481324884985313, guid: 1201ac3f95b48354e9f8740b1af2f30f, type: 3}
   warningPos: {fileID: 3851794006879616233}
   parentCooldown: {fileID: 7017946598449298004}
+  animator: {fileID: 3897320993694603859}
+--- !u!95 &3897320993694603859
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300904625300859974}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ab3557b09db90a419f18b94342471f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1055927937885150852
 PrefabInstance:
   m_ObjectHideFlags: 0

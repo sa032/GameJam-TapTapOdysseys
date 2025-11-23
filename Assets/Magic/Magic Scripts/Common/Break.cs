@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Break", menuName = "Magic/Common/Break")]
@@ -12,6 +13,7 @@ public class Break : MagicBase
         if (enemy != null)
         {
             Effects enemyEffects = enemy.GetComponent<Effects>();
+            Instantiate(magicParticles, enemy.transform.position, Quaternion.identity);
             enemyEffects.FragileInflict(duration);
             AudioSource.PlayClipAtPoint(audioClip, enemy.transform.position);
         }

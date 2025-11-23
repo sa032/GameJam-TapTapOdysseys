@@ -19,6 +19,7 @@ public class Frostnova : MagicBase
                 Effects enemyEffects = enemy.GetComponent<Effects>();
                 if (enemyEffects.frozen)
                 {
+                    Instantiate(magicParticles, enemy.transform.position, Quaternion.identity);
                     enemyEffects.WeakInflict(duration);
                     enemyEffects.FragileInflict(duration);
                     enemyEffects.FreezeStop();
