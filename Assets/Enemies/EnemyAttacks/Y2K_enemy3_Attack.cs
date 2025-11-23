@@ -7,6 +7,7 @@ public class Y2K_enemy3_Attack : MonoBehaviour
     public GameObject warning;
     public Transform warningPos;
     public Transform parentCooldown;
+    public Animator animator;
     public void Attack()
     {
         StartCoroutine(AttackCoroutine());
@@ -24,6 +25,7 @@ public class Y2K_enemy3_Attack : MonoBehaviour
         Effects playerEffects = GameObject.FindGameObjectWithTag("Player").GetComponent<Effects>();
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("Y2KSilAttack");
         if (GlobalValues.parrying)
         {
             GlobalValues.parried = true;
@@ -34,5 +36,7 @@ public class Y2K_enemy3_Attack : MonoBehaviour
             player.damage(damage);
             playerEffects.ColdInflict(4);
         }
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("Y2KSilIdle");
     }
 }

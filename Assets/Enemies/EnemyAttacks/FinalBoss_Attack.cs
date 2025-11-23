@@ -10,6 +10,7 @@ public class FinalBoss_Attack : MonoBehaviour
     public GameObject warning;
     public Transform warningPos;
     public Transform parentCooldown;
+    public Animator animator;
     private int index = 1;
     public void Attack()
     {
@@ -59,6 +60,7 @@ public class FinalBoss_Attack : MonoBehaviour
     }
     public IEnumerator BaseAttackCoroutine1()
     {
+        animator.Play("FinalBossWindup1");
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.3f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
@@ -70,14 +72,28 @@ public class FinalBoss_Attack : MonoBehaviour
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
         StartCoroutine(SingleAttackCoroutine1(false));
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("FinalBossWindup1");
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("FinalBossAttack1");
         StartCoroutine(SingleAttackCoroutine1(false));
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("FinalBossWindup1");
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("FinalBossAttack1");
         StartCoroutine(SingleAttackCoroutine1(false));
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("FinalBossWindup1");
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("FinalBossAttack1");
         StartCoroutine(SingleAttackCoroutine1(false));
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("FinalBossWindup1");
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("FinalBossAttack1");
         yield return StartCoroutine(SingleAttackCoroutine1(true));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("FinalBossIdle");
     }
     private IEnumerator SingleAttackCoroutine1(bool stunAfterParry)
     {
@@ -98,9 +114,13 @@ public class FinalBoss_Attack : MonoBehaviour
     }
     public IEnumerator BaseAttackCoroutine2()
     {
+        animator.Play("FinalBossWindup2");
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("FinalBossAttack2");
         yield return StartCoroutine(SingleAttackCoroutine2(true));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("FinalBossIdle");
     }
     private IEnumerator SingleAttackCoroutine2(bool stunAfterParry)
     {
@@ -123,21 +143,32 @@ public class FinalBoss_Attack : MonoBehaviour
     }
     public IEnumerator BaseAttackCoroutine3()
     {
+        animator.Play("FinalBossWindup2");
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("FinalBossAttack2");
         StartCoroutine(SingleAttackCoroutine3(false, false));
         yield return new WaitForSeconds(0.2f);
+        animator.Play("FinalBossWindup2");
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("FinalBossAttack2");
         StartCoroutine(SingleAttackCoroutine3(false, false));
         yield return new WaitForSeconds(0.2f);
+        animator.Play("FinalBossWindup2");
         Instantiate(warning, warningPos.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("FinalBossAttack3");
         StartCoroutine(SingleAttackCoroutine3(false, false));
         yield return new WaitForSeconds(0.2f);
+        animator.Play("FinalBossWindup2");
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("FinalBossAttack3");
         yield return StartCoroutine(SingleAttackCoroutine3(true, true));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("FinalBossIdle");
     }
     private IEnumerator SingleAttackCoroutine3(bool stunAfterParry, bool burn)
     {
@@ -162,10 +193,14 @@ public class FinalBoss_Attack : MonoBehaviour
     }
     public IEnumerator BaseAttackCoroutine4()
     {
+        animator.Play("FinalBossWindup1");
         yield return new WaitForSeconds(2);
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("FinalBossAttack3");
         yield return StartCoroutine(SingleAttackCoroutine4(true));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("FinalBossIdle");
     }
     private IEnumerator SingleAttackCoroutine4(bool stunAfterParry)
     {
