@@ -1020,6 +1020,7 @@ MonoBehaviour:
   parryPos: {fileID: 983302391}
   impulse: {fileID: 767466685}
   SFX: {fileID: 767466688}
+  magicManager: {fileID: 767466684}
   volume: {fileID: 213130500}
 --- !u!114 &767466682
 MonoBehaviour:
@@ -1040,6 +1041,7 @@ MonoBehaviour:
   impulse: {fileID: 767466686}
   slash: {fileID: 8837877417409421276, guid: b130bd9ed9c9879428c08503ff15b229, type: 3}
   audioSource: {fileID: 767466689}
+  magicManager: {fileID: 767466684}
 --- !u!114 &767466683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,7 +1066,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a15c6087141f5e4db7baf8e0de01a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MagicManager
-  currentMana: 5
+  currentMana: 0
+  maxMana: 100
   magicSlots:
   - {fileID: 11400000, guid: ff17d4da325a07540be9d1ccbddf8180, type: 2}
   - {fileID: 11400000, guid: e652237bcaa53db4fa6cda14e285b47c, type: 2}

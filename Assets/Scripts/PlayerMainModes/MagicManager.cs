@@ -3,7 +3,12 @@ using UnityEngine;
 public class MagicManager : MonoBehaviour
 {
     public float currentMana;
+    public float maxMana;
     public MagicBase[] magicSlots = new MagicBase[3];
+    private void Update()
+    {
+        currentMana = Mathf.Clamp(currentMana, 0, maxMana);
+    }
     public void CastCurrentMagic(int slot)
     {
         if (magicSlots[slot] == null)
