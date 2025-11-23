@@ -363,7 +363,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.01524, y: 2.96232, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 514148743965278556}
@@ -443,11 +443,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f187f33c9551e1d40a2dc7c649ba4fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 10
-  health: 10
+  maxHealth: 175
+  health: 175
+  Defense: 0
+  isBlock: 0
+  LevelGain: 450
   anim: {fileID: 0}
   hurt: 
   idle: 
+  Gameover: {fileID: 0}
 --- !u!114 &172993527489623960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166363000698a0c4c8ea726ced8b1295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Steampunk_enemy1_Attack
-  damage: 2
+  damage: 8
   warning: {fileID: 8449481324884985313, guid: 1201ac3f95b48354e9f8740b1af2f30f, type: 3}
   warningPos: {fileID: 3851794006879616233}
   parentCooldown: {fileID: 7017946598449298004}

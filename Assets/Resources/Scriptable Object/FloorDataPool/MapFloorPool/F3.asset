@@ -18,6 +18,6 @@ MonoBehaviour:
   EliteEnemyPrefab:
   - {fileID: 7946928893400954836, guid: fe2dd4c622a5aa64da1e836dd70aaac2, type: 3}
   BossPrefab:
-  - {fileID: 7946928893400954836, guid: fe2dd4c622a5aa64da1e836dd70aaac2, type: 3}
+  - {fileID: 5544128748225764397, guid: f619274c5c253e64ab9963b2a30aecc5, type: 3}
   encounters:
   - {fileID: 11400000, guid: 06c57b1e9e4bdbf4b9437bd9f6cb4e14, type: 2}

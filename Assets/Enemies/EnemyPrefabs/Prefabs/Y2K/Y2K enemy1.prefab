@@ -332,7 +332,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.28497, y: 1.28124, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2799038508128955330}
@@ -416,10 +416,11 @@ MonoBehaviour:
   health: 25
   Defense: 0
   isBlock: 0
-  LevelGain: 350
+  LevelGain: 110
   anim: {fileID: 0}
   hurt: 
   idle: 
+  Gameover: {fileID: 0}
 --- !u!114 &6445961567309150916
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -35,11 +35,12 @@ public class Health : MonoBehaviour
     {
         float dmg_reduction = 0;
         if(isBlock == true) dmg_reduction = 50;
+        
         float dmgCal1 = damageAmount-Defense;
         if(this.gameObject.tag == "Enemy")
         {
             BuffContainData buff = BuffContainData.instance;
-            dmgCal1 = (dmgCal1+buff.DamageBuffFlat)+(1+buff.DamageBuffPercent/100);
+            dmgCal1 = (1+buff.DamageBuffFlat)*(1+buff.DamageBuffPercent/100);
         }
         
         float damageCalculate = dmgCal1-(dmgCal1*(dmg_reduction/100));

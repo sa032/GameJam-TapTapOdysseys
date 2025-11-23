@@ -531,7 +531,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.69796, y: 0.71297, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2480805516969867903}
@@ -612,11 +612,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f187f33c9551e1d40a2dc7c649ba4fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 10
-  health: 10
+  maxHealth: 300
+  health: 300
+  Defense: 0
+  isBlock: 0
+  LevelGain: 600
   anim: {fileID: 0}
   hurt: 
   idle: 
+  Gameover: {fileID: 0}
 --- !u!114 &3161341512951039975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e32f90b2997c33d40b6bfe60d28ae26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cyberpunk_enemy3_Attack1
-  damage: 1
+  damage: 10
   warning: {fileID: 8449481324884985313, guid: 1201ac3f95b48354e9f8740b1af2f30f, type: 3}
   warningPos: {fileID: 5258279467124852106}
   parentCooldown: {fileID: 2480805516969867903}
@@ -673,7 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b54f1591040dc44a6977132b2a03c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cyberpunk_enemy3_Attack2
-  damage: 1
+  damage: 10
   warning: {fileID: 8449481324884985313, guid: 1201ac3f95b48354e9f8740b1af2f30f, type: 3}
   warningPos: {fileID: 5258279467124852106}
   parentCooldown: {fileID: 28810318003668348}

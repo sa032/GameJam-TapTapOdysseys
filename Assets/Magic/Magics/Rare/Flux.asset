@@ -15,5 +15,11 @@ MonoBehaviour:
   manaCost: 0
   audioClip: {fileID: 8300000, guid: 2adf967d24cc81a4aae3ae599640227c, type: 3}
   magicParticles: {fileID: 5741882353194293545, guid: eb469d97a417165419f34b177b268c8f, type: 3}
+  magicType: 0
+  PassivePrefab: {fileID: 0}
+  Name: Flux
+  Image: {fileID: 21300000, guid: b5b4167c8d8a7df47b8a184972fe4152, type: 3}
+  Rarity: 1
+  Description: extend the duration of all status effects
   MagicCard: {fileID: 0}
   timeAdd: 3

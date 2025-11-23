@@ -15,5 +15,12 @@ MonoBehaviour:
   manaCost: 0
   audioClip: {fileID: 8300000, guid: e2962ca8531d6dc4ab70c4de0e795571, type: 3}
   magicParticles: {fileID: 2651090604078100182, guid: dcee9e95bbd4f424bbfdfc435fe91551, type: 3}
+  magicType: 0
+  PassivePrefab: {fileID: 0}
+  Name: Frostnova
+  Image: {fileID: 21300000, guid: 41caefe4783ca6640a0655fdcf146b1d, type: 3}
+  Rarity: 1
+  Description: inflict all Frozen enemies with Weak and Fragile and remove Frozen
+    effect | AOE
   MagicCard: {fileID: 0}
   duration: 5

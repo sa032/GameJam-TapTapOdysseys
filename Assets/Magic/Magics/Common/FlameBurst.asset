@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlameBurst
   manaCost: 0
   audioClip: {fileID: 8300000, guid: 1d0663ad4ee243e499070dd0c2adda9a, type: 3}
+  magicParticles: {fileID: 7068610157000891834, guid: 1a6eecbe8ae82a943848116f546314a8, type: 3}
   magicType: 0
   PassivePrefab: {fileID: 0}
   Name: Flame Burst

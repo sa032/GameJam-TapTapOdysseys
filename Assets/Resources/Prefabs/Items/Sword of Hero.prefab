@@ -48,7 +48,7 @@ MonoBehaviour:
   image: {fileID: 1239791830632635237, guid: edb486065f0ba884badc7dc2a8f95f24, type: 3}
   Name: Sword of hero
   Rarity: 3
-  description: +2 Damage +100% Damage
+  description: +2.5 Damage +75% Damage
 --- !u!114 &4134789832378561864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,8 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bdab942d681e94484e052b0e46562e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item_StatsBuff
-  DamageBuffPercent: 100
-  DamageBuffFlat: 2
+  DamageBuffPercent: 75
+  DamageBuffFlat: 2.5
   DefenseBuffPercent: 0
   DefenseBuffFlat: 0
   HPBuffPercent: 0

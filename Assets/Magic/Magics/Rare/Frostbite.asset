@@ -15,5 +15,11 @@ MonoBehaviour:
   manaCost: 0
   audioClip: {fileID: 8300000, guid: 91781035ac276f940a71944ae9192cd5, type: 3}
   magicParticles: {fileID: 4914184830023741936, guid: 8711eebf8facc054bad9ed4d62c3238c, type: 3}
+  magicType: 0
+  PassivePrefab: {fileID: 0}
+  Name: Frostbite
+  Image: {fileID: 21300000, guid: 4b8a9e221c7012e4aa2e27e5e075152c, type: 3}
+  Rarity: 1
+  Description: inflict all Cold enemies with Weak | AOE
   MagicCard: {fileID: 0}
   duration: 5

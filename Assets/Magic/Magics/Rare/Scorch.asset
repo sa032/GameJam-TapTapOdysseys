@@ -15,5 +15,12 @@ MonoBehaviour:
   manaCost: 0
   audioClip: {fileID: 8300000, guid: 768700e536909e247825030ee144c19f, type: 3}
   magicParticles: {fileID: 5687938747267756334, guid: 3323e0c43e9d4fb4d88f1b57481cdbfe, type: 3}
+  magicType: 0
+  PassivePrefab: {fileID: 0}
+  Name: Scorch
+  Image: {fileID: 21300000, guid: bf7e1dcc3ea91084db1a9b619fe632ae, type: 3}
+  Rarity: 1
+  Description: Consume all stacks(ticks) of burn to deal damage(depends on burn damage
+    and stacks)
   MagicCard: {fileID: 0}
   baseDamage: 2

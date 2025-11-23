@@ -15,5 +15,11 @@ MonoBehaviour:
   manaCost: 0
   audioClip: {fileID: 8300000, guid: e8c99a36eac0470429668ed5d99f61ba, type: 3}
   magicParticles: {fileID: 4714940945269416353, guid: 3b8a163779e31bb419d2e7326174d13a, type: 3}
+  magicType: 0
+  PassivePrefab: {fileID: 0}
+  Name: Blizzard
+  Image: {fileID: 21300000, guid: 52a0be7dd5bdd73479a156643ad7f46c, type: 3}
+  Rarity: 1
+  Description: next attack after activating inflicts Cold | AOE
   MagicCard: {fileID: 0}
   duration: 5

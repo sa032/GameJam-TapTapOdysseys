@@ -48,7 +48,7 @@ MonoBehaviour:
   image: {fileID: -6454969007074664543, guid: 013ce59842d9c55419209c6f6a5817ed, type: 3}
   Name: Shuriken
   Rarity: 2
-  description: +1 Damage
+  description: +2.5 Damage
 --- !u!114 &4134789832378561864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item_StatsBuff
   DamageBuffPercent: 0
-  DamageBuffFlat: 1
+  DamageBuffFlat: 2.5
   DefenseBuffPercent: 0
   DefenseBuffFlat: 0
   HPBuffPercent: 0

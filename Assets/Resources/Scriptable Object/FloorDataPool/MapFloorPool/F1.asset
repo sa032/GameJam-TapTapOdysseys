@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: F1
   m_EditorClassIdentifier: Assembly-CSharp::FloorDataPool
   EnemyPrefab:
-  - {fileID: 830809691760821944, guid: 7f6703249c022ad4abc99ab5073fa747, type: 3}
-  - {fileID: 2346981638277858310, guid: 97546c6758b6da54392bc60a67798f7e, type: 3}
+  - {fileID: 7965060501521148882, guid: 1013a88541edda046ab96041dacc65f4, type: 3}
+  - {fileID: 7965060501521148882, guid: 1013a88541edda046ab96041dacc65f4, type: 3}
   EliteEnemyPrefab:
-  - {fileID: 7965060501521148882, guid: 1013a88541edda046ab96041dacc65f4, type: 3}
+  - {fileID: 830809691760821944, guid: 7f6703249c022ad4abc99ab5073fa747, type: 3}
   BossPrefab:
-  - {fileID: 7965060501521148882, guid: 1013a88541edda046ab96041dacc65f4, type: 3}
+  - {fileID: 2346981638277858310, guid: 97546c6758b6da54392bc60a67798f7e, type: 3}
   encounters:
   - {fileID: 11400000, guid: 07e596e382b3e8f43b511e8a57a06063, type: 2}

@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TestMagic
   manaCost: 0
   audioClip: {fileID: 0}
+  magicParticles: {fileID: 0}
   magicType: 1
   PassivePrefab: {fileID: 769629659062329521, guid: 8d208b320e3ebd646af8d545a3015c5e, type: 3}
   Name: ExtraHP
   Image: {fileID: 7278047870583210113, guid: 3c0d1f7cbf1106445875822a7d644b63, type: 3}
   Rarity: 0
-  Description: +10 ExtraHP
+  Description: +20 ExtraHP
   MagicCard: {fileID: 0}
   duration: 5
   damage: 1

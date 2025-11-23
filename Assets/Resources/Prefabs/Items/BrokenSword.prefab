@@ -48,7 +48,7 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: f1fa3395e1e2fca41bffdfcdeda2fd35, type: 3}
   Name: BrokenSword
   Rarity: 0
-  description: +15% Damage
+  description: +30% Damage
 --- !u!114 &4134789832378561864
 MonoBehaviour:
   m_ObjectHideFlags: 0

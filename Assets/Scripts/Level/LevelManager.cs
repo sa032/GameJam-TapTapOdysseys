@@ -93,7 +93,7 @@ public class LevelManager : MonoBehaviour
                 {
                     tempExp -= tempExpToNext;
                     tempLevel++;
-                    tempExpToNext *= 1.2f;
+                    tempExpToNext *= 1.05f;
                 }
             }
         }
@@ -163,7 +163,7 @@ public class LevelManager : MonoBehaviour
     void LevelUp()
     {
         currentLevel++;
-        expToNextLevel *= 1.2f;
+        expToNextLevel *= 1.05f;
         SoundManager.instance.PlaySoundSFX("LevelUp");
 
         // ตั้ง flag ให้เล่น particle หลัง AnimateAddExp เสร็จ

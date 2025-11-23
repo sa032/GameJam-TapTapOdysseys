@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Break
   manaCost: 0
   audioClip: {fileID: 8300000, guid: 60e87aaee9a30b243a2a2c4f65a1e432, type: 3}
+  magicParticles: {fileID: 9154963994990682134, guid: 2e4fbb560d7394e4b878a9b2edb53ef0, type: 3}
   magicType: 0
   PassivePrefab: {fileID: 0}
   Name: Break

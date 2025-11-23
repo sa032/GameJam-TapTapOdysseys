@@ -72,6 +72,7 @@ public class RestartGame : MonoBehaviour
             }
             
         }
+        yield return new WaitForSeconds(2f);
         isAnimationINDone = true;
     }
     public GameObject Mainmenu,Subtitle; 
@@ -124,7 +125,7 @@ public class RestartGame : MonoBehaviour
         
         yield return new WaitForSeconds(0.25f);
         MapNodeSelectUI.instance.GetNextNodeUI();
-        
+        BuffContainData.instance.IsStartTimer = true;
         Mainmenu.SetActive(false);
         foreach(GameObject n in WinLoseScene) n.SetActive(false);
     }

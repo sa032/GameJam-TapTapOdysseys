@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TestMagic
   manaCost: 0
   audioClip: {fileID: 0}
+  magicParticles: {fileID: 0}
   magicType: 1
   PassivePrefab: {fileID: 769629659062329521, guid: c44bde44270a6ef42b23af15a3ec0af6, type: 3}
   Name: Defensive Stats
   Image: {fileID: -5396974761190355345, guid: 975cb00b4de016c46927bf384f807b94, type: 3}
   Rarity: 0
-  Description: +0.1 Defense
+  Description: +0.05 Defense
   MagicCard: {fileID: 0}
   duration: 5
   damage: 1
