@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896dd0aa6ab549b45beb91e1c18958a4, type: 3}
+  m_Name: Blizzard
+  m_EditorClassIdentifier: Assembly-CSharp::Blizzard
+  manaCost: 0
+  audioClip: {fileID: 8300000, guid: e8c99a36eac0470429668ed5d99f61ba, type: 3}
+  magicParticles: {fileID: 4714940945269416353, guid: 3b8a163779e31bb419d2e7326174d13a, type: 3}
+  magicType: 0
+  PassivePrefab: {fileID: 0}
+  Name: Blizzard
+  Image: {fileID: 21300000, guid: 52a0be7dd5bdd73479a156643ad7f46c, type: 3}
+  Rarity: 1
+  Description: next attack after activating inflicts Cold | AOE
+  MagicCard: {fileID: 0}
+  duration: 5

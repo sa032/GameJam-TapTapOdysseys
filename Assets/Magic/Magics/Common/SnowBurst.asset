@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9938c8b2a40e3754eae2b20501337c42, type: 3}
+  m_Name: SnowBurst
+  m_EditorClassIdentifier: Assembly-CSharp::SnowBurst
+  manaCost: 0
+  audioClip: {fileID: 8300000, guid: f8b6f02e6ab358b4f874081d11a876e3, type: 3}
+  magicParticles: {fileID: 8395318579330903957, guid: 670f7e95b6c81c4408a3ca763fda61fa, type: 3}
+  magicType: 0
+  PassivePrefab: {fileID: 0}
+  Name: Snow Burst
+  Image: {fileID: 21300000, guid: 319fff7bf9eedf14ca806c8b424b4cf7, type: 3}
+  Rarity: 0
+  Description: deal damage/extra damage if Cold | Single
+  MagicCard: {fileID: 0}
+  damage: 0
+  burstDamage: 0

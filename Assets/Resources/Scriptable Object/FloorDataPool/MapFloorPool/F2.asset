@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2e6881d17cc9e46965d96df8987731, type: 3}
+  m_Name: F2
+  m_EditorClassIdentifier: Assembly-CSharp::FloorDataPool
+  EnemyPrefab:
+  - {fileID: 8300904625300859974, guid: ffb508bccf31a9d42980def6fae94e7d, type: 3}
+  - {fileID: 3729091012525628435, guid: 69630d988b387d340a11c5224e73ca23, type: 3}
+  EliteEnemyPrefab:
+  - {fileID: 7908432637282672443, guid: 8db525d88f4f01a4d968715cae40aa52, type: 3}
+  BossPrefab:
+  - {fileID: 1606293753970099556, guid: bfde0fec40e78ec4a8ee43f2800b91d1, type: 3}
+  encounters:
+  - {fileID: 11400000, guid: f978606ad7756964da8fb4f52f58c007, type: 2}

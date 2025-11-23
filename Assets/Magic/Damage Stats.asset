@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460e52c9345fa1944809256777ec1a26, type: 3}
+  m_Name: Damage Stats
+  m_EditorClassIdentifier: Assembly-CSharp::TestMagic
+  manaCost: 0
+  audioClip: {fileID: 0}
+  magicParticles: {fileID: 0}
+  magicType: 1
+  PassivePrefab: {fileID: 769629659062329521, guid: 9688a3d90e368bf41b14688033fcfe4e, type: 3}
+  Name: Defensive Stats
+  Image: {fileID: 5523630204628833594, guid: 4fd7433d2ca875c4687354d0b6e34d60, type: 3}
+  Rarity: 0
+  Description: +0.25 Damage
+  MagicCard: {fileID: 0}
+  duration: 5
+  damage: 1

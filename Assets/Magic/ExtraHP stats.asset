@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460e52c9345fa1944809256777ec1a26, type: 3}
+  m_Name: ExtraHP stats
+  m_EditorClassIdentifier: Assembly-CSharp::TestMagic
+  manaCost: 0
+  audioClip: {fileID: 0}
+  magicParticles: {fileID: 0}
+  magicType: 1
+  PassivePrefab: {fileID: 769629659062329521, guid: 8d208b320e3ebd646af8d545a3015c5e, type: 3}
+  Name: ExtraHP
+  Image: {fileID: 7278047870583210113, guid: 3c0d1f7cbf1106445875822a7d644b63, type: 3}
+  Rarity: 0
+  Description: +20 ExtraHP
+  MagicCard: {fileID: 0}
+  duration: 5
+  damage: 1
