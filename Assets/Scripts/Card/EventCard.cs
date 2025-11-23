@@ -67,6 +67,7 @@ public class EventCard : MonoBehaviour
                 StartCoroutine(RestAnimation());
                 break;
             case NodeType.Boss :
+            EnemyNodeType = NodeType.Boss;
                 StartCoroutine(SpawnBossEnemy());
                 break;
         }
@@ -110,6 +111,13 @@ public class EventCard : MonoBehaviour
                 TreasureEvent(timer+0.1f,1);
             }
             else MapNodeSelectUI.instance.GetNextNodeUI();
+        }else if (EnemyNodeType == NodeType.Boss)
+        {
+            TreasureUI.SetActive(true);
+            SoundManager.instance.PlaySoundSFX("TreasureDrop");
+            yield return new WaitForSeconds(0.75f);
+            TreasureUI.SetActive(false);
+            TreasureEvent(timer+0.1f,3);
         }
         
     }

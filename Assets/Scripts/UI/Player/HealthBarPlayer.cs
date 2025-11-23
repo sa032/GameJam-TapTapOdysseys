@@ -10,7 +10,7 @@ public class HealthBarPlayer : MonoBehaviour
     
     void Update()
     {
-        if(playerHP == null) return;
+        if(playerHP == null) {this.gameObject.SetActive(false);return;}
 
         slider.value = playerHP.health/playerHP.maxHealth;
         text.text = "HP "+playerHP.health+"/"+playerHP.maxHealth;

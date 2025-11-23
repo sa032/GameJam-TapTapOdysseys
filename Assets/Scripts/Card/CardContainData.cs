@@ -267,6 +267,7 @@ public class CardContainData : MonoBehaviour
         CardUI_TransitionOut(true);
         
     }
+    public ParticleSystem DimensionVFX;
     public IEnumerator DisbleSelf(float db)
     {
         yield return new WaitForSeconds(db);
@@ -291,7 +292,9 @@ public class CardContainData : MonoBehaviour
         //TODO >>>>>>
         if (MapManager.Instance.CurrentFloor+1 < MapManager.Instance.config.FloorLayers.Count)
         {
-            print("LET TO THE NEXT FLOOR");
+            DimensionVFX.Play();
+            SoundManager.instance.PlaySoundSFX("DimensionVFX");
+            //print("LET TO THE NEXT FLOOR");
             MapManager.Instance.CurrentFloor += 1;
             MapManager.Instance.GenerateNewMap();
         }

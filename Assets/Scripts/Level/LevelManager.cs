@@ -199,7 +199,7 @@ public class LevelManager : MonoBehaviour
         fillImage.color = originalColor;
     }
 
-    void UpdateText()
+    public void UpdateText()
     {
         levelText.text = $"Level {currentLevel}";
         expText.text = $"{currentExp:0}/{expToNextLevel:0}";

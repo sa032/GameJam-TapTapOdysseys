@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
     public Animator anim;
     public string hurt;
     public string idle;
+    public GameObject Gameover;
     private void Update()
     {
         health = Mathf.Clamp(health, 0, maxHealth);
@@ -22,6 +23,10 @@ public class Health : MonoBehaviour
                 BuffContainData.instance.Kill +=1;
                 LevelManager.instance.AddExp(LevelGain);
                 Destroy(gameObject);
+            }
+            if (this.gameObject.tag == "Player")
+            {
+                Gameover.SetActive(true);
             }
             
         }

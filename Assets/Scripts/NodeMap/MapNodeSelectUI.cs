@@ -85,18 +85,23 @@ namespace Map
                 }
                 else
                 {
-                    TimeBarDatasets.TimedEventDataset events = TimeBarManager.instance.currentDataset.datasets[2];
-                    events.elements[1].minTime = 0;
-                    events.elements[1].maxTime = 0;
+                    if (mapManager.CurrentFloor >= mapManager.config.FloorLayers.Count-1)
+                    {
+                        Victory.SetActive(true);
+                    }else{
+                        TimeBarDatasets.TimedEventDataset events = TimeBarManager.instance.currentDataset.datasets[2];
+                        events.elements[1].minTime = 0;
+                        events.elements[1].maxTime = 0;
 
-                    events.elements[2].minTime = 0;
-                    events.elements[2].maxTime = 100;
+                        events.elements[2].minTime = 0;
+                        events.elements[2].maxTime = 100;
 
-                    events.elements[0].minTime = 0;
-                    events.elements[0].maxTime = 0;
-                    TimeBarManager.instance.SwitchDataset(2);
-                    Card1.GetComponent<CardContainData>().state = CardState.GoNextFloor;
-                    Card1.SetActive(true);
+                        events.elements[0].minTime = 0;
+                        events.elements[0].maxTime = 0;
+                        TimeBarManager.instance.SwitchDataset(2);
+                        Card1.GetComponent<CardContainData>().state = CardState.GoNextFloor;
+                        Card1.SetActive(true);
+                    }
                 }
             }
             else
@@ -106,7 +111,7 @@ namespace Map
                 LevelUPSelectCard();
             }
         }
-        
+        public GameObject Victory; 
         void CardUI(Node nextnode , GameObject Card)
         {
             Card.GetComponent<CardContainData>().state = CardState.SelectPath;

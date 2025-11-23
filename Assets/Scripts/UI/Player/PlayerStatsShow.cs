@@ -30,12 +30,18 @@ public class PlayerStatsShow : MonoBehaviour
         PlayTime.text = $"PlayTime {hours:00}:{minutes:00}:{seconds:00}";
 
         Kill.text = "Kill " + buff.Kill;
-        ManaSlider.value = MagicManager.instance.currentMana/100;
-        ManaText.text = "Mana "+MagicManager.instance.currentMana+"/"+100;
+        if(ManaSlider.gameObject.activeInHierarchy)
+        {
+            ManaSlider.value = MagicManager.instance.currentMana/100;
+            ManaText.text = "Mana "+MagicManager.instance.currentMana+"/"+100;
 
-        GameObject Player = GameObject.FindGameObjectWithTag("Player");
-        Player.GetComponent<Health>().isBlock = ParryMode.instance.inParryMode;
-        Player.GetComponent<Health>().Defense = buff.DefenseBuffFlat;
-        Player.GetComponent<Health>().maxHealth = 20+buff.HPBuffFlat;
+            GameObject Player = GameObject.FindGameObjectWithTag("Player");
+            Player.GetComponent<Health>().isBlock = ParryMode.instance.inParryMode;
+            Player.GetComponent<Health>().Defense = buff.DefenseBuffFlat;
+            Player.GetComponent<Health>().maxHealth = 20+buff.HPBuffFlat;
+        }
+        
+
+        
     }
 }
