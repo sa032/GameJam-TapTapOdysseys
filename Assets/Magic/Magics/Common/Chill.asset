@@ -17,8 +17,8 @@ MonoBehaviour:
   magicType: 0
   PassivePrefab: {fileID: 0}
   Name: Chill
-  Image: {fileID: -6573826362745927925, guid: 6a0312f853ce0e741898b97b76425025, type: 3}
+  Image: {fileID: 21300000, guid: a1580eef1f3b7dd4eb0bc3ad4401ff7b, type: 3}
   Rarity: 0
-  Description: 
+  Description: Chill - inflict Cold | Single
   MagicCard: {fileID: 0}
   duration: 3

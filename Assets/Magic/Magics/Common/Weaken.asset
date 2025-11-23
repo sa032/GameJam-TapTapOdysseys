@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weaken
   manaCost: 0
   audioClip: {fileID: 8300000, guid: 91781035ac276f940a71944ae9192cd5, type: 3}
+  magicType: 0
+  PassivePrefab: {fileID: 0}
+  Name: Weaken
+  Image: {fileID: 21300000, guid: ebe19ff8126d35e4b9e54028fa642f2b, type: 3}
+  Rarity: 0
+  Description: inflict Weak | Single
   MagicCard: {fileID: 0}
   duration: 0

@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Break
   manaCost: 0
   audioClip: {fileID: 8300000, guid: 60e87aaee9a30b243a2a2c4f65a1e432, type: 3}
+  magicType: 0
+  PassivePrefab: {fileID: 0}
+  Name: Break
+  Image: {fileID: 21300000, guid: cbd58516247739a4ea2e8a5b5cf66c54, type: 3}
+  Rarity: 0
+  Description: inflict Fragile | Single
   MagicCard: {fileID: 0}
   duration: 0

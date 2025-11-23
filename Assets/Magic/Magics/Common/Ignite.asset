@@ -17,9 +17,9 @@ MonoBehaviour:
   magicType: 0
   PassivePrefab: {fileID: 0}
   Name: Ignite
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 02f9fbea49faf9a469adc550202cc8dc, type: 3}
   Rarity: 0
-  Description: 
+  Description: inflict Burn | Single
   MagicCard: {fileID: 0}
   duration: 5
   damage: 0.5

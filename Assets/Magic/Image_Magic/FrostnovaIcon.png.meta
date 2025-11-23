@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 41caefe4783ca6640a0655fdcf146b1d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2147193624693099344
+    second: FrostnovaIcon_0
+  - first:
+      213: -4628377732224862503
+    second: FrostnovaIcon_1
+  - first:
+      213: 8923264164218326107
+    second: FrostnovaIcon_2
+  - first:
+      213: 3484759058306989174
+    second: FrostnovaIcon_3
+  - first:
+      213: -2530173539370406117
+    second: FrostnovaIcon_4
+  - first:
+      213: -1954209965132480334
+    second: FrostnovaIcon_5
+  - first:
+      213: -7606171641965574001
+    second: FrostnovaIcon_6
+  - first:
+      213: -4046577079558594363
+    second: FrostnovaIcon_7
+  - first:
+      213: -7852921074202245631
+    second: FrostnovaIcon_8
+  - first:
+      213: 3577923883610366398
+    second: FrostnovaIcon_9
+  - first:
+      213: 6506632962009061366
+    second: FrostnovaIcon_10
+  - first:
+      213: -4487882649219158628
+    second: FrostnovaIcon_11
+  - first:
+      213: -7587414187598316726
+    second: FrostnovaIcon_12
+  - first:
+      213: 7696552039563759549
+    second: FrostnovaIcon_13
+  - first:
+      213: -553243353430965268
+    second: FrostnovaIcon_14
+  - first:
+      213: 2290394547879553
+    second: FrostnovaIcon_15
+  - first:
+      213: -5604742740318751509
+    second: FrostnovaIcon_16
+  - first:
+      213: 3394537912428952687
+    second: FrostnovaIcon_17
+  - first:
+      213: 6644629377864656992
+    second: FrostnovaIcon_18
+  - first:
+      213: -4924568906341814815
+    second: FrostnovaIcon_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FrostnovaIcon_0
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 559
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05bc0dfa93d5ccd10800000000000000
+      internalID: 2147193624693099344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_1
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 419
+        width: 92
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6b86889f2b4cfb0800000000000000
+      internalID: -4628377732224862503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_2
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 569
+        width: 12
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5cc439da7dc5db70800000000000000
+      internalID: 8923264164218326107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_3
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 479
+        width: 72
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67c763686e95c5030800000000000000
+      internalID: 3484759058306989174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_4
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 389
+        width: 112
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1febb5429403ecd0800000000000000
+      internalID: -2530173539370406117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_5
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 509
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b000cbf36041e4e0800000000000000
+      internalID: -1954209965132480334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_6
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 439
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f880efbd033717690800000000000000
+      internalID: -7606171641965574001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_7
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 379
+        width: 182
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c02ca8f59ba7d7c0800000000000000
+      internalID: -4046577079558594363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_8
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 299
+        width: 212
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1060ffab3e1d40390800000000000000
+      internalID: -7852921074202245631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_9
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 389
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb16bf3c0d657a130800000000000000
+      internalID: 3577923883610366398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_10
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 239
+        width: 182
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f7d56094343c4a50800000000000000
+      internalID: 6506632962009061366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_11
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 209
+        width: 142
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d27a32286d7b1c0800000000000000
+      internalID: -4487882649219158628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_12
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 349
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4b71780ff614b690800000000000000
+      internalID: -7587414187598316726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_13
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 309
+        width: 112
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf81894d45afca60800000000000000
+      internalID: 7696552039563759549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_14
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 179
+        width: 62
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce3c66ce91c7258f0800000000000000
+      internalID: -553243353430965268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_15
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 189
+        width: 62
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18efb690a13280000800000000000000
+      internalID: 2290394547879553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_16
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 269
+        width: 32
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be4f9d14c24f732b0800000000000000
+      internalID: -5604742740318751509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_17
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 189
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c7cee0f32db1f20800000000000000
+      internalID: 3394537912428952687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_18
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 169
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0686fb3e637763c50800000000000000
+      internalID: 6644629377864656992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostnovaIcon_19
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 129
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1edef81dbaa68abb0800000000000000
+      internalID: -4924568906341814815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FrostnovaIcon_0: 2147193624693099344
+      FrostnovaIcon_1: -4628377732224862503
+      FrostnovaIcon_10: 6506632962009061366
+      FrostnovaIcon_11: -4487882649219158628
+      FrostnovaIcon_12: -7587414187598316726
+      FrostnovaIcon_13: 7696552039563759549
+      FrostnovaIcon_14: -553243353430965268
+      FrostnovaIcon_15: 2290394547879553
+      FrostnovaIcon_16: -5604742740318751509
+      FrostnovaIcon_17: 3394537912428952687
+      FrostnovaIcon_18: 6644629377864656992
+      FrostnovaIcon_19: -4924568906341814815
+      FrostnovaIcon_2: 8923264164218326107
+      FrostnovaIcon_3: 3484759058306989174
+      FrostnovaIcon_4: -2530173539370406117
+      FrostnovaIcon_5: -1954209965132480334
+      FrostnovaIcon_6: -7606171641965574001
+      FrostnovaIcon_7: -4046577079558594363
+      FrostnovaIcon_8: -7852921074202245631
+      FrostnovaIcon_9: 3577923883610366398
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
