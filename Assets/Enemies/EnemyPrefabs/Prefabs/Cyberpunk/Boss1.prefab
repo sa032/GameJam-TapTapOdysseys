@@ -385,9 +385,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d296adaa64a4a42b925b349498bb43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Boss1_Attack
-  damage1: 6
-  damage2: 9
-  damage3: 10
+  damage1: 16
+  damage2: 19
+  damage3: 20
   warning: {fileID: 8449481324884985313, guid: 1201ac3f95b48354e9f8740b1af2f30f, type: 3}
   warningPos: {fileID: 1789527651580198802}
   parentCooldown: {fileID: 2940447614384588154}

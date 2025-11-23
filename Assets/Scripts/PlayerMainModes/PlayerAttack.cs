@@ -35,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 BuffContainData buff = BuffContainData.instance;
                 float damageBuffCalculate = damage;
-                magicManager.currentMana += 5;
+                magicManager.currentMana += 2;
                 health.damage(damageBuffCalculate);
                 Instantiate(slash, enemy.transform.position, Quaternion.identity);
             }

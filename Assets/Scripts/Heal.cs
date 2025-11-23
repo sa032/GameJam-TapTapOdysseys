@@ -13,6 +13,6 @@ public class Heal : MonoBehaviour
         }
         healVFX.Play();
         magicManager.currentMana -= 50;
-        player.health += player.maxHealth/4;
+        player.health += player.maxHealth/10;
     }
 }

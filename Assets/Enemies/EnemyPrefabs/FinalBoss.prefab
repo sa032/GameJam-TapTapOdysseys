@@ -554,10 +554,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab56c3c7a4dec484e890af060a460271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalBoss_Attack
-  damage1: 2
-  damage2: 4
-  damage3: 3
-  damage4: 10
+  damage1: 25
+  damage2: 26
+  damage3: 28
+  damage4: 32
   warning: {fileID: 8449481324884985313, guid: 1201ac3f95b48354e9f8740b1af2f30f, type: 3}
   warningPos: {fileID: 5026819560697858618}
   parentCooldown: {fileID: 5969871824035249375}
