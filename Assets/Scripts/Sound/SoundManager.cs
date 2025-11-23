@@ -12,4 +12,9 @@ public class SoundManager : MonoBehaviour
     {
         this.GetComponent<AudioSource>().PlayOneShot(Resources.Load<AudioClip>("Sound/"+source));
     }
+    public void PlayMusic(AudioClip audioClip)
+    {
+        this.transform.GetChild(0).GetComponent<AudioSource>().clip = audioClip;
+        this.transform.GetChild(0).GetComponent<AudioSource>().Play();
+    }
 }

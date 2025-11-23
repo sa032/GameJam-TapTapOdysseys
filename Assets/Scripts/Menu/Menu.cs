@@ -35,6 +35,8 @@ public class Menu : MonoBehaviour
         Player.transform.position = PlayerPositionCutscene.position;
         Mainmenu.GetComponent<Animator>().Play("Mainmenu_out");
         DimensionVFX.Play();
+        MapManager.Instance.CurrentFloor = 0;
+        MapManager.Instance.GenerateNewMap();
         yield return new WaitForSeconds(1f);
         //
         //
@@ -48,8 +50,7 @@ public class Menu : MonoBehaviour
         
         foreach(GameObject g in canvaGameplay) g.SetActive(true);
         
-        MapManager.Instance.CurrentFloor = 0;
-        MapManager.Instance.GenerateNewMap();
+        
         yield return new WaitForSeconds(0.25f);
         MapNodeSelectUI.instance.GetNextNodeUI();
         BuffContainData.instance.IsStartTimer = true;

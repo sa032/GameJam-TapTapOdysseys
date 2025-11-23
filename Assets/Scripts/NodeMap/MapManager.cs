@@ -53,6 +53,7 @@ namespace Map
             Debug.Log(map.ToJson());
             view.ShowMap(map);
             MapImage.sprite = config.FloorLayers[CurrentFloor].MapImage;
+            SoundManager.instance.PlayMusic(config.FloorLayers[CurrentFloor].music);
         }
 
         public void SaveMap()

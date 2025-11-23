@@ -29,6 +29,7 @@ namespace Map
     {
         public string Name;
         public Sprite MapImage;
+        public AudioClip music;
         public List<MapLayer> layers;
     }
 }

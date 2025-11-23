@@ -109,6 +109,8 @@ public class RestartGame : MonoBehaviour
         
         Player.transform.position = PlayerPositionCutscene.position;
         DimensionVFX.Play();
+        MapManager.Instance.CurrentFloor = 0;
+        MapManager.Instance.GenerateNewMap();
         yield return new WaitForSeconds(1f);
         //
         //
@@ -119,8 +121,7 @@ public class RestartGame : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         Subtitle.SetActive(false);
         yield return new WaitForSeconds(0.25f);
-        MapManager.Instance.CurrentFloor = 0;
-        MapManager.Instance.GenerateNewMap();
+        
         yield return new WaitForSeconds(0.25f);
         MapNodeSelectUI.instance.GetNextNodeUI();
         
