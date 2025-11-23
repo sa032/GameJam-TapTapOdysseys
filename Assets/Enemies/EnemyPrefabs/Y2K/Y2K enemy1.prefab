@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1818427013230828211}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0.8, z: 0}
+  m_LocalPosition: {x: -0.75, y: 2.6599998, z: 0}
   m_LocalScale: {x: 1.5, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -132,7 +132,7 @@ Transform:
   m_GameObject: {fileID: 3278044166152107841}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0.8, z: 0}
+  m_LocalPosition: {x: -0.75, y: 2.66, z: 0}
   m_LocalScale: {x: 1.5, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 7248001013271113371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -3.13, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 6445961567309150916}
   - component: {fileID: 9068675397325186931}
   - component: {fileID: 2617629377409790040}
+  - component: {fileID: 8953592752967339908}
   m_Layer: 0
   m_Name: Y2K enemy1
   m_TagString: Enemy
@@ -388,7 +389,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -4680824456326754793, guid: f762d7b32dc91fd429a8b071496487f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -440,8 +441,8 @@ MonoBehaviour:
   weakRemaining: 0
   burnParticles: {fileID: 0}
   coldParticles: {fileID: 0}
-  freezeParticles: {fileID: 0}
-  fragileParticles: {fileID: 0}
+  freezeSprite: {fileID: 0}
+  fragileSprite: {fileID: 0}
   weakParticles: {fileID: 0}
 --- !u!114 &9068675397325186931
 MonoBehaviour:
@@ -490,6 +491,29 @@ MonoBehaviour:
   warning: {fileID: 8449481324884985313, guid: 1201ac3f95b48354e9f8740b1af2f30f, type: 3}
   warningPos: {fileID: 3405513144710561250}
   parentCooldown: {fileID: 5893641290214814645}
+  animator: {fileID: 8953592752967339908}
+--- !u!95 &8953592752967339908
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7965060501521148882}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5fbaf0b773af3b14a86cc26960d19a4b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8505582122766616295
 GameObject:
   m_ObjectHideFlags: 0

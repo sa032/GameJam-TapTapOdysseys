@@ -11,6 +11,7 @@ public class Boss2_Attack : MonoBehaviour
     public Transform parentCooldown;
     public GameObject slash;
     public GameObject particle;
+    public Animator animator;
     private int index = 1;
     public void Attack()
     {
@@ -50,21 +51,34 @@ public class Boss2_Attack : MonoBehaviour
     }
     public IEnumerator BaseAttackCoroutine1()
     {
+        animator.Play("SamuraiBossWindup");
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.3f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("SamuraiBossAttack1");
         StartCoroutine(SingleAttackCoroutine1(false));
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("SamuraiBossWindup");
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("SamuraiBossAttack1");
+        StartCoroutine(SingleAttackCoroutine1(false));
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("SamuraiBossWindup");
         yield return new WaitForSeconds(0.3f);
-        StartCoroutine(SingleAttackCoroutine1(false));
-        yield return new WaitForSeconds(0.4f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.3f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("SamuraiBossAttack1");
         StartCoroutine(SingleAttackCoroutine1(false));
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("SamuraiBossWindup");
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("SamuraiBossAttack1");
         yield return StartCoroutine(SingleAttackCoroutine1(true));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("SamuraiBossIdle");
     }
     private IEnumerator SingleAttackCoroutine1(bool stunAfterParry)
     {
@@ -85,9 +99,13 @@ public class Boss2_Attack : MonoBehaviour
     }
     public IEnumerator BaseAttackCoroutine2()
     {
+        animator.Play("SamuraiBossWindup");
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("SamuraiBossAttack2");
         yield return StartCoroutine(SingleAttackCoroutine2(true));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("SamuraiBossIdle");
     }
     private IEnumerator SingleAttackCoroutine2(bool stunAfterParry)
     {
@@ -110,6 +128,7 @@ public class Boss2_Attack : MonoBehaviour
     }
     public IEnumerator BaseAttackCoroutine3()
     {
+        animator.Play("SamuraiBossWindup");
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
@@ -121,6 +140,8 @@ public class Boss2_Attack : MonoBehaviour
         StartCoroutine(SingleAttackCoroutine3(false));
         yield return new WaitForSeconds(0.4f);
         yield return StartCoroutine(SingleAttackCoroutine3(true));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("SamuraiBossIdle");
     }
     private IEnumerator SingleAttackCoroutine3(bool stunAfterParry)
     {

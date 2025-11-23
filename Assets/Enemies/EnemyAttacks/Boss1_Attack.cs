@@ -11,6 +11,7 @@ public class Boss1_Attack : MonoBehaviour
     public Transform parentCooldown;
     public GameObject Attack2Effect;
     public GameObject Attack3Effect;
+    public Animator animator;
     private int index = 1;
     public void Attack()
     {
@@ -44,17 +45,27 @@ public class Boss1_Attack : MonoBehaviour
     }
     public IEnumerator BaseAttackCoroutine1()
     {
+        animator.Play("DesertBossWindup");
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.3f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.3f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("DesertBossAttack1");
         StartCoroutine(SingleAttackCoroutine1(false));
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("DesertBossWindup");
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("DesertBossAttack1");
         StartCoroutine(SingleAttackCoroutine1(false));
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("DesertBossWindup");
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("DesertBossAttack1");
         yield return StartCoroutine(SingleAttackCoroutine1(true));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("DesertBossIdle");
     }
     private IEnumerator SingleAttackCoroutine1(bool stunAfterParry)
     {
@@ -75,14 +86,21 @@ public class Boss1_Attack : MonoBehaviour
     }
     public IEnumerator BaseAttackCoroutine2()
     {
+        animator.Play("DesertBossWindup");
         yield return new WaitForSeconds(1f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.3f);
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.4f);
+        animator.Play("DesertBossAttack2");
         StartCoroutine(SingleAttackCoroutine2(false, true));
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
+        animator.Play("DesertBossWindup");
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("DesertBossAttack2");
         yield return StartCoroutine(SingleAttackCoroutine2(true, false));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("DesertBossIdle");
     }
     private IEnumerator SingleAttackCoroutine2(bool stunAfterParry, bool fragile)
     {
@@ -111,9 +129,13 @@ public class Boss1_Attack : MonoBehaviour
     }
     public IEnumerator BaseAttackCoroutine3()
     {
+        animator.Play("DesertBossWindup");
         Instantiate(warning, warningPos.position, Quaternion.identity);
         yield return new WaitForSeconds(0.5f);
+        animator.Play("DesertBossAttack3");
         yield return StartCoroutine(SingleAttackCoroutine3(true));
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("DesertBossIdle");
     }
     private IEnumerator SingleAttackCoroutine3(bool stunAfterParry)
     {
