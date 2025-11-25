@@ -3,6 +3,7 @@ using System.Collections;
 using Unity.VisualScripting;
 public class Health : MonoBehaviour
 {
+    private Effects effects;
     public float maxHealth;
     public float health;
     public float Defense;
@@ -12,6 +13,10 @@ public class Health : MonoBehaviour
     public string hurt;
     public string idle;
     public GameObject Gameover;
+    private void Start()
+    {
+        effects = GetComponent<Effects>();
+    }
     private void Update()
     {
         health = Mathf.Clamp(health, 0, maxHealth);
@@ -35,14 +40,15 @@ public class Health : MonoBehaviour
         float dmg_reduction = 0;
         if(isBlock == true) dmg_reduction = 50;
         
-        float dmgCal1 = damageAmount-Defense;
-        if(this.gameObject.tag == "Enemy")
+        float dmgCal1 = damageAmount;
+        float dmgCal2 = damageAmount;
+        dmgCal1 = damageAmount-Defense;
+
+        if (effects.fragile)
         {
-            BuffContainData buff = BuffContainData.instance;
-            dmgCal1 = (1+buff.DamageBuffFlat)*(1+buff.DamageBuffPercent/100);
+            float damageCal2 = dmgCal1-(dmgCal1*1.5f);
         }
-        
-        float damageCalculate = dmgCal1-(dmgCal1*(dmg_reduction/100));
+        float damageCalculate = dmgCal2-(dmgCal2*(dmg_reduction/100));
         if(damageCalculate <= 0) damageCalculate = 0;
         
         health -= damageCalculate;
