@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad39a06d94f317a4fb9d1c2a941f12cc, type: 3}
   m_Name: Scorch
   m_EditorClassIdentifier: Assembly-CSharp::Scorch
-  manaCost: 0
+  manaCost: 40
   audioClip: {fileID: 8300000, guid: 768700e536909e247825030ee144c19f, type: 3}
   magicParticles: {fileID: 5687938747267756334, guid: 3323e0c43e9d4fb4d88f1b57481cdbfe, type: 3}
   magicType: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   Description: Consume all stacks(ticks) of burn to deal damage(depends on burn damage
     and stacks)
   MagicCard: {fileID: 0}
-  baseDamage: 2
+  damage: 2

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c29daf6a8e2cbb4fbea7e62df3f6753, type: 3}
   m_Name: Flamewake
   m_EditorClassIdentifier: Assembly-CSharp::Flamewake
-  manaCost: 0
+  manaCost: 30
   audioClip: {fileID: 8300000, guid: d4a7a76345db3f349b73d8050e9a12a5, type: 3}
   magicParticles: {fileID: 7642730857315303072, guid: 02eddf0f2ffcd604e993a9d52c567ab5, type: 3}
   magicType: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07845b21ad955241ba7fea04d464f48, type: 3}
   m_Name: Weaken
   m_EditorClassIdentifier: Assembly-CSharp::Weaken
-  manaCost: 0
+  manaCost: 20
   audioClip: {fileID: 8300000, guid: 91781035ac276f940a71944ae9192cd5, type: 3}
   magicParticles: {fileID: 133076118849936541, guid: 312376e73c9a46c4abcdb326697d4a9c, type: 3}
   magicType: 0

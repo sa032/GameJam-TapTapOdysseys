@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460e52c9345fa1944809256777ec1a26, type: 3}
   m_Name: Ignite
   m_EditorClassIdentifier: Assembly-CSharp::Ignite
-  manaCost: 0
+  manaCost: 20
   audioClip: {fileID: 8300000, guid: 1d0663ad4ee243e499070dd0c2adda9a, type: 3}
   magicParticles: {fileID: 7068610157000891834, guid: 1a6eecbe8ae82a943848116f546314a8, type: 3}
   magicType: 0
