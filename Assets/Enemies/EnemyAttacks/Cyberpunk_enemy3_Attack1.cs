@@ -4,6 +4,7 @@ using System.Collections;
 public class Cyberpunk_enemy3_Attack1 : MonoBehaviour
 {
     public float damage;
+    public float burnDamage;
     public GameObject warning;
     public Transform warningPos;
     public Transform parentCooldown;
@@ -44,7 +45,7 @@ public class Cyberpunk_enemy3_Attack1 : MonoBehaviour
         else
         {
             player.damage(damage);
-            playerEffects.BurnInflict(5,damage * 0.2f);
+            playerEffects.BurnInflict(5,burnDamage);
         }
     }
 }

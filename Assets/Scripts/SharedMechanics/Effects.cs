@@ -95,6 +95,17 @@ public class Effects : MonoBehaviour
     }
     public void Shock()
     {
+        float damageBuffCalculate = 7;
+        BuffContainData buff = BuffContainData.instance;
+        if (this.gameObject.CompareTag("Player"))
+        {
+            FragileInflict(7);
+            WeakInflict(7);
+        }
+        else
+        {
+            damageBuffCalculate = (10+buff.MagicBuffFlat)*(1+buff.MagicBuffPercent/100);
+        }
         health.damage(7);
     }
     public void BurnInflict(int duration, float damage)
