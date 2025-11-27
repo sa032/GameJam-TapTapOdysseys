@@ -71,7 +71,7 @@ public class TimeBarManager : MonoBehaviour
         }
         setTimeBarValues();
         setMarkers(false);
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) )
         {
             Spacebar.SetBool("IsPress",true);
             currentValue += Time.deltaTime * sliderSpeed * sliderMultiplier;
@@ -81,7 +81,7 @@ public class TimeBarManager : MonoBehaviour
             }
         }
         
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) )
         {
             Spacebar.SetBool("IsPress",false);
             bool matched = false;

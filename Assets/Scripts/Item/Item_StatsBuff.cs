@@ -21,6 +21,12 @@ public class Item_StatsBuff : MonoBehaviour
 
         BuffContainData.instance.HPBuffPercent += HPBuffPercent;
         BuffContainData.instance.HPBuffFlat += HPBuffFlat;
+
+        GameObject Player = GameObject.FindGameObjectWithTag("Player");
+        if (Player != null)
+        {
+            Player.GetComponent<Health>().health += HPBuffFlat;
+        }
     }
 
     void Update()

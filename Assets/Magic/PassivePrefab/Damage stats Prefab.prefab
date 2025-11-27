@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item_StatsBuff
   DamageBuffPercent: 0
-  DamageBuffFlat: 0.25
+  DamageBuffFlat: 0.5
   DefenseBuffPercent: 0
   DefenseBuffFlat: 0
   HPBuffPercent: 0

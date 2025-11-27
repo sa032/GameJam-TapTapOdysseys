@@ -83,7 +83,7 @@ public class CardContainData : MonoBehaviour
                 }
                 else if (encounterType == EncounterType.Exp)
                 {
-                    LevelManager.instance.AddExp(LevelManager.instance.expToNextLevel+1);
+                    LevelManager.instance.AddExp(4*LevelManager.instance.expToNextLevel+1);
                     EventCard.Instance.ExitEncounter();
                 }
                 

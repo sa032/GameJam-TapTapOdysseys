@@ -11,6 +11,7 @@ namespace Map
 {
     public class MapNodeSelectUI : MonoBehaviour
     {
+        
         public MapManager mapManager;
         public static MapNodeSelectUI instance;
         public MapViewUI mapView;

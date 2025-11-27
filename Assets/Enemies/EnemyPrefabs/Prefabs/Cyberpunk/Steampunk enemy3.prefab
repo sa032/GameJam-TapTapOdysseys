@@ -443,11 +443,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f187f33c9551e1d40a2dc7c649ba4fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 275
-  health: 275
+  maxHealth: 450
+  health: 450
   Defense: 0
   isBlock: 0
-  LevelGain: 250
+  LevelGain: 800
   anim: {fileID: 0}
   hurt: 
   idle: 

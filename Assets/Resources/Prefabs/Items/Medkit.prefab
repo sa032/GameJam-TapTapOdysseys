@@ -48,7 +48,7 @@ MonoBehaviour:
   image: {fileID: -3826845409251182802, guid: 3e904f721813d4945a6018e3cf605e41, type: 3}
   Name: Medkit
   Rarity: 1
-  description: +20 ExtraHP
+  description: +40 ExtraHP
 --- !u!114 &4134789832378561864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,4 +66,4 @@ MonoBehaviour:
   DefenseBuffPercent: 0
   DefenseBuffFlat: 0
   HPBuffPercent: 0
-  HPBuffFlat: 20
+  HPBuffFlat: 40

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MagicCardManager : MonoBehaviour
 {
     public List<MagicBase> Magics;
+    public List<MagicBase> PassiveMagics;
     public Transform MagicPassiveInventory;
     public GameObject BorderMagicUI;
     public GameObject CardPreview,CardPreviewPosiion,SwitchUI;
@@ -31,11 +32,12 @@ public class MagicCardManager : MonoBehaviour
     public List<MagicBase> GetRandomMagic(int count = 3)
     {
         // ถ้าของไม่ถึง ก็สุ่มเท่าที่มี
-        int amount = Mathf.Min(count, Magics.Count);
+        int amount = Mathf.Min(count-1, Magics.Count);
         SoundManager.instance.PlaySoundSFX("MagicCardPick");
-        List<MagicBase> result = new List<MagicBase>(amount);
+        List<MagicBase> result = new List<MagicBase>(amount+1);
         List<MagicBase> temp = new List<MagicBase>(Magics); // copy list เพื่อสุ่มไม่ซ้ำ
-
+        result.Add(PassiveMagics[UnityEngine.Random.Range(0, 3)]);
+        
         for (int i = 0; i < amount; i++)
         {
             int index = UnityEngine.Random.Range(0, temp.Count);

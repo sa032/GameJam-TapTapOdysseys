@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
     {
         if(isPlayingCutscene == true) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) )
         {
             StartCoroutine(PlayMainMenu());
         }

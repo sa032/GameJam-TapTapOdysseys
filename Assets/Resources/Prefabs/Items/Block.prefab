@@ -48,7 +48,7 @@ MonoBehaviour:
   image: {fileID: 7482667652216324306, guid: c929cc2b6e5520e41a31828af5f6339a, type: 3}
   Name: Block
   Rarity: 0
-  description: +0.2 Defense
+  description: +0.3 Defense
 --- !u!114 &4134789832378561864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,6 +64,6 @@ MonoBehaviour:
   DamageBuffPercent: 0
   DamageBuffFlat: 0
   DefenseBuffPercent: 0
-  DefenseBuffFlat: 0.2
+  DefenseBuffFlat: 0.3
   HPBuffPercent: 0
   HPBuffFlat: 0
