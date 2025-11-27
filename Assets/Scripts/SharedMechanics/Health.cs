@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using Unity.VisualScripting;
+using TMPro;
 public class Health : MonoBehaviour
 {
     private Effects effects;
@@ -13,6 +14,7 @@ public class Health : MonoBehaviour
     public string hurt;
     public string idle;
     public GameObject Gameover;
+    public GameObject damageTextObject;
     private void Start()
     {
         effects = GetComponent<Effects>();
@@ -50,6 +52,9 @@ public class Health : MonoBehaviour
         if(damageCalculate <= 0) damageCalculate = 0;
         
         health -= damageCalculate;
+        DamageText damageText = Instantiate(damageTextObject, transform.position, transform.rotation)
+        .GetComponent<DamageText>();
+        damageText.damageNumber = damageCalculate;
         StartCoroutine(Shake(5));
         Debug.Log(damageCalculate);
     }
