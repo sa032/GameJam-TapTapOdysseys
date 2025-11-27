@@ -3,20 +3,23 @@ using UnityEngine;
 
 public class DamageText : MonoBehaviour
 {
+    private Vector3 launch;
     private TextMeshPro tmp;
     public float damageNumber;
     public float lerpSpeed;
     private void Start()
     {
-        transform.position = Random.insideUnitCircle * 0.2f;
+        transform.localPosition = (Vector3)Random.insideUnitCircle * 1f;
+        launch = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f);
     }
     private void Update()
     {
-        transform.localScale -= new Vector3(0.1f, 0.1f, 0);
-        transform.position = Vector3.Lerp(
-            transform.position,
-            transform.position + Vector3.up,
-            Time.deltaTime * lerpSpeed
+        transform.localScale = Vector3.Lerp(
+            transform.localScale, 
+            Vector3.zero, 
+            3 * Time.deltaTime
         );
+
+        transform.localPosition += launch * 1 * Time.deltaTime;
     }
 }
