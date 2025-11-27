@@ -40,20 +40,18 @@ public class Health : MonoBehaviour
         float dmg_reduction = 0;
         if(isBlock == true) dmg_reduction = 50;
         
-        float dmgCal1 = damageAmount;
-        float dmgCal2 = damageAmount;
-        dmgCal1 = damageAmount-Defense;
+        float dmgCal1 = damageAmount-Defense;
 
         if (effects.fragile)
         {
-            float damageCal2 = dmgCal1-(dmgCal1*1.5f);
+            dmgCal1 = dmgCal1*1.5f;
         }
-        float damageCalculate = dmgCal2-(dmgCal2*(dmg_reduction/100));
+        float damageCalculate = dmgCal1-(dmgCal1*(dmg_reduction/100));
         if(damageCalculate <= 0) damageCalculate = 0;
         
         health -= damageCalculate;
         StartCoroutine(Shake(5));
-        Debug.Log(damageAmount);
+        Debug.Log(damageCalculate);
     }
     public void heal(float healAmount)
     {

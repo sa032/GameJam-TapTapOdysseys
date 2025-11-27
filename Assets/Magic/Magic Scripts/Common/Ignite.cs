@@ -15,7 +15,18 @@ public class Ignite : MagicBase
         {
             Instantiate(magicParticles, enemy.transform.position, Quaternion.identity);
             Effects enemyEffects = enemy.GetComponent<Effects>();
-            enemyEffects.BurnInflict(duration, damage);
+            
+            float damageBuffCalculate = damage;
+            Effects playerEffects = GameObject.FindGameObjectWithTag("Player").GetComponent<Effects>();
+            BuffContainData buff = BuffContainData.instance;
+            // its divided by 3 for flames
+            damageBuffCalculate = (damage+(buff.MagicBuffFlat/3))*(1+buff.MagicBuffPercent/100);
+            if (playerEffects.weak)
+            {
+                damageBuffCalculate *= 0.5f;
+            }
+
+            enemyEffects.BurnInflict(duration, damageBuffCalculate);
             AudioSource.PlayClipAtPoint(audioClip, enemy.transform.position);
         }
     }
