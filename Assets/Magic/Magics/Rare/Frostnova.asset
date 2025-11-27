@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4a9e37c870383498926413dc256c6b, type: 3}
   m_Name: Frostnova
   m_EditorClassIdentifier: Assembly-CSharp::Frostnova
-  manaCost: 0
+  manaCost: 30
   audioClip: {fileID: 8300000, guid: e2962ca8531d6dc4ab70c4de0e795571, type: 3}
   magicParticles: {fileID: 2651090604078100182, guid: dcee9e95bbd4f424bbfdfc435fe91551, type: 3}
   magicType: 0

@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
 using Unity.VisualScripting;
+using TMPro;
 public class Health : MonoBehaviour
 {
+    private Effects effects;
     public float maxHealth;
     public float health;
     public float Defense;
@@ -12,6 +14,11 @@ public class Health : MonoBehaviour
     public string hurt;
     public string idle;
     public GameObject Gameover;
+    public GameObject damageTextObject;
+    private void Start()
+    {
+        effects = GetComponent<Effects>();
+    }
     private void Update()
     {
         health = Mathf.Clamp(health, 0, maxHealth);
@@ -36,18 +43,20 @@ public class Health : MonoBehaviour
         if(isBlock == true) dmg_reduction = 50;
         
         float dmgCal1 = damageAmount-Defense;
-        if(this.gameObject.tag == "Enemy")
+
+        if (effects.fragile)
         {
-            BuffContainData buff = BuffContainData.instance;
-            dmgCal1 = (1+buff.DamageBuffFlat)*(1+buff.DamageBuffPercent/100);
+            dmgCal1 = dmgCal1*1.5f;
         }
-        
         float damageCalculate = dmgCal1-(dmgCal1*(dmg_reduction/100));
         if(damageCalculate <= 0) damageCalculate = 0;
         
         health -= damageCalculate;
+        DamageText damageText = Instantiate(damageTextObject, transform.position, transform.rotation)
+        .GetComponent<DamageText>();
+        damageText.damageNumber = damageCalculate;
         StartCoroutine(Shake(5));
-        Debug.Log(damageAmount);
+        Debug.Log(damageCalculate);
     }
     public void heal(float healAmount)
     {

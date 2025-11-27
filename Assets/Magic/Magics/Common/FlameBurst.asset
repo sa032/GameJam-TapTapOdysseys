@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75948913a7efcf49b7a7986adf13bf0, type: 3}
   m_Name: FlameBurst
   m_EditorClassIdentifier: Assembly-CSharp::FlameBurst
-  manaCost: 0
+  manaCost: 10
   audioClip: {fileID: 8300000, guid: 1d0663ad4ee243e499070dd0c2adda9a, type: 3}
   magicParticles: {fileID: 7068610157000891834, guid: 1a6eecbe8ae82a943848116f546314a8, type: 3}
   magicType: 0
@@ -22,5 +22,4 @@ MonoBehaviour:
   Rarity: 0
   Description: deal damage/extra damage if Burning | Single
   MagicCard: {fileID: 0}
-  damage: 0
-  burstDamage: 0
+  damage: 3

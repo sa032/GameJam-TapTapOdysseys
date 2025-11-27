@@ -621,6 +621,7 @@ MonoBehaviour:
   hurt: 
   idle: 
   Gameover: {fileID: 0}
+  damageTextObject: {fileID: 6896105345675786663, guid: 8f97be2483858bb4bbb1ab83d7f02bfb, type: 3}
 --- !u!114 &3161341512951039975
 MonoBehaviour:
   m_ObjectHideFlags: 0

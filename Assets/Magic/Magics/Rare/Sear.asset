@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ecd837e4b9abc4c94ea6a76c39dfa6, type: 3}
   m_Name: Sear
   m_EditorClassIdentifier: Assembly-CSharp::Sear
-  manaCost: 0
+  manaCost: 30
   audioClip: {fileID: 8300000, guid: 768700e536909e247825030ee144c19f, type: 3}
   magicParticles: {fileID: 8083267488726359564, guid: 93cb3a26e5aba99468283c3be2fbe31b, type: 3}
   magicType: 0
@@ -22,4 +22,4 @@ MonoBehaviour:
   Rarity: 1
   Description: inflict all Burning enemies with Fragile | AOE
   MagicCard: {fileID: 0}
-  duration: 3
+  duration: 5

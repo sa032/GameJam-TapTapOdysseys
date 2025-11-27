@@ -5,6 +5,9 @@ public class BuffContainData : MonoBehaviour
     [Header("Damage Buff")]
     public float DamageBuffPercent;
     public float DamageBuffFlat;
+    [Header("Magic Buff")]
+    public float MagicBuffFlat;
+    public float MagicBuffPercent;
     [Header("Defense Buff")]
     public float DefenseBuffPercent;
     public float DefenseBuffFlat;

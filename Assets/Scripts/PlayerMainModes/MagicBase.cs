@@ -9,6 +9,8 @@ public abstract class MagicBase : ScriptableObject
     public AudioClip audioClip;
     public GameObject magicParticles;
     public abstract void Cast();
+
+
     public MagicType magicType;
     public GameObject PassivePrefab;
     public string Name;

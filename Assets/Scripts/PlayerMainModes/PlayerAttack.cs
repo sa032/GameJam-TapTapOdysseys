@@ -31,11 +31,19 @@ public class PlayerAttack : MonoBehaviour
         if (enemy != null)
         {
             Health health = enemy.GetComponent<Health>();
+            Effects effects = GameObject.FindGameObjectWithTag("Player").GetComponent<Effects>();
             if (health != null)
             {
-                BuffContainData buff = BuffContainData.instance;
                 float damageBuffCalculate = damage;
-                magicManager.currentMana += 2;
+
+                BuffContainData buff = BuffContainData.instance;
+                damageBuffCalculate = (damage+buff.DamageBuffFlat)*(1+buff.DamageBuffPercent/100);
+                if (effects.weak)
+                {
+                    damageBuffCalculate *= 0.5f;
+                }
+
+                magicManager.currentMana += 5;
                 health.damage(damageBuffCalculate);
                 Instantiate(slash, enemy.transform.position, Quaternion.identity);
             }

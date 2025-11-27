@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc44b5c9659c8345bc439d4bbee62ff, type: 3}
   m_Name: Chill
   m_EditorClassIdentifier: Assembly-CSharp::Chill
-  manaCost: 0
+  manaCost: 20
   audioClip: {fileID: 8300000, guid: f8b6f02e6ab358b4f874081d11a876e3, type: 3}
   magicParticles: {fileID: 8395318579330903957, guid: 670f7e95b6c81c4408a3ca763fda61fa, type: 3}
   magicType: 0
