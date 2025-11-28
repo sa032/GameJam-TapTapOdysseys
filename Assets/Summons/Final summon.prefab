@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -9090872899900170987, guid: 1882cb924e5f9fd48a36d16dc4fefc26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb9465626e215d419359605d5e1384d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  damage1: 0.5
-  damage2: 0.1
+  damage1: 2.5
+  damage2: 2
 --- !u!1 &9175752918175525698
 GameObject:
   m_ObjectHideFlags: 0
