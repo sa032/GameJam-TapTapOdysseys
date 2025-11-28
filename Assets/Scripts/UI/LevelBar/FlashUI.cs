@@ -9,7 +9,7 @@ public class FlashUI : MonoBehaviour
 
     private Image[] images;                   // เก็บทุก Image ที่เป็นลูก
 
-    void Start()
+    void OnEnable()
     {
         // ดึงทุก Image ที่เป็น children ทั้งหมด
         images = GetComponentsInChildren<Image>();

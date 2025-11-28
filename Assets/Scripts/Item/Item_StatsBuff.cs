@@ -11,6 +11,9 @@ public class Item_StatsBuff : MonoBehaviour
     [Header("HP Buff")]
     public float HPBuffPercent;
     public float HPBuffFlat;
+    [Header("Magic Buff")]
+    public float MagicBuffPercent;
+    public float MagicBuffFlat;
     void Awake()
     {
         BuffContainData.instance.DamageBuffPercent += DamageBuffPercent;
@@ -21,6 +24,9 @@ public class Item_StatsBuff : MonoBehaviour
 
         BuffContainData.instance.HPBuffPercent += HPBuffPercent;
         BuffContainData.instance.HPBuffFlat += HPBuffFlat;
+
+        BuffContainData.instance.MagicBuffPercent += MagicBuffPercent;
+        BuffContainData.instance.MagicBuffFlat += MagicBuffFlat;
 
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         if (Player != null)

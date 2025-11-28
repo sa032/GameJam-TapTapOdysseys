@@ -48,7 +48,7 @@ MonoBehaviour:
   image: {fileID: -3983944188102630738, guid: 8f5b771590d07d24bb7e911055bddd88, type: 3}
   Name: Shield Of Hero
   Rarity: 3
-  description: +2 Defense +50 ExtraHP
+  description: +2 Defense +10 ExtraHP
 --- !u!114 &4134789832378561864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,4 +66,6 @@ MonoBehaviour:
   DefenseBuffPercent: 0
   DefenseBuffFlat: 2
   HPBuffPercent: 0
-  HPBuffFlat: 50
+  HPBuffFlat: 10
+  MagicBuffPercent: 0
+  MagicBuffFlat: 0

@@ -143,16 +143,19 @@ namespace Map
         //TODO: --------------------------------------------------------------EVENT-----------------
         List<GameObject> items;
         List<MagicBase> magics;
+        public GameObject LevelVFX;
         public void TreasureUI()
         {
             items = ItemManager.instance.GetRandomItems();
             int Amount = items.Count;
+            
             ShowCardUI(Amount,NodeType.Treasure);
         }
         public void LevelUPSelectCard()
         {
             magics = MagicCardManager.instance.GetRandomMagic();
             int Amount = magics.Count;
+            LevelVFX.SetActive(true);
             ShowCardUI(Amount,NodeType.None);
         }
         public void ShowCardUI(int CardAmount , NodeType nodeStates)

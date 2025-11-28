@@ -5,9 +5,6 @@ TextureImporter:
   - first:
       213: 6624704220539968654
     second: BreakIcon_0
-  - first:
-      213: 2292959709604434627
-    second: BreakIcon_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -119,10 +116,10 @@ TextureImporter:
       name: BreakIcon_0
       rect:
         serializedVersion: 2
-        x: 119
-        y: 229
-        width: 272
-        height: 292
+        x: 13
+        y: 11
+        width: 274
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,33 +134,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: BreakIcon_1
-      rect:
-        serializedVersion: 2
-        x: 319
-        y: 139
-        width: 192
-        height: 342
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3c2514f05ba32df10800000000000000
-      internalID: 2292959709604434627
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +149,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       BreakIcon_0: 6624704220539968654
-      BreakIcon_1: 2292959709604434627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
