@@ -216,7 +216,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -9090872899900170987, guid: 1882cb924e5f9fd48a36d16dc4fefc26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -240,4 +240,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c021af8763a68c74782ec95edb8fba6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  damage: 0.1
+  damage: 1.75

@@ -18,7 +18,7 @@ MonoBehaviour:
   magicType: 0
   PassivePrefab: {fileID: 0}
   Name: Break
-  Image: {fileID: 21300000, guid: cbd58516247739a4ea2e8a5b5cf66c54, type: 3}
+  Image: {fileID: 6624704220539968654, guid: cbd58516247739a4ea2e8a5b5cf66c54, type: 3}
   Rarity: 0
   Description: inflict Fragile | Single
   MagicCard: {fileID: 0}

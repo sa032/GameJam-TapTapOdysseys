@@ -18,7 +18,7 @@ MonoBehaviour:
   magicType: 0
   PassivePrefab: {fileID: 0}
   Name: Flame Burst
-  Image: {fileID: 21300000, guid: fbecfcb07f50d2a4ea6d60516711727c, type: 3}
+  Image: {fileID: -8076825727216399687, guid: fbecfcb07f50d2a4ea6d60516711727c, type: 3}
   Rarity: 0
   Description: deal damage/extra damage if Burning | Single
   MagicCard: {fileID: 0}

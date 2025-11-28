@@ -141,7 +141,7 @@ public class RestartGame : MonoBehaviour
         Playtime.text = $"PlayTime {hours:00}:{minutes:00}:{seconds:00}";
         Itemcollect.text = "Item Collect "+Inventory.transform.childCount;
     }
-    public GameObject Inventory,MagicManager,ObjectContainer,UIItem,BorderUI1,BorderUI2,NPC,title;
+    public GameObject Inventory,MagicManager,ObjectContainer,UIItem,BorderUI1,BorderUI2,NPC,title,ParentSummon;
     public MagicManager magicManager;
     void ClearAllObject()
     {
@@ -200,6 +200,10 @@ public class RestartGame : MonoBehaviour
         for (int i = 0;i<UIItem.transform.childCount;i++)
         {
             Destroy(UIItem.transform.GetChild(i).gameObject);
+        }
+        for (int i = 0;i<ParentSummon.transform.childCount;i++)
+        {
+            Destroy(ParentSummon.transform.GetChild(i).gameObject);
         }
         Player.GetComponent<Health>().health = 20;
         Player.GetComponent<Health>().maxHealth = 20;

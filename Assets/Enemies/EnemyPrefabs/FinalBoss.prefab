@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 187354669195289892}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 4.13, z: 0}
+  m_LocalPosition: {x: -0.75, y: 3.69, z: 0}
   m_LocalScale: {x: 1.5, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -425,7 +425,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.47909, y: 0.41884, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5969871824035249375}
@@ -559,6 +559,7 @@ MonoBehaviour:
   damage2: 26
   damage3: 28
   damage4: 32
+  burnDamage: 0
   warning: {fileID: 8449481324884985313, guid: 1201ac3f95b48354e9f8740b1af2f30f, type: 3}
   warningPos: {fileID: 5026819560697858618}
   parentCooldown: {fileID: 5969871824035249375}
@@ -576,6 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalBoss_Attack2
   damage: 0
+  burnDamage: 0
   warning: {fileID: 8449481324884985313, guid: 1201ac3f95b48354e9f8740b1af2f30f, type: 3}
   warningPos: {fileID: 5026819560697858618}
   parentCooldown: {fileID: 2169300208457454234}
@@ -628,7 +630,7 @@ Transform:
   m_GameObject: {fileID: 8895770395076565211}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 4.13, z: 0}
+  m_LocalPosition: {x: -0.75, y: 3.6899998, z: 0}
   m_LocalScale: {x: 1.5, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
