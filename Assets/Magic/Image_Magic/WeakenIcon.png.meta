@@ -8,9 +8,6 @@ TextureImporter:
   - first:
       213: 8575220414883737987
     second: WeakenIcon_1
-  - first:
-      213: -8546574848859906301
-    second: WeakenIcon_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,10 +119,10 @@ TextureImporter:
       name: WeakenIcon_0
       rect:
         serializedVersion: 2
-        x: 179
-        y: 309
-        width: 52
-        height: 32
+        x: 51
+        y: 67
+        width: 196
+        height: 212
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,10 +141,10 @@ TextureImporter:
       name: WeakenIcon_1
       rect:
         serializedVersion: 2
-        x: 189
-        y: 69
-        width: 252
-        height: 512
+        x: 55
+        y: 25
+        width: 188
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,28 +155,6 @@ TextureImporter:
       bones: []
       spriteID: 381b2dba88d410770800000000000000
       internalID: 8575220414883737987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WeakenIcon_2
-      rect:
-        serializedVersion: 2
-        x: 389
-        y: 319
-        width: 62
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 30fda67e477746980800000000000000
-      internalID: -8546574848859906301
       vertices: []
       indices: 
       edges: []
@@ -200,7 +175,6 @@ TextureImporter:
     nameFileIdTable:
       WeakenIcon_0: -596049610236110151
       WeakenIcon_1: 8575220414883737987
-      WeakenIcon_2: -8546574848859906301
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
