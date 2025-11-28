@@ -136,7 +136,7 @@ public class TimeBarManager : MonoBehaviour
                     
                     if(events[i].isMagic == true && magicBase != null)
                     {
-                        text.text = magicBase.Name;
+                        text.text = magicBase.Name + (" : ") + magicBase.Description;
                     }else
                     text.text = events[i].Name;
                     
