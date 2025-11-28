@@ -5,12 +5,14 @@ public class y2ksummon : MonoBehaviour
 {
     private EnemyManager enemyManager;
     public float damage;
+    public Animator animator;
     public void Attack()
     {
         StartCoroutine(AttackCoroutine());
     }
     public IEnumerator AttackCoroutine()
     {
+        animator.Play("Y2KAttack");
         enemyManager = GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>();
         GameObject enemy = enemyManager.GetFirstEnemy();
 
@@ -28,5 +30,6 @@ public class y2ksummon : MonoBehaviour
             }
         }
         yield return new WaitForSeconds(0.5f);
+        animator.Play("Y2KIdle");
     }
 }

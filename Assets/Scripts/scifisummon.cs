@@ -6,15 +6,22 @@ public class scifisummon : MonoBehaviour
 {
     private EnemyManager enemyManager;
     public float damage;
+    public Animator animator;
     public void Attack()
     {
         StartCoroutine(AttackCoroutine());
     }
     public IEnumerator AttackCoroutine()
     {
+        animator.Play("ScifiAttack");
         SingleAttack(false);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("ScifiIdle");
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("ScifiAttack");
         SingleAttack(true);
+        yield return new WaitForSeconds(0.2f);
+        animator.Play("ScifiIdle");
     }
     private void SingleAttack(bool burn)
     {

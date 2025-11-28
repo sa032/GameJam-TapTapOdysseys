@@ -5,15 +5,22 @@ public class cyberpunksummon : MonoBehaviour
 {
     private EnemyManager enemyManager;
     public float damage;
+    public Animator animator;
     public void Attack()
     {
         StartCoroutine(AttackCoroutine());
     }
     public IEnumerator AttackCoroutine()
     {
+        animator.Play("CyberpunkAttack");
         SingleAttack(false);
         yield return new WaitForSeconds(0.3f);
+        animator.Play("CyberpunkIdle");
+        yield return new WaitForSeconds(0.3f);
+        animator.Play("CyberpunkAttack");
         SingleAttack(true);
+        yield return new WaitForSeconds(0.3f);
+        animator.Play("CyberpunkIdle");
     }
     private void SingleAttack(bool burn)
     {

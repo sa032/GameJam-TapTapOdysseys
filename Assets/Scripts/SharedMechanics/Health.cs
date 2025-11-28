@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
     public GameObject Gameover;
     public GameObject damageTextObject;
     private bool haveOrigPos = false;
+    Vector3 OrigPos = Vector3.zero;
     private void Start()
     {
         effects = GetComponent<Effects>();
@@ -67,7 +68,6 @@ public class Health : MonoBehaviour
     }
     private IEnumerator Shake(int times)
     {
-        Vector3 OrigPos = Vector3.zero;
         if (!haveOrigPos)
         {
             OrigPos = transform.position;
