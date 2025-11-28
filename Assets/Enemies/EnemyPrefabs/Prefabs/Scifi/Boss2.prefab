@@ -385,8 +385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f187f33c9551e1d40a2dc7c649ba4fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 23000
-  health: 23000
+  maxHealth: 12000
+  health: 12000
   Defense: 0
   isBlock: 0
   LevelGain: 10000

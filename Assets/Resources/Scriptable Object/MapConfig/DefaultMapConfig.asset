@@ -103,7 +103,7 @@ MonoBehaviour:
       randomizePosition: 0
       randomizeNodes: 0
   - Name: Egypt
-    MapImage: {fileID: 5885588517540005310, guid: 96d2c72bfbc32f1469272e4e9309c73c, type: 3}
+    MapImage: {fileID: 6573864909406603046, guid: acef1c4effa46d346980520ae6096235, type: 3}
     music: {fileID: 8300000, guid: 9f0cbdd9911dac2448e7e4634a63318f, type: 3}
     layers:
     - nodeType: 1
