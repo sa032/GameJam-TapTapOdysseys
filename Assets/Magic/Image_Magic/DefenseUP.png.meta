@@ -5,6 +5,15 @@ TextureImporter:
   - first:
       213: -5396974761190355345
     second: DefenseUP_0
+  - first:
+      213: 2837545418098326903
+    second: DefenseUP_1
+  - first:
+      213: -1961720340896537168
+    second: DefenseUP_2
+  - first:
+      213: 5050845557107929555
+    second: DefenseUP_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,10 +125,10 @@ TextureImporter:
       name: DefenseUP_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 176
-        height: 198
+        x: 19
+        y: 10
+        width: 132
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,11 +143,77 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: DefenseUP_1
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 154
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77db9c7168cf06720800000000000000
+      internalID: 2837545418098326903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DefenseUP_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 46
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b5243c5eb196c4e0800000000000000
+      internalID: -1961720340896537168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DefenseUP_3
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 19
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d137ce0645381640800000000000000
+      internalID: 5050845557107929555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +224,9 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       DefenseUP_0: -5396974761190355345
+      DefenseUP_1: 2837545418098326903
+      DefenseUP_2: -1961720340896537168
+      DefenseUP_3: 5050845557107929555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

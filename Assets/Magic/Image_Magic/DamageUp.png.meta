@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: 5523630204628833594
     second: DamageUp_0
+  - first:
+      213: -1434773558029330451
+    second: DamageUp_1
+  - first:
+      213: -1082194526363465753
+    second: DamageUp_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,10 +122,10 @@ TextureImporter:
       name: DamageUp_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 176
-        height: 198
+        x: 4
+        y: 149
+        width: 31
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,11 +140,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: DamageUp_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 8
+        width: 68
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7d98cfc09a61ce0800000000000000
+      internalID: -1434773558029330451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DamageUp_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 9
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7cb3edfc54bf0f0800000000000000
+      internalID: -1082194526363465753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +199,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       DamageUp_0: 5523630204628833594
+      DamageUp_1: -1434773558029330451
+      DamageUp_2: -1082194526363465753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -5,6 +5,15 @@ TextureImporter:
   - first:
       213: -8905898539599098538
     second: IgniteIcon_0
+  - first:
+      213: -585028116411462947
+    second: IgniteIcon_1
+  - first:
+      213: 1428271486117890596
+    second: IgniteIcon_2
+  - first:
+      213: -6056790975942645071
+    second: IgniteIcon_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,10 +125,10 @@ TextureImporter:
       name: IgniteIcon_0
       rect:
         serializedVersion: 2
-        x: 139
-        y: 39
-        width: 332
-        height: 572
+        x: 23
+        y: 7
+        width: 92
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,6 +139,72 @@ TextureImporter:
       bones: []
       spriteID: 65d8685b674e76480800000000000000
       internalID: -8905898539599098538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IgniteIcon_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 29
+        width: 90
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddacda9170091e7f0800000000000000
+      internalID: -585028116411462947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IgniteIcon_2
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 29
+        width: 90
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42a40ec695d32d310800000000000000
+      internalID: 1428271486117890596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IgniteIcon_3
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 7
+        width: 92
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1baa52892b4f1fba0800000000000000
+      internalID: -6056790975942645071
       vertices: []
       indices: 
       edges: []
@@ -149,6 +224,9 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       IgniteIcon_0: -8905898539599098538
+      IgniteIcon_1: -585028116411462947
+      IgniteIcon_2: 1428271486117890596
+      IgniteIcon_3: -6056790975942645071
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

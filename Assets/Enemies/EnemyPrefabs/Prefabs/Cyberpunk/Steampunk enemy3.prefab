@@ -443,8 +443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f187f33c9551e1d40a2dc7c649ba4fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 450
-  health: 450
+  maxHealth: 600
+  health: 600
   Defense: 0
   isBlock: 0
   LevelGain: 800
@@ -492,8 +492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5b7b7bc94370d42b0cf9b1e0498af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  coolDown: 5
-  currentCoolDown: 5
+  coolDown: 3
+  currentCoolDown: 3
   attackEvent:
     m_PersistentCalls:
       m_Calls:

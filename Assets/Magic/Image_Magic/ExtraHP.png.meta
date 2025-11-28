@@ -5,6 +5,12 @@ TextureImporter:
   - first:
       213: 7278047870583210113
     second: ExtraHP_0
+  - first:
+      213: 4079599877565606007
+    second: ExtraHP_1
+  - first:
+      213: -3447801658211970244
+    second: ExtraHP_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -116,10 +122,10 @@ TextureImporter:
       name: ExtraHP_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 176
-        height: 198
+        x: 13
+        y: 145
+        width: 29
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,11 +140,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ExtraHP_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 34
+        width: 133
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77866085976ad9830800000000000000
+      internalID: 4079599877565606007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ExtraHP_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 16
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c33d54ab8a2f620d0800000000000000
+      internalID: -3447801658211970244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +199,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       ExtraHP_0: 7278047870583210113
+      ExtraHP_1: 4079599877565606007
+      ExtraHP_2: -3447801658211970244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
