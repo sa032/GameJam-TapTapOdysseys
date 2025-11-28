@@ -4,6 +4,7 @@ using System.Collections;
 public class Y2K_enemy2_Attack : MonoBehaviour
 {
     public float damage;
+    public float burnDamage;
     public GameObject warning;
     public Transform warningPos;
     public Transform parentCooldown;
@@ -34,7 +35,7 @@ public class Y2K_enemy2_Attack : MonoBehaviour
         else
         {
             player.damage(damage);
-            playerEffects.BurnInflict(3, damage * 0.2f);
+            playerEffects.BurnInflict(3, burnDamage);
         }
         yield return new WaitForSeconds(0.2f);
         animator.Play("Y2KSilIdle");

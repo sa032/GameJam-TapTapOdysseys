@@ -6,6 +6,7 @@ public class Boss1_Attack : MonoBehaviour
     public float damage1;
     public float damage2;
     public float damage3;
+    public float burnDamage;
     public GameObject warning;
     public Transform warningPos;
     public Transform parentCooldown;
@@ -153,7 +154,7 @@ public class Boss1_Attack : MonoBehaviour
         else
         {
             player.damage(damage3);
-            playerEffects.BurnInflict(5,1);
+            playerEffects.BurnInflict(5,burnDamage);
         }
     }
 }
