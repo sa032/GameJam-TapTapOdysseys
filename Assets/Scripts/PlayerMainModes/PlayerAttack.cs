@@ -60,8 +60,8 @@ public class PlayerAttack : MonoBehaviour
         GlobalValues.barLocked = false;
     }
     public void SetNextAttack(UnityAction attack)
-{
-    nextAttack.RemoveAllListeners();
-    nextAttack.AddListener(attack);
-}
+    {
+        nextAttack.RemoveAllListeners();
+        nextAttack.AddListener(attack);
+    }
 }
