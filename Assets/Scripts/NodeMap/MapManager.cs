@@ -13,6 +13,9 @@ namespace Map
         public int CurrentFloor = 0;
         public static MapManager Instance;
         public SpriteRenderer MapImage;
+        public GameObject[] PostProcessing;
+        [SerializeField]
+        private GameObject Clone_PostProcessing;
 
         public Map CurrentMap { get; private set; }
 
@@ -54,6 +57,12 @@ namespace Map
             view.ShowMap(map);
             MapImage.sprite = config.FloorLayers[CurrentFloor].MapImage;
             SoundManager.instance.PlayMusic(config.FloorLayers[CurrentFloor].music);
+            if(Clone_PostProcessing != null) Destroy(Clone_PostProcessing);
+            if (PostProcessing[CurrentFloor] != null)
+            {
+                Clone_PostProcessing = Instantiate(PostProcessing[CurrentFloor]);
+                Clone_PostProcessing.transform.position = new Vector3(0,0,0);
+            }
         }
 
         public void SaveMap()

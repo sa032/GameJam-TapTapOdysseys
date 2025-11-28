@@ -176,6 +176,11 @@ public class RestartGame : MonoBehaviour
         BuffContainData.instance.IsStartTimer = false;
         BuffContainData.instance.Kill = 0;
         BuffContainData.instance.PlayTime = 0;
+
+        MagicManager.GetComponent<MagicManager>().magicSlots[0] = null;
+        MagicManager.GetComponent<MagicManager>().magicSlots[1] = null;
+        MagicManager.GetComponent<MagicManager>().magicSlots[2] = null;
+
         for (int i = 0;i<Inventory.transform.childCount;i++)
         {
             Destroy(Inventory.transform.GetChild(i).gameObject);

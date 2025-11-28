@@ -440,8 +440,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -3.7196002, y: -1.2255001, z: 0}
-    m_Extent: {x: 9.724501, y: 5.3301, z: 0}
+    m_Center: {x: -3.3017502, y: -1.5748501, z: 0}
+    m_Extent: {x: 10.14235, y: 5.63525, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -454,8 +454,8 @@ MonoBehaviour:
   m_ShapePath:
   - {x: 4.406801, y: 3.5636501, z: 0}
   - {x: -12.9449215, y: -4.724604, z: 0}
-  - {x: -11.072269, y: -6.056603, z: 0}
-  - {x: 5.506624, y: 3.6046567, z: 0}
+  - {x: -10.475577, y: -6.7129645, z: 0}
+  - {x: 6.3419914, y: 3.3659806, z: 0}
 --- !u!1 &1306679586381159674
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +733,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.25
+  m_Intensity: 0.22
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -752,8 +752,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -2.0555499, y: -2.3289, z: 0}
-    m_Extent: {x: 7.14715, y: 6.3894997, z: 0}
+    m_Center: {x: -3.27855, y: -2.31285, z: 0}
+    m_Extent: {x: 8.37015, y: 6.40495, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -764,8 +764,8 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: 4.406801, y: 3.5636501, z: 0}
-  - {x: -8.7040825, y: -7.972566, z: 0}
+  - {x: 3.1239138, y: 3.5934849, z: 0}
+  - {x: -11.150518, y: -7.704055, z: 0}
   - {x: -4.5531745, y: -8.220182, z: 0}
   - {x: 4.5936503, y: 3.5424085, z: 0}
 --- !u!1 &2016463143807221353
@@ -1549,7 +1549,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0.78
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
