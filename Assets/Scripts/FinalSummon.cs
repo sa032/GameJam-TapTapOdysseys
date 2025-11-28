@@ -8,6 +8,7 @@ public class FinalSummon : MonoBehaviour
     public float damage2;
     private EnemyManager enemyManager;
     private int index = 1;
+    public Animator animator;
     public void Attack()
     {
         AttackCoroutine();
@@ -31,8 +32,10 @@ public class FinalSummon : MonoBehaviour
     } 
     public IEnumerator BaseAttackCoroutine1()
     {
+        animator.Play("FinalAttack1");
         SingleAttack1();
         yield return new WaitForSeconds(0.3f);
+        animator.Play("FinalIdle");
     }
     private void SingleAttack1()
     {
@@ -61,8 +64,10 @@ public class FinalSummon : MonoBehaviour
     }
     public IEnumerator BaseAttackCoroutine2()
     {
+        animator.Play("FinalAttack2");
         SingleAttack2();
         yield return new WaitForSeconds(0.3f);
+        animator.Play("FinalIdle");
     }
     private void SingleAttack2()
     {
