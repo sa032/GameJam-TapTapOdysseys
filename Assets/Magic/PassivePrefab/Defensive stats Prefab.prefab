@@ -47,6 +47,8 @@ MonoBehaviour:
   DamageBuffPercent: 0
   DamageBuffFlat: 0
   DefenseBuffPercent: 0
-  DefenseBuffFlat: 0.15
+  DefenseBuffFlat: 0.05
   HPBuffPercent: 0
   HPBuffFlat: 0
+  MagicBuffPercent: 0
+  MagicBuffFlat: 0

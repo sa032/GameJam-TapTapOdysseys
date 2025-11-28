@@ -49,4 +49,6 @@ MonoBehaviour:
   DefenseBuffPercent: 0
   DefenseBuffFlat: 0
   HPBuffPercent: 0
-  HPBuffFlat: 20
+  HPBuffFlat: 15
+  MagicBuffPercent: 0
+  MagicBuffFlat: 0

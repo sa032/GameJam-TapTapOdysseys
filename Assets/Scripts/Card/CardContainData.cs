@@ -38,7 +38,7 @@ public class CardContainData : MonoBehaviour
         new Color(0.914f, 0.757f, 1.000f, 1.000f),
         new Color(1.000f, 0.894f, 0.580f, 0.989f)
     };
-
+    public GameObject LevelVFX;
     public void Execute()
     {
         if(NodeData != null)nodeSave = NodeData.Node;
@@ -62,7 +62,7 @@ public class CardContainData : MonoBehaviour
             case CardState.Magic :
                 MagicCardManager.instance.AddMagicToInventory(MagicData);
                 MagicCardManager.instance.CardPreviewFunc(MagicData,this.transform.position);
-                
+                LevelVFX.SetActive(false);
                 Reset();
                 //StartCoroutine(DisbleSelf(0.5f));
                 break;

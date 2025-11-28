@@ -142,6 +142,7 @@ public class RestartGame : MonoBehaviour
         Itemcollect.text = "Item Collect "+Inventory.transform.childCount;
     }
     public GameObject Inventory,MagicManager,ObjectContainer,UIItem,BorderUI1,BorderUI2,NPC,title;
+    public MagicManager magicManager;
     void ClearAllObject()
     {
         LevelManager.instance.Dif_level = 0;
@@ -167,6 +168,9 @@ public class RestartGame : MonoBehaviour
         BuffContainData.instance.DamageBuffFlat = 0;
         BuffContainData.instance.DamageBuffPercent = 0;
 
+        BuffContainData.instance.MagicBuffFlat = 0;
+        BuffContainData.instance.MagicBuffPercent = 0;
+
         BuffContainData.instance.DefenseBuffFlat = 0;
         BuffContainData.instance.DefenseBuffPercent = 0;
 
@@ -177,9 +181,9 @@ public class RestartGame : MonoBehaviour
         BuffContainData.instance.Kill = 0;
         BuffContainData.instance.PlayTime = 0;
 
-        MagicManager.GetComponent<MagicManager>().magicSlots[0] = null;
-        MagicManager.GetComponent<MagicManager>().magicSlots[1] = null;
-        MagicManager.GetComponent<MagicManager>().magicSlots[2] = null;
+        magicManager.magicSlots[0] = null;
+        magicManager.magicSlots[1] = null;
+        magicManager.magicSlots[2] = null;
 
         for (int i = 0;i<Inventory.transform.childCount;i++)
         {
