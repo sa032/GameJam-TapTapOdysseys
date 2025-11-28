@@ -15,8 +15,10 @@ public class Health : MonoBehaviour
     public string idle;
     public GameObject Gameover;
     public GameObject damageTextObject;
+    Vector3 OrigPos;
     private void Start()
     {
+        OrigPos = transform.position;
         effects = GetComponent<Effects>();
     }
     private void Update()
@@ -65,8 +67,6 @@ public class Health : MonoBehaviour
     }
     private IEnumerator Shake(int times)
     {
-        Vector3 OrigPos = transform.position;
-        
         if (GlobalValues.blocking && this.gameObject.CompareTag("Player"))
         {
             Debug.Log("Blocked");
