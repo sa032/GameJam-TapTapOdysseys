@@ -15,10 +15,9 @@ public class Health : MonoBehaviour
     public string idle;
     public GameObject Gameover;
     public GameObject damageTextObject;
-    Vector3 OrigPos;
+    private bool haveOrigPos = false;
     private void Start()
     {
-        OrigPos = transform.position;
         effects = GetComponent<Effects>();
     }
     private void Update()
@@ -41,6 +40,7 @@ public class Health : MonoBehaviour
     }
     public void damage(float damageAmount)
     {
+        Vector3 OrigPos = transform.position;
         float dmg_reduction = 0;
         if(isBlock == true) dmg_reduction = 50;
         
@@ -67,6 +67,13 @@ public class Health : MonoBehaviour
     }
     private IEnumerator Shake(int times)
     {
+        Vector3 OrigPos = Vector3.zero;
+        if (!haveOrigPos)
+        {
+            OrigPos = transform.position;
+            haveOrigPos = true;
+        }
+        
         if (GlobalValues.blocking && this.gameObject.CompareTag("Player"))
         {
             Debug.Log("Blocked");
